@@ -2,7 +2,47 @@ body {
     margin: 0;
 }
 
-.titulo{
+.titulo {
     text-align: center;
-    font-family: 'Comic Neue',cursive;
+    font-family: 'Comic Neue', cursive;
+}
+
+.tabla {
+    font-family: 'Comic Neue';
+    background: white;
+}
+
+.tabla table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: left;
+    width: 90%;
+}
+
+.tabla table td,.tabla table th {
+    padding: 3px 10px;
+}
+
+.tabla table thead th {
+    background-color: #CCCCCC;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.tabla table tbody td {
+    color: black;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
+}
+
+.tabla table tbody .alt td {
+    background: #EEEEEE;
+    color: black;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: left;
 }
