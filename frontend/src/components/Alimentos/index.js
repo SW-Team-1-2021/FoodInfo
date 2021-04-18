@@ -1,7 +1,13 @@
 import React from 'react';
+import './alimentos.css';
 
 function Alimentos() {
-    return <h1>ALIMENTOS</h1>;
+    return(
+    <div>
+        <h1  className="titulo">LISTA DE ALIMENTOS</h1>
+    </div>
+    );
+    
 }
 
 export default Alimentos;
