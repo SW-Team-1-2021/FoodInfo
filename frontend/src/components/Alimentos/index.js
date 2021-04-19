@@ -1,12 +1,13 @@
 import React from 'react';
 import './alimentos.css';
+import Table from 'react-bootstrap/Table';
 
 function Alimentos() {
     return (
-        <div>
+        <div className="alimentos">
             <h1 className="titulo">LISTA DE ALIMENTOS</h1>
             <div className="tabla">
-                <table border="1">
+                <Table responsive="md" striped bordered hover size="sm">
                     <thead>
                         <tr>
                             <th>Categoria</th>
@@ -41,7 +42,7 @@ function Alimentos() {
                             <td>12</td>
                         </tr>
                     </tbody>
-                </table>
+                </Table>
             </div>
         </div>
     );
