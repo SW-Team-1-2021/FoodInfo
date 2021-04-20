@@ -15,7 +15,10 @@ let foodSchema = new Schema({
   advertencia: String,
   combinacion: String,
   descripcion: String,
-  imagen: String
+  imagen: {
+    data: Buffer,
+    contentType: String
+  }
 }, {
   versionKey: false // You should be aware of the outcome after set to false
 });
