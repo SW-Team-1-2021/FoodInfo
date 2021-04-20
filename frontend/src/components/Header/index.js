@@ -1,27 +1,25 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
+import './style.css'
+import logo from '../../images/logo.png'
 
 function Header() {
     return (
         <Fragment>
-           <header id="header"> 
-                     <nav id="menu">
-                        <ul>
-                            <li>
-                            <Link to='/inicio'>Inicio</Link>
-                            </li>
-                            <li>
-                            <Link to='/alimentos'>Alimentos</Link>
-                            </li>
-                            <li>
-                            <Link to='/añadir'>Añadir</Link>
-                            </li>
-                         </ul>
-                     </nav>
-                     <div className="clearfix"></div>
-                </header>
-                    
-            
+            <div className='header'>
+                <div>
+                    <img src={logo} className='image'/>
+                </div>
+                <div className='link'>
+                    <Link to='/inicio' className='text-link'>Inicio</Link>
+                </div>
+                <div className='link'>
+                    <Link to='/alimentos' className='text-link'>Alimentos</Link>
+                </div>
+                <div className='link'>
+                    <Link to='/añadir' className='text-link'>Añadir</Link>
+                </div>
+            </div>
         </Fragment>
     );
 }

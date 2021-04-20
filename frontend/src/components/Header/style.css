@@ -1,0 +1,21 @@
+.clearfix {
+    clear: both;
+    float: none;
+}
+
+.header {
+    display: flex
+}
+
+.image {
+    width: 70px;
+    height: 70px;
+}
+
+.link {
+    margin: 1em;
+}
+
+.text-link {
+    color: #4671a4;
+}
