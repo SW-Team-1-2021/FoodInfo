@@ -1,11 +1,17 @@
-import foodschemadefi from './food.schema.defi.json';
-import ajv, { ErrorObject } from 'ajv';
-import { model } from 'mongoose';
+'use strict';
 
-const ajValidator = ajv({ allErrors: true }),
-const validate = ajValidator.compile(foodschemadefi);
-const result = await validate(model);
-if (!result) {
-  const errors = await this.parseErrors(validate.errors);
-  throw errors;
+const ajvSchemaValidator = require('./food.schema-validator');
+const errorBuilder = require('../commons/error-builder');
+
+async function schemaValidatorSavePut(req, res, next) {
+  let validator = ajvSchemaValidator.validatorSavePut(req.body);
+  if (!validator.bool) {
+    const error = errorBuilder.build('ajv', validator.error);
+    return res.status(error.status).json(error.body);
+  }
+  next();
 }
+
+module.exports = {
+  schemaValidatorSavePut
+};
