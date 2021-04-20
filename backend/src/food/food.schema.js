@@ -9,7 +9,7 @@ let foodSchema = new Schema({
   nombre: String,
   segundonombre: String,
   procedencia: String,
-  calegorias: String,
+  categorias: String,
   horainicio: String,
   horafinal: String,
   advertencia: String,
