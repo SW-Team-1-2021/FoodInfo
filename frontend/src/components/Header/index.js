@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function Header() {
     return (
         <Fragment>
-            <header id="header"> 
-                <nav id="menu">
+            <header> 
+                <nav>
                     <ul>
                         <li>
                             <Link to='/inicio'>Inicio</Link>
@@ -18,7 +18,6 @@ function Header() {
                         </li>
                     </ul>
                 </nav>
-                <div className="clearfix"></div>
             </header>  
         </Fragment>
     );
