@@ -1,13 +1,13 @@
 const express = require('express');
-const server = express();
+const app = express();
 const db = require('./src/config/mongodb');
 const port = process.env.PORT || 8080;
 
 db.connect();
 
-server.use(express.json());
-server.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-require('./src/routes/index.js')(server);
+require('./src/routes/index.js')(app);
 
-server.listen(port, () => console.log(`Magic happens on port ${port}`));
+app.listen(port, () => console.log(`Magic happens on port ${port}`));
