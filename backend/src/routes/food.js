@@ -2,14 +2,13 @@
 
 const express = require('express');
 const foodController = require('../food/food.controller');
-const middleware = require('../person/person.middleware');
+const middleware = require('../food/food.middleware');
 
 const router = express.Router();
 
 router
   .post('/',
     middleware.schemaValidatorSavePut, foodController.saveFood)
-  .get('/', (req, res) => {
-    res.send('<h1>tabla de alimentos</h1>');
-  });
+  .get('/', foodController.getFood);
+
 module.exports = router;
