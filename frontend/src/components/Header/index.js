@@ -4,24 +4,22 @@ import { Link } from "react-router-dom";
 function Header() {
     return (
         <Fragment>
-           <header id="header"> 
-                     <nav id="menu">
-                        <ul>
-                            <li>
+            <header id="header"> 
+                <nav id="menu">
+                    <ul>
+                        <li>
                             <Link to='/inicio'>Inicio</Link>
-                            </li>
-                            <li>
+                        </li>
+                        <li>
                             <Link to='/alimentos'>Alimentos</Link>
-                            </li>
-                            <li>
+                        </li>
+                        <li>
                             <Link to='/añadir'>Añadir</Link>
-                            </li>
-                         </ul>
-                     </nav>
-                     <div className="clearfix"></div>
-                </header>
-                    
-            
+                        </li>
+                    </ul>
+                </nav>
+                <div className="clearfix"></div>
+            </header>  
         </Fragment>
     );
 }
