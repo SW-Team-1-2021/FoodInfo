@@ -8,7 +8,7 @@ function Header() {
         <Fragment>
             <div className='header'>
                 <div>
-                    <img src={logo} className='image'/>
+                    <Link to='/inicio'><img src={logo} className='image' alt='logo'/></Link>
                 </div>
                 <div className='link'>
                     <Link to='/inicio' className='text-link'>Inicio</Link>
