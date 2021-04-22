@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from './elementos/Formularios';
-//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+
 import Input from './componentes/Input';
 import Descrip from './componentes/CampoDescripcion';
 import Imagen from './componentes/CampoImagen'
@@ -119,12 +118,12 @@ const App = () => {
 					leyendaError=" ingrese solo numeros "
 					expresionRegular={expresiones.calor}
 				/>
-				
+			
 				<Hora
 				  mensajeError=""
 				/>
 
-<Input
+                   <Input
 					estado={advertencias}
 					cambiarEstado={cambiarAdvertencias}
 					tipo="text"
