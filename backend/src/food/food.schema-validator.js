@@ -46,9 +46,12 @@ const properties = {
     'maxlength': 250
   },
   imagen: {
-    'type': 'data',
-    'contentType': 'String'
-  }
+    'type': 'string'
+  }//,
+//   imagen: {
+//     'type': 'data',
+//     'contentType': 'String'
+//   }
 };
 
 const requiredSavePut = [
