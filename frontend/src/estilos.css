@@ -5,7 +5,8 @@
 }
 
 body {
-	background: #e5e5e5;
+	background: url(fondo.png);
+    background-size: cover;
 	font-family: 'Roboto', sans-serif;
 }
 
