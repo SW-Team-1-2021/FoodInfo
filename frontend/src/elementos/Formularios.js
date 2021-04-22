@@ -103,6 +103,28 @@ const Descri=styled.div`
     }
  `;
 
+ const Select=styled.select`
+   grid-template-columns: 1fr ;
+   width: 100%;
+	background: #fff;
+	border-radius: 3px;
+	height: 40px;
+	line-height: 45px;
+	padding: 0 10px 0 10px;
+	transition: .3s ease all;
+	border: 3px solid transparent;
+
+	&:focus {
+		border: 3px solid ${colores.borde};
+		outline: none;
+		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+	}
+ `;
+
+ const Opction=styled.option`
+     windth: 100%;
+ `;
+
 
 
 const ContenedorBotonCentrado = styled.div`
@@ -171,5 +193,7 @@ export {
 	MensajeError,
 	Descri,
 	Horario,
-	SuperHorario
+	SuperHorario,
+	Select,
+     Opction
 };

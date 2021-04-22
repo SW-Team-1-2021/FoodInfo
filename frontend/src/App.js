@@ -5,6 +5,7 @@ import Input from './componentes/Input';
 import Descrip from './componentes/CampoDescripcion';
 import Imagen from './componentes/CampoImagen'
 import Hora from './componentes/Horario';
+import Categoria from './componentes/ComponenteCategoria';
 
 const App = () => {
 	const [categoria, cambiarCategoria] = useState({ campo: '', valido: null });
@@ -70,16 +71,10 @@ const App = () => {
 		<main>
 			<h2 align="center" ><font face="Comic Neue">AGREGAR  ALIMENTO</font></h2>
 			<Formulario action="" onSubmit={onSubmit}>
-				<Input
-					estado={categoria}
-					cambiarEstado={cambiarCategoria}
-					tipo="text"
-					label="Categoria"
-					placeholder="ej: Frutas"
-					name="categoria"
-					leyendaError="La categoria tiene que ser de 4 a 80 caracteres . "
-					expresionRegular={expresiones.nombre1}
-				/>
+			 
+			  <Categoria
+				  />
+  
 				<Input
 					estado={nombre}
 					cambiarEstado={cambiarNombre}
