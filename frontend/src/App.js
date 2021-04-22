@@ -1,117 +1,179 @@
-import React /*{useState}*/from 'react';
-import {Formulario,BotonMedio,Boton} from './elementos/Formularios';
-import Campos from './componentes/Campos';
-import CampoHoraio from  './componentes/CampoHorario';
-import CampoImagen from  './componentes/CampoImagen';
-import Descripcion from './componentes/CampoDescripcion';
+import React, {useState} from 'react';
+import {Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from './elementos/Formularios';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import Input from './componentes/Input';
+import Descrip from './componentes/CampoDescripcion';
+import Imagen from './componentes/CampoImagen'
+import Hora from './componentes/Horario';
 
-const App = ()=> {
-   //const [cate,cambiarUsuario] =useState({cuadrado: '', valido: null});
-   
+const App = () => {
+	const [categoria, cambiarCategoria] = useState({campo: '', valido: null});
+	const [nombre, cambiarNombre] = useState({campo: '', valido: null});
+	const [opcional, cambiarOpcional] = useState({campo: '', valido: null});
+	const [procedencia, cambiarProcedencia] = useState({campo: '', valido: null});
+	const [calorias, cambiarCalorias] = useState({campo: '', valido: null});
+	//const [horario, cambiarHorario] = useState({campo: '', valido: null});
 
-   const  expresiones  =  {
+	const [advertencias, cambiarAdvertencias] = useState({campo: '', valido: null});
+	const [combinacion, cambiarCombinacion] = useState({campo: '', valido: null});
     
-    nombre : /^[a-zA-Z0-9_\s-]{3,80}$/,  // Letras 80.
-    
-  }
-   const onSubmit=(e)=>{
-        e.preventDefault();
+	const [descripcion, cambiarDescripcion] = useState({campo: '', valido: null});
+	const [formularioValido, cambiarFormularioValido] = useState(null);
 
-        if(Campos.props.valido){
-          console.log("verdad")
-        }
-   }   
-      
-    return (
-      <main>
-        <h2 align="center" ><font face="Comic Neue">AGREGAR  ALIMENTO</font></h2>
-        <Formulario action="" onSubmit={onSubmit}>
-           <Campos
-          //  estado={cate}
-           // cambiarEstado={cambiarUsuario}
-            tipo="text"
-            label="Categoria"
-            placeholder="Escriba el nombre"
-            name="categoria"
-            mensajeError="La categoria tiene que ser de 4 a 80 caracteres . "
-            expresionRegular={expresiones.nombre} 
-            //   asegurar=props.valido
+	const expresiones = {
+		
+		nombre1 : /^[a-zA-Z0-9_\s_ñ-]{4,80}$/, 
+        advert: /^[a-zA-Z0-9_\s_ñ,_-]{4,150}$/, 
+       combin:  /^[a-zA-Z0-9_\s_ñ_,-]{4,100}$/, 
+       descrip : /^[a-zA-Z0-9_\s_,_ñ-]{4,250}$/,
+	   calor : /^[0-9_\s_,_-]{2,8}$/,
+	}
 
-             
-           />
-           <Campos 
-             tipo="text"
-             label="Nombre Alimento"
-             placeholder="ejemplo: palta"
-             name="nombre"
-             mensajeError=" El nombre tiene que ser de 4 a 80 caracteres, sin caracteres especiales. "
-             expresionRegular={expresiones.nombre} 
-           />
-           <Campos 
-            tipo="text"
-            label="Nombre Opcional"
-            placeholder="ejemplo: aguacate"
-            name="segundo"
-            mensajeError=" El nombre tiene que ser de 4 a 80 caracteres sin caracteres especiales. "
-            expresionRegular={expresiones.nombre} 
-           />
-           <Campos 
-             tipo="text"
-             label="Procedencia"
-             placeholder="ejemplo:Latinoamerica "
-             name="procedencia"
-             mensajeError=" La procedencia tiene que ser de 4 a 80 carcteres sin caracteres especiales. "
-             expresionRegular={expresiones.nombre} 
-           />
-           <Campos
-             tipo="number"
-             label="Calorias"
-             placeholder="ejemplo: 24"
-             name="calorias"
-             mensajeError=" ingrese solo numeros "
-             expresionRegular=""
-           />
-           
-           <CampoHoraio
-            mensajeError=""
-           /> 
-           <Campos
-             tipo="text"
-             label="Advertencias"
-             placeholder="ejemplo: no comer durante el embarazo"
-             name="advertencias"
-             mensajeError=" Las Advertencias tienen que ser de 4 a 80 caracteres sin caracteres especiales. "
-             expresionRegular={expresiones.nombre} 
-           />
-           <Campos
-             tipo="text"
-             label="Combinacion de Alimentos"
-             placeholder="ejemplo: 24"
-             name="combinacion"
-             mensajeError=" La combinacion de alimentos deven ser de 4 a 80 caracteres sin caracteres especiales. "
-             expresionRegular={expresiones.nombre} 
-           />
-           
-           <CampoImagen/>
-           
-          <Descripcion
-            mensajeError="La descripcion deve ser de 4 a 250 digitos sin caracteres especiales."
-            expresionRegular={expresiones.nombre} 
-           />
-          
-          
+	
 
-          <BotonMedio>
-            <p><b>Error: </b>Por favor rellene el formulario correctamente</p>
-          </BotonMedio>
-          <BotonMedio>
-            <Boton type="submit">Enviar</Boton>
-            <p>Formulario Enviado correctamente</p>
-          </BotonMedio>
+	
 
-        </Formulario>
-      </main>
-    );
-  }
-  
-  export default App;
+	const onSubmit = (e) => {
+		e.preventDefault();
+
+		if(
+			categoria.valido === 'true' &&
+			nombre.valido === 'true' &&
+			opcional.valido === 'true' &&
+			procedencia.valido === 'true' &&
+			calorias.valido === 'true' &&
+		//	horario.valido === 'true' &&
+			advertencias.valido==='true'&&
+			combinacion.valido==='true' &&
+			descripcion.valido==='true'
+
+			
+		){
+			cambiarFormularioValido(true);
+			cambiarCategoria({campo: '', valido: ''});
+			cambiarNombre({campo: '', valido: null});
+			cambiarOpcional({campo: '', valido: null});
+			cambiarProcedencia({campo: '', valido: 'null'});
+			cambiarCalorias({campo: '', valido: null});
+		 //	cambiarHorario({campo: '', valido: null});
+			cambiarAdvertencias({campo: '', valido: null});
+			cambiarCombinacion({campo: '', valido: null});
+			cambiarDescripcion({campo: '', valido: null});
+
+			// ... 
+		} else {
+			cambiarFormularioValido(false);
+		}
+	}
+
+	return (
+		<main>
+			<h2 align="center" ><font face="Comic Neue">AGREGAR  ALIMENTO</font></h2>
+			<Formulario action="" onSubmit={onSubmit}>
+				<Input
+					estado={categoria}
+					cambiarEstado={cambiarCategoria}
+					tipo="text"
+					label="Categoria"
+					placeholder="Frutas"
+					name="categoria"
+					leyendaError="La categoria tiene que ser de 4 a 80 caracteres . "
+					expresionRegular={expresiones.nombre1}
+				/>
+				<Input
+					estado={nombre}
+					cambiarEstado={cambiarNombre}
+					tipo="text"
+					label="Nombre de Alimento"
+					placeholder="Piña"
+					name="nombre"
+					leyendaError=" El nombre tiene que ser de 4 a 80 caracteres, sin caracteres especiales. "
+					expresionRegular={expresiones.nombre1}
+				/>
+				<Input
+					estado={opcional}
+					cambiarEstado={cambiarOpcional}
+					tipo="text"
+					label="Nombre opcional"
+					name="opcional"
+					leyendaError=" El nombre opcional tiene que ser de 4 a 80 caracteres, sin caracteres especiales. "
+					expresionRegular={expresiones.nombre1}
+				/>
+				<Input
+					estado={procedencia}
+					cambiarEstado={cambiarProcedencia}
+					tipo="text"
+					label="Procedencia"
+					name="procedencia"
+					leyendaError=" La procedencia tiene que ser de 4 a 80 carcteres sin caracteres especiales. "
+					expresionRegular={expresiones.nombre1}
+				/>
+				<Input
+					estado={calorias}
+					cambiarEstado={cambiarCalorias}
+					tipo="number"
+					label="Calorias"
+					placeholder="24,45"
+					name="calorias"
+					leyendaError=" ingrese solo numeros "
+					expresionRegular={expresiones.calor}
+				/>
+				
+				<Hora
+				  mensajeError=""
+				/>
+
+<Input
+					estado={advertencias}
+					cambiarEstado={cambiarAdvertencias}
+					tipo="text"
+					label="Advertencias"
+					placeholder="No recomendable para..."
+					name="advertencias"
+					leyendaError="Las Advertencias tienen que ser de 4 a 80 caracteres sin caracteres especiales. "
+					expresionRegular={expresiones.advert}
+				/>
+				<Input
+					estado={combinacion}
+					cambiarEstado={cambiarCombinacion}
+					tipo="text"
+					label="Combinacion "
+					placeholder="Platano-leche"
+					name="combinacion"
+					leyendaError=" La combinacion de alimentos deben ser de 4 a 80 caracteres sin caracteres especiales. "
+					expresionRegular={expresiones.nombre1}
+				/>
+
+				 <Imagen
+				 
+				 />
+
+				<Descrip
+				  estado={descripcion}
+				  cambiarEstado={cambiarDescripcion}
+				  leyendaError="La descripcion debe ser de 4 a 250 digitos sin caracteres especiales."
+			      expresionRegular={expresiones.descrip}
+				
+				/>
+                
+				
+
+
+
+				 
+				{formularioValido === false && <MensajeError>
+					<p>
+						<b>Error:</b> Por favor rellena el formulario correctamente.
+					</p>
+				</MensajeError>}
+				<ContenedorBotonCentrado>
+					<Boton type="submit">Enviar</Boton>
+					{formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
+				</ContenedorBotonCentrado>
+			</Formulario>
+		</main>
+	);
+}
+ 
+export default App;

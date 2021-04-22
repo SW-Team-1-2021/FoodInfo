@@ -1,34 +1,26 @@
-import React, {useState} from 'react';
-import {GrupoInput,Input,Label}  from './../elementos/Formularios';
+import React  from 'react';
+import {Label}  from './../elementos/Formularios';
 
   
 
 const Imagen=()=>{
 
-  const [fileUrl, setFileUrl]=useState(null);
-
-  const vistaImagen=(event)=>{
-    const imagenCargada=event.target.files[0];
-    const imagenUrl=URL.createObjectURL(imagenCargada); 
-    setFileUrl(imagenUrl);
-  }
+  
 
     return(
-        <GrupoInput>
-        <Label htmlFor="">Subir Imagen</Label><label></label>
-       
+        <div>
+        <Label htmlFor="imagen" >Subir imagen</Label>
         
+            <input 
+                type="file"
+                 
+                id="imagen"
+                
+                accept="image/*"
+            />
+            
         
-        <Input type="file" name="file" 
-        id="archivo" 
-         placeholder="Subir" 
-         accept="image/*" 
-         onChange={vistaImagen}/>
-         
-         <image src={fileUrl} height="5px" width="5px" />
-
-         
-      </GrupoInput>
+    </div>
 
     
  );

@@ -1,41 +1,45 @@
-import React, {useState} from 'react';
-import {Descri,Label,Input,MensajeError}  from './../elementos/Formularios';
+import React from 'react';
+import {Descri,Label,Input, LeyendaError}  from './../elementos/Formularios';
 
-const Descripcion=({expresionRegular,mensajeError})=>{
+const Descripcion=({estado,cambiarEstado,expresionRegular,leyendaError,funcion})=>{
 
-   const [descripcion,cambiarDescripcion] =useState({camp: '', vale: null});
+   
 
     const onChange=(e)=>{
-        cambiarDescripcion({...descripcion, camp: e.target.value});
+        cambiarEstado({...estado, campo: e.target.value});
         //console.log(e.target.value);
 
     }
 
    const validacion=()=>{
     if(expresionRegular){
-     if(expresionRegular.test(descripcion.camp)){
-          cambiarDescripcion({...descripcion, vale: true});
+     if(expresionRegular.test(estado.campo)){
+          cambiarEstado({...estado, valido: 'true'});
           console.log('Input Correcto');
       }else{
-        cambiarDescripcion({...descripcion, vale: false});
+        cambiarEstado({...estado, valido: 'false'});
            console.log('Input INCorrecto');
       }
    }
+}
+if(funcion){
+  funcion();
+}
 
- }
     return(
+      
         <Descri >
-        <Label htmlFor="" valido={descripcion.vale}>Descripcion</Label>
+        <Label htmlFor="" valido={estado.valido}>Descripcion</Label>
         <Input 
          type="text" 
          placeholder="Descripcion"
-         value={descripcion.camp}
+         value={estado.campo}
          onChange={onChange}
          onKeyUp={validacion}
          onBlur={validacion}
-         valido={descripcion.vale}
+         valido={estado.valido}
           />
-        <MensajeError valido={descripcion.vale}>{mensajeError}</MensajeError>
+        <LeyendaError valido={estado.valido}>{leyendaError}</LeyendaError>
       </Descri>
 
     
