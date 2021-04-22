@@ -2,7 +2,7 @@
 
 const express = require('express');
 const foodController = require('../food/food.controller');
-const middleware = require('../person/person.middleware');
+const middleware = require('../food/food.middleware');
 
 const router = express.Router();
 router
