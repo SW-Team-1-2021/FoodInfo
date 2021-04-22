@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 function Alimentos() {
     return (
         <div className="alimentos">
-            <h1 className="titulo">LISTA DE ALIMENTOS</h1>
+            <h1 className="titulo"><strong>LISTA DE ALIMENTOS</strong></h1>
             <div className="tabla">
                 <Table responsive="md" striped bordered hover size="sm">
                     <thead>
@@ -17,6 +17,54 @@ function Alimentos() {
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>Frutas</td>
+                            <td>Manzana</td>
+                            <td>Asia</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Frutas</td>
+                            <td>Manzana</td>
+                            <td>Asia</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Frutas</td>
+                            <td>Manzana</td>
+                            <td>Asia</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Frutas</td>
+                            <td>Manzana</td>
+                            <td>Asia</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Frutas</td>
+                            <td>Manzana</td>
+                            <td>Asia</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Frutas</td>
+                            <td>Manzana</td>
+                            <td>Asia</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Frutas</td>
+                            <td>Manzana</td>
+                            <td>Asia</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <td>Frutas</td>
+                            <td>Manzana</td>
+                            <td>Asia</td>
+                            <td>12</td>
+                        </tr>
                         <tr>
                             <td>Frutas</td>
                             <td>Manzana</td>
