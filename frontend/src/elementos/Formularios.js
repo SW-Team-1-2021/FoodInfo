@@ -9,7 +9,7 @@ const colores = {
 const Formulario = styled.form`
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	gap: 20px;
+	gap: 10px;
 
 	@media (max-width: 800px){
 		grid-template-columns: 1fr;
@@ -55,7 +55,7 @@ const Input = styled.input`
 	width: 100%;
 	background: #fff;
 	border-radius: 3px;
-	height: 45px;
+	height: 40px;
 	line-height: 45px;
 	padding: 0 10px 0 10px;
 	transition: .3s ease all;
@@ -92,7 +92,7 @@ const LeyendaError = styled.p`
 `;
 
 const Descri=styled.div`  
-  grid-column: span 2;
+  grid-column: span 3;
    input {
       width: 100%;
       

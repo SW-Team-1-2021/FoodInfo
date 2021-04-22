@@ -75,7 +75,7 @@ const App = () => {
 					cambiarEstado={cambiarCategoria}
 					tipo="text"
 					label="Categoria"
-					placeholder="Frutas"
+					placeholder="ej: Frutas"
 					name="categoria"
 					leyendaError="La categoria tiene que ser de 4 a 80 caracteres . "
 					expresionRegular={expresiones.nombre1}
@@ -85,7 +85,7 @@ const App = () => {
 					cambiarEstado={cambiarNombre}
 					tipo="text"
 					label="Nombre de Alimento"
-					placeholder="Piña"
+					placeholder="ej: Platano"
 					name="nombre"
 					leyendaError=" El nombre tiene que ser de 4 a 80 caracteres, sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
@@ -95,6 +95,7 @@ const App = () => {
 					cambiarEstado={cambiarOpcional}
 					tipo="text"
 					label="Nombre opcional"
+					placeholder="ej: Banana "
 					name="opcional"
 					leyendaError=" El nombre opcional tiene que ser de 4 a 80 caracteres, sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
@@ -104,6 +105,7 @@ const App = () => {
 					cambiarEstado={cambiarProcedencia}
 					tipo="text"
 					label="Procedencia"
+					placeholder="ej : Latinoamerica"
 					name="procedencia"
 					leyendaError=" La procedencia tiene que ser de 4 a 80 carcteres sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
@@ -113,7 +115,7 @@ const App = () => {
 					cambiarEstado={cambiarCalorias}
 					tipo="number"
 					label="Calorias"
-					placeholder="24,45"
+					placeholder="ej: 24"
 					name="calorias"
 					leyendaError=" ingrese solo numeros "
 					expresionRegular={expresiones.calor}
@@ -138,7 +140,7 @@ const App = () => {
 					cambiarEstado={cambiarCombinacion}
 					tipo="text"
 					label="Combinacion "
-					placeholder="Platano-leche"
+					placeholder="ej: Platano-leche"
 					name="combinacion"
 					leyendaError=" La combinacion de alimentos deben ser de 4 a 80 caracteres sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
