@@ -10,10 +10,10 @@ function Alimentos() {
                 <Table responsive="md" striped bordered hover size="sm">
                     <thead>
                         <tr>
-                            <th>Categoria</th>
-                            <th>Nombre</th>
-                            <th>Procedencia</th>
-                            <th>Calorias(kcal)</th>
+                            <th>CATEGORIA</th>
+                            <th>NOMBRE</th>
+                            <th>PROCEDENCIA</th>
+                            <th>CALORIAS(kcal)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,7 +23,7 @@ function Alimentos() {
                             <td>Asia</td>
                             <td>12</td>
                         </tr>
-                        <tr className="alt">
+                        <tr>
                             <td>Frutas</td>
                             <td>Manzana</td>
                             <td>Asia</td>
@@ -35,7 +35,7 @@ function Alimentos() {
                             <td>Asia</td>
                             <td>12</td>
                         </tr>
-                        <tr className="alt">
+                        <tr>
                             <td>Frutas</td>
                             <td>Manzana</td>
                             <td>Asia</td>
