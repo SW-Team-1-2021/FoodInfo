@@ -5,6 +5,7 @@ import Input from './componentes/Input';
 import Descrip from './componentes/CampoDescripcion';
 import Imagen from './componentes/CampoImagen'
 import Hora from './componentes/Horario';
+import Categoria from './componentes/CampoCategoria';
 
 const App = () => {
 	const [categoria, cambiarCategoria] = useState({campo: '', valido: null});
@@ -19,6 +20,13 @@ const App = () => {
     
 	const [descripcion, cambiarDescripcion] = useState({campo: '', valido: null});
 	const [formularioValido, cambiarFormularioValido] = useState(null);
+
+	/*const categorias= [{"nombre":"Frutas"},
+                       {"nombre":"Verduras"},
+					   {"nombre":"Lacteos"},      
+					   {"nombre":"Carnes y Pescado"},
+					   {"nombre":"Hortalizas"}
+					];*/
 
 	const expresiones = {
 		
@@ -45,8 +53,7 @@ const App = () => {
 		//	horario.valido === 'true' &&
 			advertencias.valido==='true'&&
 			combinacion.valido==='true' &&
-			descripcion.valido==='true'
-
+			descripcion.valido==='true' 
 			
 		){
 			cambiarFormularioValido(true);
@@ -68,18 +75,12 @@ const App = () => {
 
 	return (
 		<main>
-			<h2 align="center" ><font face="Comic Neue">AGREGAR  ALIMENTO</font></h2>
+			<h2 align="center" >AGREGAR  ALIMENTO</h2>
 			<Formulario action="" onSubmit={onSubmit}>
-				<Input
-					estado={categoria}
-					cambiarEstado={cambiarCategoria}
-					tipo="text"
-					label="Categoria"
-					placeholder="ej: Frutas"
-					name="categoria"
-					leyendaError="La categoria tiene que ser de 4 a 80 caracteres . "
-					expresionRegular={expresiones.nombre1}
+				<Categoria
+				  
 				/>
+				
 				<Input
 					estado={nombre}
 					cambiarEstado={cambiarNombre}
