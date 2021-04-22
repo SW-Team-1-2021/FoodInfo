@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2? family = Antonio: wght @ 400; 500 & display = swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/*#e5e5e5*/
-*{
-    box-sizing: border-box;
+* {
+	box-sizing: border-box;
 }
-body{
-    
-    
-    background: url(logo2.jpg);
-    font-family: 'Antonio', sans-serif;
+
+/*background-size: cover;*/
+body {
+	background: url(fondo.png);
+	
+	font-family: 'Roboto', sans-serif;
 }
-main{
-    max-width: 800px;
-    width: 90%;
-    margin: auto;
-    padding: 0 ;
+
+main {
+	max-width: 800px;
+	width: 90%;
+	margin: auto;
+	padding: 40px;
 }
