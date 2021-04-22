@@ -5,21 +5,21 @@ const ajvValidator = require('../commons/ajv-validator');
 const properties = {
   categoria: {
     'type': 'string',
-    'minimum': 1,
-    'maximum': 80
+    'minlength': 1,
+    'maxlength': 80
   },
   nombre: {
     'type': 'string',
-    'minimum': 2,
-    'maximum': 80
+    'minlength': 2,
+    'maxlength': 80
   },
   segundonombre: {
     'type': 'string'
   },
   procedencia: {
     'type': 'string',
-    'minimum': 1,
-    'maximum': 80
+    'minlength': 1,
+    'maxlength': 80
   },
   categorias: {
     'type': 'string',
@@ -33,20 +33,21 @@ const properties = {
   },
   advertencia: {
     'type': 'string',
-    'maximum': 150
+    'maxlength': 150
   },
   combinacion: {
     'type': 'string',
-    'minimum': 1,
-    'maximum': 100
+    'minlength': 1,
+    'maxlength': 100
   },
   descripcion: {
     'type': 'string',
-    'minimum': 1,
-    'maximum': 250
+    'minlength': 1,
+    'maxlength': 250
   },
   imagen: {
-    'type': 'string'
+    'type': 'data',
+    'contentType': 'String'
   }
 };
 
