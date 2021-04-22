@@ -26,7 +26,7 @@ const App = () => {
 		advert: /^[a-zA-Z0-9_\s_ñ,_-]{4,150}$/,
 		combin: /^[a-zA-Z0-9_\s_ñ_,-]{4,100}$/,
 		descrip: /^[a-zA-Z0-9_\s_,_ñ-]{4,250}$/,
-		calor: /^[0-9_\s_,_-]{2,8}$/,
+		calor: /^\d{0,4}(\.\d{0,4})?$/,
 	}
 
 
@@ -115,9 +115,9 @@ const App = () => {
 					cambiarEstado={cambiarCalorias}
 					tipo="number"
 					label="Calorias"
-					placeholder="ej: 24"
+					placeholder="ej: 15.12"
 					name="calorias"
-					leyendaError=" ingrese solo numeros "
+					leyendaError=" ingrese solo numeros(maximo 4 enteros y 4 decimales)"
 					expresionRegular={expresiones.calor}
 				/>
 
