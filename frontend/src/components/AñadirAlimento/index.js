@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError,Main } from '../AñadirAlimento/estilosFormmulario';
+import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from '../AñadirAlimento/estilosFormmulario';
 
 //./elementos/Formularios
 import Input from '../AñadirAlimento/CampoInput/index';
@@ -70,7 +70,8 @@ const AñadirAlimento = () => {
 	}
 
 	return (
-		<Main>
+		<div className="caja">
+		<main>
 			<h2 align="center" >AGREGAR  ALIMENTO</h2>
 			<Formulario action="" onSubmit={onSubmit}>
 			 
@@ -170,7 +171,8 @@ const AñadirAlimento = () => {
 					{formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
 				</ContenedorBotonCentrado>
 			</Formulario>
-		</Main>
+		</main>
+		</div>
 	);
 
 
