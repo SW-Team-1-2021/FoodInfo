@@ -1,12 +1,30 @@
+.titulo {
+  margin: 0;
+  color: #000000;
+  font-size: xxx-large;
+}
 
-.titulo{
-    color:#000000;
-    font-family: 'Comic Neue', cursive;
-  }
-  #subtitulo{
-    color:#aa9176;
-    font-family: 'Comic Neue', cursive;
-    text-align: center;
-    margin:1px ;
-  }
-  
+.subtitulo {
+  color: #6f3d07;
+  text-align: center;
+  margin: 1px;
+}
+
+.container-image {
+  background-image: url(../../images/pagina_principal.png);
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+}
+
+.container-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  grid-column-gap: 50px;
+  grid-template-columns: auto auto auto;
+}
