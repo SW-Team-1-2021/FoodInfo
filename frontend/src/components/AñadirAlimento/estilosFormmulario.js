@@ -6,10 +6,7 @@ const colores = {
 	exito: "#1ed12d"
 }
 
-const Main=styled.main`
-        background-image: url(fondo.png);
 
-`;
 
 const Formulario = styled.form`
 	display: grid;
@@ -190,8 +187,6 @@ export {
 	GrupoInput,
 	Input,
 	LeyendaError,
-	//IconoValidacion,
-	//ContenedorTerminos,
 	ContenedorBotonCentrado,
 	Boton,
 	MensajeExito,
@@ -200,6 +195,5 @@ export {
 	Horario,
 	SuperHorario,
 	Select,
-    Opction,
-    Main
+    Opction
 };

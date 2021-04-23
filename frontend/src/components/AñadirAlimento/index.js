@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError,Main } from '../AñadirAlimento/estilosFormmulario';
+import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from '../AñadirAlimento/estilosFormmulario';
 
 //./elementos/Formularios
 import Input from '../AñadirAlimento/CampoInput/index';
@@ -7,6 +7,7 @@ import Descrip from '../AñadirAlimento/CampoDescripcion/index';
 import Imagen from '../AñadirAlimento/CampoIMagen/index';
 import Hora from '../AñadirAlimento/CampoHorario/index';
 import Categoria from '../AñadirAlimento/CampoCategoria/index';
+import './style.css';
 
 const AñadirAlimento = () => {
 	const [categoria, cambiarCategoria] = useState({ campo: '', valido: null });
@@ -69,7 +70,8 @@ const AñadirAlimento = () => {
 	}
 
 	return (
-		<Main>
+		<div className="caja">
+		<main>
 			<h2 align="center" >AGREGAR  ALIMENTO</h2>
 			<Formulario action="" onSubmit={onSubmit}>
 			 
@@ -169,7 +171,8 @@ const AñadirAlimento = () => {
 					{formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
 				</ContenedorBotonCentrado>
 			</Formulario>
-		</Main>
+		</main>
+		</div>
 	);
 
 
