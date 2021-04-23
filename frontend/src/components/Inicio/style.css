@@ -1,0 +1,30 @@
+.titulo {
+  margin: 0;
+  color: #000000;
+  font-size: xxx-large;
+}
+
+.subtitulo {
+  color: #6f3d07;
+  text-align: center;
+  margin: 1px;
+}
+
+.container-image {
+  background-image: url(../../images/pagina_principal.png);
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+}
+
+.container-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  grid-column-gap: 50px;
+  grid-template-columns: auto auto auto;
+}
