@@ -69,7 +69,7 @@ const App = () => {
 
 	return (
 		<main>
-			<h2 align="center" ><font face="Comic Neue">AGREGAR  ALIMENTO</font></h2>
+			<h2 align="center" >AGREGAR  ALIMENTO</h2>
 			<Formulario action="" onSubmit={onSubmit}>
 			 
 			  <Categoria
