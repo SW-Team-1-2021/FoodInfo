@@ -10,12 +10,10 @@ import Categoria from '../AñadirAlimento/CampoCategoria/index';
 import './style.css';
 
 const AñadirAlimento = () => {
-	const [categoria, cambiarCategoria] = useState({ campo: '', valido: null });
 	const [nombre, cambiarNombre] = useState({ campo: '', valido: null });
 	const [opcional, cambiarOpcional] = useState({ campo: '', valido: null });
 	const [procedencia, cambiarProcedencia] = useState({ campo: '', valido: null });
 	const [calorias, cambiarCalorias] = useState({ campo: '', valido: null });
-	//const [horario, cambiarHorario] = useState({campo: '', valido: null});
 
 	const [advertencias, cambiarAdvertencias] = useState({ campo: '', valido: null });
 	const [combinacion, cambiarCombinacion] = useState({ campo: '', valido: null });
@@ -40,12 +38,10 @@ const AñadirAlimento = () => {
 		e.preventDefault();
 
 		if (
-			categoria.valido === 'true' &&
-			nombre.valido === 'true' &&
+			nombre.valido === true &&
 			opcional.valido === 'true' &&
 			procedencia.valido === 'true' &&
 			calorias.valido === 'true' &&
-			//	horario.valido === 'true' &&
 			advertencias.valido === 'true' &&
 			combinacion.valido === 'true' &&
 			descripcion.valido === 'true'
@@ -53,12 +49,10 @@ const AñadirAlimento = () => {
 
 		) {
 			cambiarFormularioValido(true);
-			cambiarCategoria({ campo: '', valido: '' });
 			cambiarNombre({ campo: '', valido: null });
 			cambiarOpcional({ campo: '', valido: null });
 			cambiarProcedencia({ campo: '', valido: 'null' });
 			cambiarCalorias({ campo: '', valido: null });
-			//	cambiarHorario({campo: '', valido: null});
 			cambiarAdvertencias({ campo: '', valido: null });
 			cambiarCombinacion({ campo: '', valido: null });
 			cambiarDescripcion({ campo: '', valido: null });

@@ -1,6 +1,28 @@
 .caja{
-    background-image: url(./fondo.png);
-    height: 100%;
-    width: 100%;
-    background-size: 100% 100%;
+  background-image: url(./fondo.png) ;
+  /*height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: absolute;*/
+  -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   height: 100%;
+   width: 100% 
+   
+
+  
 }
+/*
+@media  (max-width: 800px) {
+
+    .caja{
+    
+    background-image: url(./fondoPeqenio.png);
+    background-repeat: repeat-y;
+    
+       }
+  }  */
+
