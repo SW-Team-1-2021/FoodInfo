@@ -7,6 +7,7 @@ import Descrip from '../AñadirAlimento/CampoDescripcion/index';
 import Imagen from '../AñadirAlimento/CampoIMagen/index';
 import Hora from '../AñadirAlimento/CampoHorario/index';
 import Categoria from '../AñadirAlimento/CampoCategoria/index';
+import './style.css'
 
 const AñadirAlimento = () => {
 	const [categoria, cambiarCategoria] = useState({ campo: '', valido: null });

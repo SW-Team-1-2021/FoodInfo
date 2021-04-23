@@ -10,15 +10,6 @@
   margin: 1px;
 }
 
-.container-image {
-  background-image: url(../../images/pagina_principal.png);
-  height: 100%;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  position: fixed;
-}
-
 .container-title {
   display: flex;
   flex-direction: column;

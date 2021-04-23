@@ -1,0 +1,15 @@
+.container-image {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: fixed;
+}
+
+.container-image.inicio {
+    background-image: url(../../images/fondo-pagina_principal.png);
+}
+
+.container-image.alimentos, .container-image.anadir-alimento {
+    background-image: url(../../images/fondo-alimentos-e-anadir-alimento.png);
+}
