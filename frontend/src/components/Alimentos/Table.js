@@ -1,93 +1,8 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 
-export const Table = () => {
-    const data = [
-        {
-            categoria: 'Fruta',
-            nombre: 'Manzana',
-            procedencia: 'Asia',
-            calorias: '23'
-        },
-        {
-            categoria: 'Verdura',
-            nombre: 'Pepino',
-            procedencia: 'Africa',
-            calorias: '12'
-        },
-        {
-            categoria: 'Fruta',
-            nombre: 'Manzana',
-            procedencia: 'Asia',
-            calorias: '23'
-        },
-        {
-            categoria: 'Verdura',
-            nombre: 'Pepino',
-            procedencia: 'Africa',
-            calorias: '12'
-        },
-        {
-            categoria: 'Fruta',
-            nombre: 'Manzana',
-            procedencia: 'Asia',
-            calorias: '23'
-        },
-        {
-            categoria: 'Verdura',
-            nombre: 'Pepino',
-            procedencia: 'Africa',
-            calorias: '12'
-        },
-        {
-            categoria: 'Fruta',
-            nombre: 'Manzana',
-            procedencia: 'Asia',
-            calorias: '23'
-        },
-        {
-            categoria: 'Verdura',
-            nombre: 'Pepino',
-            procedencia: 'Africa',
-            calorias: '12'
-        },
-        {
-            categoria: 'Fruta',
-            nombre: 'Manzana',
-            procedencia: 'Asia',
-            calorias: '23'
-        },
-        {
-            categoria: 'Verdura',
-            nombre: 'Pepino',
-            procedencia: 'Africa',
-            calorias: '12'
-        },
-        {
-            categoria: 'Fruta',
-            nombre: 'Manzana',
-            procedencia: 'Asia',
-            calorias: '23'
-        },
-        {
-            categoria: 'Verdura',
-            nombre: 'Pepino',
-            procedencia: 'Africa',
-            calorias: '12'
-        },
-        {
-            categoria: 'Fruta',
-            nombre: 'Manzana',
-            procedencia: 'Asia',
-            calorias: '23'
-        },
-        {
-            categoria: 'Verdura',
-            nombre: 'Pepino',
-            procedencia: 'Africa',
-            calorias: '12'
-        }
-    ]
+export const Table = (data) => {
+
     const columns = [
         {
             title: "Categoria", field: 'categoria'
@@ -115,11 +30,10 @@ export const Table = () => {
                     filtering: false,
                     sorting: true,
                     // exportButton:true,
-                    headerStyle:{backgroundColor:'transparent'}                    
+                    headerStyle:{backgroundColor:'transparent'}
                 }}
                 style={{fontFamily:'Comic Neue',backgroundColor:'transparent'}}
-                
-                
             />
-        </div>)
+        </div>
+    )
 }
