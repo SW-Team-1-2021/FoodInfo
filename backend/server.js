@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const db = require('./src/config/mongodb');
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8082;
 
 db.connect();
 
