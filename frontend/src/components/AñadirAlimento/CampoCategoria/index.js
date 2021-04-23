@@ -1,5 +1,5 @@
 import React from 'react';
-import {Label,Select,/*Opction*/LeyendaError} from './../elementos/Formularios';
+import {Label,Select,/*Opction*/LeyendaError} from './../estilosFormmulario';
 
 const Categoria=({/*listaCategorias*/leyendaError})=>{
 

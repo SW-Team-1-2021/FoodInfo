@@ -1,5 +1,4 @@
-import React from 'react';
-import {Descri,Label,Input, LeyendaError}  from './../elementos/Formularios';
+import {Descri,Label,Input, LeyendaError}  from './../estilosFormmulario';
 
 const Descripcion=({estado,cambiarEstado,expresionRegular,leyendaError,funcion})=>{
 

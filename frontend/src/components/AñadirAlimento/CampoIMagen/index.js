@@ -1,5 +1,5 @@
 import React  from 'react';
-import {Label}  from './../elementos/Formularios';
+import {Label}  from './../estilosFormmulario';
 
   
 

@@ -6,6 +6,11 @@ const colores = {
 	exito: "#1ed12d"
 }
 
+const Main=styled.main`
+        background-image: url(fondo.png);
+
+`;
+
 const Formulario = styled.form`
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -195,5 +200,6 @@ export {
 	Horario,
 	SuperHorario,
 	Select,
-     Opction
+    Opction,
+    Main
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Horario,Label,Input,LeyendaError,SuperHorario} from './../elementos/Formularios';
+import {Horario,Label,Input,LeyendaError,SuperHorario} from './../estilosFormmulario';
 
 const horario =({mensajeError})=>{
     return(
