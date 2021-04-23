@@ -1,8 +1,9 @@
 import React from 'react';
 import './alimentos.css';
-import Table from 'react-bootstrap/Table';
+// import Table from 'react-bootstrap/Table';
+import { Table } from './Table';
 
-function Alimentos() {
+/*function Alimentos() {
     return (
         <div className="alimentos">
             <h1 className="titulo"><strong>LISTA DE ALIMENTOS</strong></h1>
@@ -97,4 +98,13 @@ function Alimentos() {
 
 }
 
-export default Alimentos;
+export default Alimentos;*/
+
+export default function Index() {
+    return (
+        <div className="Index">
+            <h1>LISTA DE ALIMENTOS</h1>
+            <Table/>
+        </div>
+    );
+}
