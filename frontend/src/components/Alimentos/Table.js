@@ -2,7 +2,7 @@ import React from 'react';
 import MaterialTable from 'material-table';
 
 
-export const Table = (data) => {
+export const Table = (props) => {
 
     const columns = [
         {
@@ -22,7 +22,7 @@ export const Table = (data) => {
         <div className="tablaMT">
             <MaterialTable striped bordered hover small
                 title="ALIMENTOS"
-                data={data}
+                data={props.data}
                 columns={columns}
                 options={{
                     padding: 5,
@@ -35,7 +35,7 @@ export const Table = (data) => {
                     width: 300,
                     minWidth: 300,
                     rowStyle: { fontFamily: "Roboto" ,color:"#450E0D"},
-                    headerStyle:{backgroundColor:"#B35C647F",color:"white",fontFamily: "Roboto", fontSize:"inherit",textAlign:"left"}            
+                    headerStyle:{backgroundColor:"#B35C647F",color:"white",fontFamily: "Roboto", fontSize:"inherit",textAlign:"left"}
                 }}
                 style={{backgroundColor:'transparent'}}
             />
