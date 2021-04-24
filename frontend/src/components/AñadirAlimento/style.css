@@ -3,10 +3,5 @@ main {
 	width: 90%;
 	margin: auto;
 	padding: 10px;
-}
-.caja{
-    background-image: url(./fondo.png);
-    height: 100%;
-    width: 100%;
-    background-size: 100% 100%;
+    overflow: auto;
 }
