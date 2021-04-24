@@ -5,7 +5,7 @@ import { Table } from './Table';
 export default function Index() {
     return (
         <div className="Index">
-            <h1>LISTA DE ALIMENTOS</h1>
+            <h1><strong>LISTA DE ALIMENTOS</strong></h1>
             <Table/>
         </div>
     );
