@@ -4,6 +4,13 @@
   font-size: xxx-large;
 }
 
+.container-image.inicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .subtitulo {
   color: #6f3d07;
   text-align: center;
@@ -13,9 +20,4 @@
 .container-title {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  grid-column-gap: 50px;
-  grid-template-columns: auto auto auto;
 }
