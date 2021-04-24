@@ -44,14 +44,7 @@ const properties = {
     'type': 'string',
     'minlength': 1,
     'maxlength': 250
-  },
-  imagen: {
-    'type': 'string'
-  }//,
-//   imagen: {
-//     'type': 'data',
-//     'contentType': 'String'
-//   }
+  }
 };
 
 const requiredSavePut = [
@@ -69,7 +62,7 @@ const requiredSavePut = [
 ];
 
 const schemaSavePut = {
-  'additionalProperties': false,
+  'additionalProperties': true,
   properties,
   required: requiredSavePut
 };
