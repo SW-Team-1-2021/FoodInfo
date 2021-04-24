@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../AñadirAlimento/estilosFormmulario';
+import axios from "axios"
 
 //./elementos/Formularios
 import Input from '../AñadirAlimento/CampoInput/index';
@@ -61,41 +62,39 @@ const AñadirAlimento = () => {
 
 
 		) {
-			cambiarFormularioValido(true);
-			//const alimento = {nombre:no.mbre.campo};
-			//console.log(imagen.campo);
-			//console.log(categoria.campo);
-			//console.log(horaDe.campo,horaA.campo);
 
-			var datos = { cat:categoria.campo,
-				nom:nombre.campo,
-				seg:opcional.campo,
-				proc:procedencia.campo,
-				cal:calorias.campo,
-				horDe:horaDe.campo,
-				horA:horaA.campo,
-				adv:advertencias.campo,
-				com:combinacion.campo,
-				ima:imagen.campo,
-				des:descripcion.campo
-
+			var datos = { categoria:categoria.campo,
+				nombre:nombre.campo,
+				segundonombre:opcional.campo,
+				procedencia:procedencia.campo,
+				categorias:calorias.campo,
+				horainicio:horaDe.campo,
+				horafinal:horaA.campo,
+				advertencia:advertencias.campo,
+				combinacion:combinacion.campo,
+				imagen:imagen.campo,
+				descripcion:descripcion.campo
+				
 			};
-			
 
-			 console.log(datos);
+			axios.post(`http://localhost:8082/api/food`, datos)
+			.then(res => {
+				console.log(res);
+				console.log(res.data);
+				cambiarFormularioValido(true);
+				cambiarNombre({ campo: '', valido: null });
+				cambiarOpcional({ campo: '', valido: null });
+				cambiarProcedencia({ campo: '', valido: null });
+				cambiarCalorias({ campo: '', valido: null });
+				cambiarAdvertencias({ campo: '', valido: null });
+				cambiarCombinacion({ campo: '', valido: null });
+				cambiarDescripcion({ campo: '', valido: null });
+			})
+			.catch( error => {
+				cambiarFormularioValido(false);
+				console.log(error);
+			})
 
-		
-
-			cambiarNombre({ campo: '', valido: null });
-			cambiarOpcional({ campo: '', valido: null });
-			cambiarProcedencia({ campo: '', valido: null });
-			cambiarCalorias({ campo: '', valido: null });
-			cambiarAdvertencias({ campo: '', valido: null });
-			cambiarCombinacion({ campo: '', valido: null });
-			cambiarDescripcion({ campo: '', valido: null });
-
-			
-			// ... 
 		} else {
 			cambiarFormularioValido(false);
 		}
