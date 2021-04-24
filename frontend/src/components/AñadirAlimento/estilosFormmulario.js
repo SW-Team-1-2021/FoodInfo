@@ -27,7 +27,7 @@ const Label = styled.label`
 	
 
 
-	${props => props.valido === 'false' && css`
+	${props => props.valido === false && css`
 		color: ${colores.error};
 	`}
 `;
@@ -69,11 +69,11 @@ const Input = styled.input`
 		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 	}
 
-	${props => props.valido === 'true' && css`
+	${props => props.valido === true && css`
 		border: 3px solid transparent;
 	`}
 
-	${props => props.valido === 'false' && css`
+	${props => props.valido === false && css`
 		border: 3px solid ${colores.error} !important;
 	`}
 `;
@@ -84,11 +84,11 @@ const LeyendaError = styled.p`
 	color: ${colores.error};
 	display: none;
 
-	${props => props.valido === 'true' && css`
+	${props => props.valido === true && css`
 		display: none;
 	`}
 
-	${props => props.valido === 'false' && css`
+	${props => props.valido === false && css`
 		display: block;
 	`}
 `;

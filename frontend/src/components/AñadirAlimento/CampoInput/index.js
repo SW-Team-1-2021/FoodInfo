@@ -3,6 +3,7 @@ import {Input, Label, GrupoInput, LeyendaError} from './../estilosFormmulario';
 //import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 const ComponenteInput = ({estado, cambiarEstado, tipo, label, placeholder, name, leyendaError, expresionRegular, funcion}) => {
+	
 	const onChange = (e) => {
 		cambiarEstado({...estado, campo: e.target.value});
 	}
@@ -10,9 +11,9 @@ const ComponenteInput = ({estado, cambiarEstado, tipo, label, placeholder, name,
 	const validacion = () => {
 		if(expresionRegular){
 			if(expresionRegular.test(estado.campo)){
-				cambiarEstado({...estado, valido: 'true'});
+				cambiarEstado({...estado, valido: true});
 			} else {
-				cambiarEstado({...estado, valido: 'false'});
+				cambiarEstado({...estado, valido: false});
 			}
 		}
 
@@ -20,6 +21,8 @@ const ComponenteInput = ({estado, cambiarEstado, tipo, label, placeholder, name,
 			funcion();
 		}
 	}
+	/*console.log(estado.campo);
+    console.log(estado.valido);*/
 
 	return (
 		<div>

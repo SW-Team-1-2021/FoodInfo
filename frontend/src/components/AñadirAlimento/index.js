@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError} from '../AñadirAlimento/estilosFormmulario';
+import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from '../AñadirAlimento/estilosFormmulario';
 
 //./elementos/Formularios
 import Input from '../AñadirAlimento/CampoInput/index';
@@ -7,21 +7,31 @@ import Descrip from '../AñadirAlimento/CampoDescripcion/index';
 import Imagen from '../AñadirAlimento/CampoIMagen/index';
 import Hora from '../AñadirAlimento/CampoHorario/index';
 import Categoria from '../AñadirAlimento/CampoCategoria/index';
-import './style.css';
+import './style.css'
 
 const AñadirAlimento = () => {
+
 	const [categoria, cambiarCategoria] = useState({ campo: '', valido: null });
+
 	const [nombre, cambiarNombre] = useState({ campo: '', valido: null });
 	const [opcional, cambiarOpcional] = useState({ campo: '', valido: null });
 	const [procedencia, cambiarProcedencia] = useState({ campo: '', valido: null });
 	const [calorias, cambiarCalorias] = useState({ campo: '', valido: null });
-	//const [horario, cambiarHorario] = useState({campo: '', valido: null});
+
+	const [horaDe,cambiarHoraDe]=useState({ campo: '', valido: null });
+	const [horaA,cambiarHoraA]=useState({ campo: '', valido: null });
+
+	const [imagen,cambiarImagen]=useState({ campo: '', valido: null });
+
 
 	const [advertencias, cambiarAdvertencias] = useState({ campo: '', valido: null });
 	const [combinacion, cambiarCombinacion] = useState({ campo: '', valido: null });
 
 	const [descripcion, cambiarDescripcion] = useState({ campo: '', valido: null });
+
 	const [formularioValido, cambiarFormularioValido] = useState(null);
+
+	                                            
 
 	const expresiones = {
 
@@ -38,31 +48,53 @@ const AñadirAlimento = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
+		
 
 		if (
-			categoria.valido === 'true' &&
-			nombre.valido === 'true' &&
-			opcional.valido === 'true' &&
-			procedencia.valido === 'true' &&
-			calorias.valido === 'true' &&
-			//	horario.valido === 'true' &&
-			advertencias.valido === 'true' &&
-			combinacion.valido === 'true' &&
-			descripcion.valido === 'true'
+			nombre.valido === true&&
+			opcional.valido === true &&
+			procedencia.valido === true &&
+			calorias.valido === true &&
+			advertencias.valido === true &&
+			combinacion.valido === true &&
+			descripcion.valido === true
 
 
 		) {
 			cambiarFormularioValido(true);
-			cambiarCategoria({ campo: '', valido: '' });
+			//const alimento = {nombre:no.mbre.campo};
+			//console.log(imagen.campo);
+			//console.log(categoria.campo);
+			//console.log(horaDe.campo,horaA.campo);
+
+			var datos = { cat:categoria.campo,
+				nom:nombre.campo,
+				seg:opcional.campo,
+				proc:procedencia.campo,
+				cal:calorias.campo,
+				horDe:horaDe.campo,
+				horA:horaA.campo,
+				adv:advertencias.campo,
+				com:combinacion.campo,
+				ima:imagen.campo,
+				des:descripcion.campo
+
+			};
+			
+
+			 console.log(datos);
+
+		
+
 			cambiarNombre({ campo: '', valido: null });
 			cambiarOpcional({ campo: '', valido: null });
-			cambiarProcedencia({ campo: '', valido: 'null' });
+			cambiarProcedencia({ campo: '', valido: null });
 			cambiarCalorias({ campo: '', valido: null });
-			//	cambiarHorario({campo: '', valido: null});
 			cambiarAdvertencias({ campo: '', valido: null });
 			cambiarCombinacion({ campo: '', valido: null });
 			cambiarDescripcion({ campo: '', valido: null });
 
+			
 			// ... 
 		} else {
 			cambiarFormularioValido(false);
@@ -70,14 +102,15 @@ const AñadirAlimento = () => {
 	}
 
 	return (
-		<div className="caja">
 		<main>
 			<h2 align="center" >AGREGAR  ALIMENTO</h2>
 			<Formulario action="" onSubmit={onSubmit}>
-			 
-			  <Categoria
-				  />
-  
+
+				<Categoria
+				estado={categoria}
+				cambiarEstado={cambiarCategoria}
+				/>
+
 				<Input
 					estado={nombre}
 					cambiarEstado={cambiarNombre}
@@ -120,6 +153,11 @@ const AñadirAlimento = () => {
 				/>
 
 				<Hora
+				  estadoDe={horaDe}
+				  cambiarEstadoDe={cambiarHoraDe}
+				  estadoA={horaA}
+				  cambiarEstadoA={cambiarHoraA}
+				  
 					mensajeError=""
 				/>
 
@@ -145,7 +183,8 @@ const AñadirAlimento = () => {
 				/>
 
 				<Imagen
-
+                     estado={imagen}
+					 cambiarEstado={cambiarImagen}
 				/>
 
 				<Descrip
@@ -172,10 +211,9 @@ const AñadirAlimento = () => {
 				</ContenedorBotonCentrado>
 			</Formulario>
 		</main>
-		</div>
 	);
 
 
-   }
+}
 
 export default AñadirAlimento;
