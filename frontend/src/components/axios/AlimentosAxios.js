@@ -4,7 +4,7 @@ const URL = `alimento/`;
 
 export function getAlimentoPorId(id) {
     const instance = ApiConnectionFactory.createBasicAxiosInstance();
-    return instance.post(URL + id, data);
+    return instance.post(URL + id);
 }
 
 export function getAlimentos() {
