@@ -1,8 +1,9 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 
-export const Table = () => {
-    
+
+export const Table = (data) => {
+
     const columns = [
         {
             title: "Categoria", field: 'categoria'
@@ -38,5 +39,6 @@ export const Table = () => {
                 }}
                 style={{backgroundColor:'transparent'}}
             />
-        </div>)
+        </div>
+    )
 }
