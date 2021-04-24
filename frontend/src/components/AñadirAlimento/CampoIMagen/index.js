@@ -3,9 +3,21 @@ import {Label}  from './../estilosFormmulario';
 
   
 
-const Imagen=()=>{
+const Imagen=({estado,cambiarEstado})=>{
 
-  
+    const onChange =(e)=>{
+    const input =e.target;
+       
+       
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                cambiarEstado({campo:e.target.result,valido:'true'})
+
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
 
     return(
         <div>
@@ -13,10 +25,11 @@ const Imagen=()=>{
         
             <input 
                 type="file"
-                 
-                id="imagen"
-                
+               
                 accept="image/*"
+
+                 
+                 onChange={onChange}
             />
             
         

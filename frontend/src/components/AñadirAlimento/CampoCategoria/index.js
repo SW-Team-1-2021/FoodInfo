@@ -1,16 +1,13 @@
 import React from 'react';
 import {Label,Select,/*Opction*/LeyendaError} from './../estilosFormmulario';
 
-const Categoria=({/*listaCategorias*/leyendaError})=>{
+const Categoria=({estado,cambiarEstado,leyendaError})=>{
 
- /*  var indice=document.getElementById("categorias").selectedIndex;
+  const onChange =(e)=>{
+    cambiarEstado({campo:e.target.value,valido:'true'})
 
-    if( indice === null || indice === 0 ) {
-        console.log("elija una opcion");
-        //return false;
-      }else{
-        console.log("verdad");
-      }*/
+
+  }
     
 
    return(
@@ -18,12 +15,16 @@ const Categoria=({/*listaCategorias*/leyendaError})=>{
        <div>
            <Label>Categoria</Label>
           
-           <Select name="categorias" id="categoria" required > 
+           <Select name="categorias" id="categoria" required
+           value={estado.campo}
+           onChange={onChange}
+           > 
+           
            <option value="">- Seleccione una categoria</option>
-            <option value="1">Frutas</option>
-            <option value="2">Verduras</option>
-            <option value="3">Carnes y pescado</option>
-            <option value="3">Hortalizas</option>
+            <option value="Frutas">Frutas</option>
+            <option value="Verduras">Verduras</option>
+            <option value="Carnes y pescado">Carnes y pescado</option>
+            <option value="Hortalizas">Hortalizas</option>
          
            </Select>
 
