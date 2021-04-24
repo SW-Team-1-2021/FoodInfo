@@ -31,19 +31,6 @@ const AñadirAlimento = () => {
 
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
-	const [todosCampos,cambiarTodosCampos]=useState({cat:"1",
-	                                                 nom:"2", 
-													 seg:"3",
-													 proc:"4",
-													 cal:"",
-													 horDe:"",
-													 horA:"",
-													 adv:"",
-													 com:"",
-													 ima:"",
-													 des:""
-													 });
-
 	                                            
 
 	const expresiones = {
@@ -64,23 +51,23 @@ const AñadirAlimento = () => {
 		
 
 		if (
-			nombre.valido === 'true' &&
-			opcional.valido === 'true' &&
-			procedencia.valido === 'true' &&
-			calorias.valido === 'true' &&
-			advertencias.valido === 'true' &&
-			combinacion.valido === 'true' &&
-			descripcion.valido === 'true'
+			nombre.valido === true&&
+			opcional.valido === true &&
+			procedencia.valido === true &&
+			calorias.valido === true &&
+			advertencias.valido === true &&
+			combinacion.valido === true &&
+			descripcion.valido === true
 
 
 		) {
-			cambiarFormularioValido('true');
+			cambiarFormularioValido(true);
 			//const alimento = {nombre:no.mbre.campo};
 			//console.log(imagen.campo);
 			//console.log(categoria.campo);
 			//console.log(horaDe.campo,horaA.campo);
 
-			cambiarTodosCampos({cat:categoria.campo,
+			var datos = { cat:categoria.campo,
 				nom:nombre.campo,
 				seg:opcional.campo,
 				proc:procedencia.campo,
@@ -91,21 +78,23 @@ const AñadirAlimento = () => {
 				com:combinacion.campo,
 				ima:imagen.campo,
 				des:descripcion.campo
-			   });
 
-			  
-                    console.log(todosCampos);
+			};
+			
+
+			 console.log(datos);
+
+		
 
 			cambiarNombre({ campo: '', valido: null });
 			cambiarOpcional({ campo: '', valido: null });
-			cambiarProcedencia({ campo: '', valido: 'null' });
+			cambiarProcedencia({ campo: '', valido: null });
 			cambiarCalorias({ campo: '', valido: null });
 			cambiarAdvertencias({ campo: '', valido: null });
 			cambiarCombinacion({ campo: '', valido: null });
 			cambiarDescripcion({ campo: '', valido: null });
 
 			
-				console.error(todosCampos);
 			// ... 
 		} else {
 			cambiarFormularioValido(false);

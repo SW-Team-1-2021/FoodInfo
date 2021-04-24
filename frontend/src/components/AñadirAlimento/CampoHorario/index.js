@@ -4,13 +4,15 @@ import {Horario,Label,Input,LeyendaError,SuperHorario} from './../estilosFormmul
 const horario =({mensajeError,cambiarEstadoDe,estadoDe,cambiarEstadoA,estadoA})=>{
 
     const onChangeDe =(e)=>{
-        cambiarEstadoDe({campo:e.target.value,valido:'true'})
+        cambiarEstadoDe({campo:e.target.value,valido:true})
 
     }
     const onChangeA =(e)=>{
-        cambiarEstadoA({campo:e.target.value,valido:'true'})
+        cambiarEstadoA({campo:e.target.value,valido:true})
 
     }
+    /*console.log(estadoDe.campo,estadoA.campo);
+    console.log(estadoDe.valido,estadoA.valido);*/
 
     return(
        <div> 

@@ -6,18 +6,16 @@ const Descripcion=({estado,cambiarEstado,expresionRegular,leyendaError,funcion})
 
     const onChange=(e)=>{
         cambiarEstado({...estado, campo: e.target.value});
-        //console.log(e.target.value);
 
     }
 
    const validacion=()=>{
     if(expresionRegular){
      if(expresionRegular.test(estado.campo)){
-          cambiarEstado({...estado, valido: 'true'});
-          console.log('Input Correcto');
+          cambiarEstado({...estado, valido: true});
+          
       }else{
-        cambiarEstado({...estado, valido: 'false'});
-           console.log('Input INCorrecto');
+        cambiarEstado({...estado, valido: false});
       }
    }
 }
