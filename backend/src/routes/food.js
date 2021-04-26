@@ -5,9 +5,9 @@ const foodController = require('../food/food.controller');
 const middleware = require('../food/food.middleware');
 
 const router = express.Router();
+
 router
-  .post('/',
-    middleware.schemaValidatorSavePut,
-    foodController.saveFood);
+  .post('/', middleware.schemaValidatorSavePut, foodController.saveFood)
+  .get('/', foodController.getFood);
 
 module.exports = router;

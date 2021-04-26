@@ -17,6 +17,16 @@ async function save(data) {
   }
 }
 
+async function getdata() {
+  try {
+    return await food.find();
+  } catch (error) {
+    console.log(MONGOOSE);
+    throw error;
+  }
+}
+
 module.exports = {
   save,
+  getdata
 };
