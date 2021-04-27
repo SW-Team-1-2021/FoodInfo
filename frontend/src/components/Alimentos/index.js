@@ -1,22 +1,23 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useState} from 'react';
 import './alimentos.css';
 import { Table } from './Table';
 import axios from 'axios';
 
 export default function Index() {
 
-    let jsonres = useRef(null);
+    const [data, setData] = useState([]);
+
     useEffect(() => {axios.get('/api/food').then(
         res => {
-            jsonres.current = res;
-            console.log(jsonres.current);
+            console.log(res);
+            setData(res.data)
         }
-    )});
+    )}, []);
 
     return (
         <div className="index">
             <h1><strong>LISTA DE ALIMENTOS</strong></h1>
-            {jsonres.current && Table(jsonres.current.data)}
+            <Table data={data}/>
         </div>
     );
 }
