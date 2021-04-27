@@ -35,6 +35,7 @@ if(funcion){
          onKeyUp={validacion}
          onBlur={validacion}
          valido={estado.valido}
+         required
           />
         <LeyendaError valido={estado.valido}>{leyendaError}</LeyendaError>
       </Descri>

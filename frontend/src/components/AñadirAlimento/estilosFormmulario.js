@@ -158,7 +158,8 @@ const Boton = styled.button`
 `;
 
 const MensajeExito = styled.p`
-	font-size: 14px;
+	font-size: 30px;
+	
 	color: ${colores.exito};
 `;
 

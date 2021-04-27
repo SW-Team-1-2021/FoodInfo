@@ -2,7 +2,7 @@ import React from 'react';
 import {Input, Label, GrupoInput, LeyendaError} from './../estilosFormmulario';
 //import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
-const ComponenteInput = ({estado, cambiarEstado, tipo, label, placeholder, name, leyendaError, expresionRegular, funcion}) => {
+const ComponenteInput = ({requerido,estado, cambiarEstado, tipo, label, placeholder, name, leyendaError, expresionRegular, funcion}) => {
 	
 	const onChange = (e) => {
 		cambiarEstado({...estado, campo: e.target.value});
@@ -37,6 +37,7 @@ const ComponenteInput = ({estado, cambiarEstado, tipo, label, placeholder, name,
 					onKeyUp={validacion}
 					onBlur={validacion}
 					valido={estado.valido}
+					requerido
 				/>
 				
 			</GrupoInput>

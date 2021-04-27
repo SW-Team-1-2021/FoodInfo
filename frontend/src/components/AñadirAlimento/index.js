@@ -52,11 +52,11 @@ const AñadirAlimento = () => {
 
 		if (
 			nombre.valido === true&&
-			opcional.valido === true &&
+			//opcional.valido === true &&
 			procedencia.valido === true &&
 			calorias.valido === true &&
-			advertencias.valido === true &&
-			combinacion.valido === true &&
+			//advertencias.valido === true &&
+			//combinacion.valido === true &&
 			descripcion.valido === true
 
 
@@ -120,6 +120,7 @@ const AñadirAlimento = () => {
 					name="nombre"
 					leyendaError=" El nombre tiene que ser de 4 a 80 caracteres, sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
+					requerido="required"
 				/>
 				<Input
 					estado={opcional}
