@@ -3,11 +3,13 @@ import React, {useEffect, useState} from 'react';
 import { Table } from './Table';
 import axios from 'axios';
 
+const URL =  `http://localhost:8082/api/food`;
+
 export default function Index() {
 
     const [data, setData] = useState([]);
 
-    useEffect(() => {axios.get('/api/food').then(
+    useEffect(() => {axios.get(URL).then(
         res => {
             console.log(res);
             setData(res.data)

@@ -10,6 +10,8 @@ import Hora from '../AñadirAlimento/CampoHorario/index';
 import Categoria from '../AñadirAlimento/CampoCategoria/index';
 import './style.css'
 
+const URL =  `http://localhost:8082/api/food`;
+
 const AñadirAlimento = () => {
 
 	const [categoria, cambiarCategoria] = useState({ campo: '', valido: null });
@@ -67,7 +69,7 @@ const AñadirAlimento = () => {
 				nombre:nombre.campo,
 				segundonombre:opcional.campo,
 				procedencia:procedencia.campo,
-				categorias:calorias.campo,
+				calorias:calorias.campo,
 				horainicio:horaDe.campo,
 				horafinal:horaA.campo,
 				advertencia:advertencias.campo,
@@ -77,7 +79,7 @@ const AñadirAlimento = () => {
 				
 			};
 
-			axios.post(`http://localhost:8082/api/food`, datos)
+			axios.post(URL, datos)
 			.then(res => {
 				console.log(res);
 				console.log(res.data);
