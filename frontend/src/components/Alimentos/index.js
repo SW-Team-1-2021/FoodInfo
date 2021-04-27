@@ -14,7 +14,7 @@ export default function Index() {
     )});
 
     return (
-        <div className="Index">
+        <div className="index">
             <h1><strong>LISTA DE ALIMENTOS</strong></h1>
             {jsonres.current && Table(jsonres.current.data)}
         </div>
