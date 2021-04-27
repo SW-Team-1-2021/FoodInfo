@@ -19,10 +19,10 @@ const AñadirAlimento = () => {
 	const [procedencia, cambiarProcedencia] = useState({ campo: '', valido: null });
 	const [calorias, cambiarCalorias] = useState({ campo: '', valido: null });
 
-	const [horaDe,cambiarHoraDe]=useState({ campo: '', valido: null });
-	const [horaA,cambiarHoraA]=useState({ campo: '', valido: null });
+	const [horaDe, cambiarHoraDe] = useState({ campo: '', valido: null });
+	const [horaA, cambiarHoraA] = useState({ campo: '', valido: null });
 
-	const [imagen,cambiarImagen]=useState({ campo: '', valido: null });
+	const [imagen, cambiarImagen] = useState({ campo: '', valido: null });
 
 
 	const [advertencias, cambiarAdvertencias] = useState({ campo: '', valido: null });
@@ -32,7 +32,7 @@ const AñadirAlimento = () => {
 
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
-	                                            
+
 
 	const expresiones = {
 
@@ -49,10 +49,10 @@ const AñadirAlimento = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		
+
 
 		if (
-			nombre.valido === true&&
+			nombre.valido === true &&
 			opcional.valido === true &&
 			procedencia.valido === true &&
 			calorias.valido === true &&
@@ -63,37 +63,38 @@ const AñadirAlimento = () => {
 
 		) {
 
-			var datos = { categoria:categoria.campo,
-				nombre:nombre.campo,
-				segundonombre:opcional.campo,
-				procedencia:procedencia.campo,
-				categorias:calorias.campo,
-				horainicio:horaDe.campo,
-				horafinal:horaA.campo,
-				advertencia:advertencias.campo,
-				combinacion:combinacion.campo,
-				imagen:imagen.campo,
-				descripcion:descripcion.campo
-				
+			var datos = {
+				categoria: categoria.campo,
+				nombre: nombre.campo,
+				segundonombre: opcional.campo,
+				procedencia: procedencia.campo,
+				categorias: calorias.campo,
+				horainicio: horaDe.campo,
+				horafinal: horaA.campo,
+				advertencia: advertencias.campo,
+				combinacion: combinacion.campo,
+				imagen: imagen.campo,
+				descripcion: descripcion.campo
+
 			};
 
 			axios.post(`http://localhost:8082/api/food`, datos)
-			.then(res => {
-				console.log(res);
-				console.log(res.data);
-				cambiarFormularioValido(true);
-				cambiarNombre({ campo: '', valido: null });
-				cambiarOpcional({ campo: '', valido: null });
-				cambiarProcedencia({ campo: '', valido: null });
-				cambiarCalorias({ campo: '', valido: null });
-				cambiarAdvertencias({ campo: '', valido: null });
-				cambiarCombinacion({ campo: '', valido: null });
-				cambiarDescripcion({ campo: '', valido: null });
-			})
-			.catch( error => {
-				cambiarFormularioValido(false);
-				console.log(error);
-			})
+				.then(res => {
+					console.log(res);
+					console.log(res.data);
+					cambiarFormularioValido(true);
+					cambiarNombre({ campo: '', valido: null });
+					cambiarOpcional({ campo: '', valido: null });
+					cambiarProcedencia({ campo: '', valido: null });
+					cambiarCalorias({ campo: '', valido: null });
+					cambiarAdvertencias({ campo: '', valido: null });
+					cambiarCombinacion({ campo: '', valido: null });
+					cambiarDescripcion({ campo: '', valido: null });
+				})
+				.catch(error => {
+					cambiarFormularioValido(false);
+					console.log(error);
+				})
 
 		} else {
 			cambiarFormularioValido(false);
@@ -106,8 +107,8 @@ const AñadirAlimento = () => {
 			<Formulario action="" onSubmit={onSubmit}>
 
 				<Categoria
-				estado={categoria}
-				cambiarEstado={cambiarCategoria}
+					estado={categoria}
+					cambiarEstado={cambiarCategoria}
 				/>
 
 				<Input
@@ -152,11 +153,11 @@ const AñadirAlimento = () => {
 				/>
 
 				<Hora
-				  estadoDe={horaDe}
-				  cambiarEstadoDe={cambiarHoraDe}
-				  estadoA={horaA}
-				  cambiarEstadoA={cambiarHoraA}
-				  
+					estadoDe={horaDe}
+					cambiarEstadoDe={cambiarHoraDe}
+					estadoA={horaA}
+					cambiarEstadoA={cambiarHoraA}
+
 					mensajeError=""
 				/>
 
@@ -177,13 +178,13 @@ const AñadirAlimento = () => {
 					label="Combinacion "
 					placeholder="ej: Platano-leche"
 					name="combinacion"
-					leyendaError=" La combinacion de alimentos deben ser de 4 a 80 caracteres sin caracteres especiales. "
-					expresionRegular={expresiones.nombre1}
+					leyendaError=" La combinacion de alimentos deben ser de 4 a 100 caracteres sin caracteres especiales. "
+					expresionRegular={expresiones.combin}
 				/>
 
 				<Imagen
-                     estado={imagen}
-					 cambiarEstado={cambiarImagen}
+					estado={imagen}
+					cambiarEstado={cambiarImagen}
 				/>
 
 				<Descrip
