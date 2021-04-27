@@ -41,10 +41,10 @@ const AñadirAlimento = () => {
 
 	const expresiones = {
 
-		nombre1: /^[a-zA-Z_\s_ñ-]{4,80}$/,
-		advert: /^[a-zA-Z_\s_ñ,_-]{4,150}$/,
-		combin: /^[a-zA-Z_\s_ñ_,-]{4,100}$/,
-		descrip: /^[a-zA-Z_\s_,_ñ-]{4,250}$/,
+		nombre1: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_ñ-]{4,80}$/,
+		advert: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_ñ,_-]{4,150}$/,
+		combin: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_ñ_,-]{4,100}$/,
+		descrip: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_,_ñ-]{4,250}$/,
 		calor: /^\d{0,4}(\.\d{0,4})?$/,
 	}
 
@@ -57,12 +57,12 @@ const AñadirAlimento = () => {
 
 
 		if (
-			nombre.valido === true &&
-			opcional.valido === true &&
+			nombre.valido === true&&
+			//opcional.valido === true &&
 			procedencia.valido === true &&
 			calorias.valido === true &&
-			advertencias.valido === true &&
-			combinacion.valido === true &&
+			//advertencias.valido === true &&
+			//combinacion.valido === true &&
 			descripcion.valido === true
 
 
@@ -153,8 +153,7 @@ const AñadirAlimento = () => {
 				<Input
 					estado={calorias}
 					cambiarEstado={cambiarCalorias}
-					tipo="number"
-					nuMax="9"
+					tipo="text"
 					label="Calorias"
 					placeholder="ej: 15.12"
 					name="calorias"

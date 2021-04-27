@@ -25,11 +25,9 @@ const Imagen = ({ estado, cambiarEstado }) => {
 
             <input
                 type="file"
-
-                accept="image/png"
-
-
+                accept="image/*"    
                 onChange={onChange}
+                required
             />
 
 
