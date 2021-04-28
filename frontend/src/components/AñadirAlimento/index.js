@@ -11,6 +11,9 @@ import Categoria from '../AñadirAlimento/CampoCategoria/index';
 import './style.css'
 
 const URL =  `http://localhost:8082/api/food`;
+const MSG_ERROR_NAME = 'El nombre del alimento ya se encuentra registrado';
+
+var msg = 'Por favor rellena el formulario correctamente.';
 
 const AñadirAlimento = () => {
 
@@ -93,10 +96,13 @@ const AñadirAlimento = () => {
 				cambiarDescripcion({ campo: '', valido: null });
 			})
 			.catch( error => {
+				if (error.response.status === 409) {
+					msg = MSG_ERROR_NAME;
+				}
 				cambiarFormularioValido(false);
-				console.log(error);
 			})
 		} else {
+			msg = 'Por favor rellena el formulario correctamente.';
 			cambiarFormularioValido(false);
 		}
 	}
@@ -208,7 +214,7 @@ const AñadirAlimento = () => {
 
 				{formularioValido === false && <MensajeError>
 					<p>
-						<b>Error:</b> Por favor rellena el formulario correctamente.
+						<b>Error:</b> {msg}
 					</p>
 				</MensajeError>}
 				<ContenedorBotonCentrado>
