@@ -21,10 +21,10 @@ const AñadirAlimento = () => {
 	const [procedencia, cambiarProcedencia] = useState({ campo: '', valido: null });
 	const [calorias, cambiarCalorias] = useState({ campo: '', valido: null });
 
-	const [horaDe,cambiarHoraDe]=useState({ campo: '', valido: null });
-	const [horaA,cambiarHoraA]=useState({ campo: '', valido: null });
+	const [horaDe, cambiarHoraDe] = useState({ campo: '', valido: null });
+	const [horaA, cambiarHoraA] = useState({ campo: '', valido: null });
 
-	const [imagen,cambiarImagen]=useState({ campo: '', valido: null });
+	const [imagen, cambiarImagen] = useState({ campo: '', valido: null });
 
 
 	const [advertencias, cambiarAdvertencias] = useState({ campo: '', valido: null });
@@ -34,14 +34,14 @@ const AñadirAlimento = () => {
 
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
-	                                            
+
 
 	const expresiones = {
 
-		nombre1: /^[a-zA-Z0-9_\s_ñ-]{4,80}$/,
-		advert: /^[a-zA-Z0-9_\s_ñ,_-]{4,150}$/,
-		combin: /^[a-zA-Z0-9_\s_ñ_,-]{4,100}$/,
-		descrip: /^[a-zA-Z0-9_\s_,_ñ-]{4,250}$/,
+		nombre1: /^[a-zA-Z_\s_ñ-]{4,80}$/,
+		advert: /^[a-zA-Z_\s_ñ,_-]{4,150}$/,
+		combin: /^[a-zA-Z_\s_ñ_,-]{4,100}$/,
+		descrip: /^[a-zA-Z_\s_,_ñ-]{4,250}$/,
 		calor: /^\d{0,4}(\.\d{0,4})?$/,
 	}
 
@@ -51,10 +51,10 @@ const AñadirAlimento = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		
+
 
 		if (
-			nombre.valido === true&&
+			nombre.valido === true &&
 			opcional.valido === true &&
 			procedencia.valido === true &&
 			calorias.valido === true &&
@@ -76,7 +76,7 @@ const AñadirAlimento = () => {
 				combinacion:combinacion.campo,
 				imagen:imagen.campo,
 				descripcion:descripcion.campo
-				
+
 			};
 
 			axios.post(URL, datos)
@@ -96,7 +96,6 @@ const AñadirAlimento = () => {
 				cambiarFormularioValido(false);
 				console.log(error);
 			})
-
 		} else {
 			cambiarFormularioValido(false);
 		}
@@ -108,14 +107,15 @@ const AñadirAlimento = () => {
 			<Formulario action="" onSubmit={onSubmit}>
 
 				<Categoria
-				estado={categoria}
-				cambiarEstado={cambiarCategoria}
+					estado={categoria}
+					cambiarEstado={cambiarCategoria}
 				/>
 
 				<Input
 					estado={nombre}
 					cambiarEstado={cambiarNombre}
 					tipo="text"
+					nuMax="80"
 					label="Nombre de Alimento"
 					placeholder="ej: Platano"
 					name="nombre"
@@ -126,6 +126,7 @@ const AñadirAlimento = () => {
 					estado={opcional}
 					cambiarEstado={cambiarOpcional}
 					tipo="text"
+					nuMax="80"
 					label="Nombre opcional"
 					placeholder="ej: Banana "
 					name="opcional"
@@ -136,6 +137,7 @@ const AñadirAlimento = () => {
 					estado={procedencia}
 					cambiarEstado={cambiarProcedencia}
 					tipo="text"
+					nuMax="80"
 					label="Procedencia"
 					placeholder="ej : Latinoamerica"
 					name="procedencia"
@@ -146,6 +148,7 @@ const AñadirAlimento = () => {
 					estado={calorias}
 					cambiarEstado={cambiarCalorias}
 					tipo="number"
+					nuMax="9"
 					label="Calorias"
 					placeholder="ej: 15.12"
 					name="calorias"
@@ -154,11 +157,11 @@ const AñadirAlimento = () => {
 				/>
 
 				<Hora
-				  estadoDe={horaDe}
-				  cambiarEstadoDe={cambiarHoraDe}
-				  estadoA={horaA}
-				  cambiarEstadoA={cambiarHoraA}
-				  
+					estadoDe={horaDe}
+					cambiarEstadoDe={cambiarHoraDe}
+					estadoA={horaA}
+					cambiarEstadoA={cambiarHoraA}
+
 					mensajeError=""
 				/>
 
@@ -166,6 +169,7 @@ const AñadirAlimento = () => {
 					estado={advertencias}
 					cambiarEstado={cambiarAdvertencias}
 					tipo="text"
+					nuMax="150"
 					label="Advertencias"
 					placeholder="No recomendable para..."
 					name="advertencias"
@@ -176,16 +180,17 @@ const AñadirAlimento = () => {
 					estado={combinacion}
 					cambiarEstado={cambiarCombinacion}
 					tipo="text"
+					nuMax="100"
 					label="Combinacion "
 					placeholder="ej: Platano-leche"
 					name="combinacion"
-					leyendaError=" La combinacion de alimentos deben ser de 4 a 80 caracteres sin caracteres especiales. "
-					expresionRegular={expresiones.nombre1}
+					leyendaError=" La combinacion de alimentos deben ser de 4 a 100 caracteres sin caracteres especiales. "
+					expresionRegular={expresiones.combin}
 				/>
 
 				<Imagen
-                     estado={imagen}
-					 cambiarEstado={cambiarImagen}
+					estado={imagen}
+					cambiarEstado={cambiarImagen}
 				/>
 
 				<Descrip
