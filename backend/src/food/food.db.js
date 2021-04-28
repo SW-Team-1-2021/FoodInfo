@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose');
 const schema = require('./food.schema');
+const errorBuilder = require('../commons/error-builder');
 
 const DOCUMENT = 'food';
 const MONGOOSE = 'mongoose';
@@ -26,7 +27,16 @@ async function getdata() {
   }
 }
 
+async function find(data) {
+  try {
+    return await food.find(data);
+  } catch (error) {
+    throw errorBuilder.build(MONGOOSE, error);
+  }
+}
+
 module.exports = {
   save,
-  getdata
+  getdata,
+  find
 };
