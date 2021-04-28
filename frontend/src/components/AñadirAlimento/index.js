@@ -106,7 +106,7 @@ const AñadirAlimento = () => {
 
 	return (
 		<main>
-			<h2 align="center" >AGREGAR  ALIMENTO</h2>
+			<h1 align="center" >AGREGAR  ALIMENTO</h1>
 			<Formulario action="" onSubmit={onSubmit}>
 
 				<Categoria
@@ -188,7 +188,7 @@ const AñadirAlimento = () => {
 					cambiarEstado={cambiarCombinacion}
 					tipo="text"
 					nuMax="100"
-					label="Combinacion "
+					label="Combinacion de Alimentos"
 					placeholder="ej: Platano-leche"
 					name="combinacion"
 					leyendaError=" La combinacion de alimentos deben ser de 4 a 80 caracteres sin caracteres especiales. "
@@ -216,12 +216,12 @@ const AñadirAlimento = () => {
 
 				{formularioValido === false && <MensajeError>
 					<p>
-						<b>Error:</b> {msg}
+						<b>Error:</b>No se pudo completar el registro. Por favor rellena el formulario correctamente.
 					</p>
 				</MensajeError>}
 				<ContenedorBotonCentrado>
 					<Boton type="submit">Enviar</Boton>
-					{formularioValido === true && <MensajeExito>Formulario enviado exitosamente!</MensajeExito>}
+					{formularioValido === true && <MensajeExito>El alimento fue agregado correctamente</MensajeExito>}
 				</ContenedorBotonCentrado>
 			</Formulario>
 		</main>
