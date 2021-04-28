@@ -191,6 +191,7 @@ const AñadirAlimento = () => {
 				<Imagen
                      estado={imagen}
 					 cambiarEstado={cambiarImagen}
+					 leyendaError="asegurese de que sea una imagen"
 				/>
 
 				<Descrip
