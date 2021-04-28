@@ -1,9 +1,10 @@
-import React from 'react';
-import { Label } from './../estilosFormmulario';
+import React  from 'react';
+import {Label,LeyendaError}  from './../estilosFormmulario';
 
 
+const Imagen=({estado,cambiarEstado,leyendaError})=>{
 
-const Imagen = ({ estado, cambiarEstado }) => {
+
 
     const onChange = (e) => {
         const input = e.target;
@@ -12,26 +13,43 @@ const Imagen = ({ estado, cambiarEstado }) => {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-                cambiarEstado({ campo: e.target.result, valido: 'true' })
+                cambiarEstado({campo:e.target.result,valido:true})
 
             };
             reader.readAsDataURL(input.files[0]);
         }
+
+        var archivoInput=document.getElementById('archivoInput');
+        var archivoRuta=archivoInput.value;
+        var extPermitidas=/(.PNG|.JPG)$/i;
+        if(!extPermitidas.exec(archivoRuta)){
+            alert('Asegurese de que sea una imagen');
+            archivoInput.value='';
+            
+        }
     }
 
-    return (
+   
+
+    
+
+    return(
         <div>
-            <Label htmlFor="imagen" >Subir imagen</Label>
-
-            <input
+        <Label htmlFor="imagen" >Subir imagen</Label>
+        
+            <input 
+            id="archivoInput"
                 type="file"
-                accept="image/*"    
-                onChange={onChange}
-                required
+                accept="image/*"
+                 onChange={onChange}
+                 required
             />
+        <LeyendaError valido={estado.valido}>{leyendaError} </LeyendaError>  
+        
+      </div>
 
 
-        </div>
+        
 
 
     );
