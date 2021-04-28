@@ -42,9 +42,9 @@ const AñadirAlimento = () => {
 	const expresiones = {
 
 		nombre1: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_ñ-]{4,80}$/,
-		advert: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_ñ,_-]{4,150}$/,
-		combin: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_ñ_,-]{4,100}$/,
-		descrip: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_,_ñ-]{4,250}$/,
+		advert: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_,_.-]{4,150}$/,
+		combin: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_._,-]{4,100}$/,
+		descrip: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_,_.-]{4,250}$/,
 		calor: /^\d{0,4}(\.\d{0,4})?$/,
 	}
 
@@ -58,11 +58,8 @@ const AñadirAlimento = () => {
 
 		if (
 			nombre.valido === true&&
-			//opcional.valido === true &&
 			procedencia.valido === true &&
 			calorias.valido === true &&
-			//advertencias.valido === true &&
-			//combinacion.valido === true &&
 			descripcion.valido === true
 
 
@@ -127,6 +124,7 @@ const AñadirAlimento = () => {
 					name="nombre"
 					leyendaError=" El nombre tiene que ser de 4 a 80 caracteres, sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
+					requerido={true}
 				/>
 				<Input
 					estado={opcional}
@@ -138,6 +136,7 @@ const AñadirAlimento = () => {
 					name="opcional"
 					leyendaError=" El nombre opcional tiene que ser de 4 a 80 caracteres, sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
+					requerido={""}
 				/>
 				<Input
 					estado={procedencia}
@@ -149,6 +148,7 @@ const AñadirAlimento = () => {
 					name="procedencia"
 					leyendaError=" La procedencia tiene que ser de 4 a 80 carcteres sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
+					requerido={true}
 				/>
 				<Input
 					estado={calorias}
@@ -159,6 +159,7 @@ const AñadirAlimento = () => {
 					name="calorias"
 					leyendaError=" ingrese solo numeros(maximo 4 enteros y 4 decimales)"
 					expresionRegular={expresiones.calor}
+					requerido={true}
 				/>
 
 				<Hora
@@ -180,6 +181,7 @@ const AñadirAlimento = () => {
 					name="advertencias"
 					leyendaError="Las Advertencias tienen que ser de 4 a 80 caracteres sin caracteres especiales. "
 					expresionRegular={expresiones.advert}
+					requerido={""}
 				/>
 				<Input
 					estado={combinacion}
@@ -189,8 +191,9 @@ const AñadirAlimento = () => {
 					label="Combinacion "
 					placeholder="ej: Platano-leche"
 					name="combinacion"
-					leyendaError=" La combinacion de alimentos deben ser de 4 a 100 caracteres sin caracteres especiales. "
-					expresionRegular={expresiones.combin}
+					leyendaError=" La combinacion de alimentos deben ser de 4 a 80 caracteres sin caracteres especiales. "
+					expresionRegular={expresiones.nombre1}
+					requerido={""}
 				/>
 
 				<Imagen

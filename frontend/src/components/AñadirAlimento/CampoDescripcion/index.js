@@ -37,6 +37,7 @@ const Descripcion = ({ estado, cambiarEstado, expresionRegular, leyendaError, fu
         onKeyUp={validacion}
         onBlur={validacion}
         valido={estado.valido}
+        required
       />
       <LeyendaError valido={estado.valido}>{leyendaError}</LeyendaError>
     </Descri>
