@@ -41,10 +41,10 @@ const AñadirAlimento = () => {
 
 	const expresiones = {
 
-		nombre1: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_ñ-]{4,80}$/,
-		advert: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_,_.-]{4,150}$/,
-		combin: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_._,-]{4,100}$/,
-		descrip: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_,_.-]{4,250}$/,
+		nombre1: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_ñ-]{1,80}$/,
+		advert: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_,_.-]{1,150}$/,
+		combin: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_._,-]{1,100}$/,
+		descrip: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_,_.-]{1,250}$/,
 		calor: /^\d{0,4}(\.\d{0,4})?$/,
 	}
 
@@ -57,7 +57,7 @@ const AñadirAlimento = () => {
 
 
 		if (
-			nombre.valido === true&&
+			nombre.valido === true &&
 			procedencia.valido === true &&
 			calorias.valido === true &&
 			descripcion.valido === true
@@ -118,11 +118,12 @@ const AñadirAlimento = () => {
 					estado={nombre}
 					cambiarEstado={cambiarNombre}
 					tipo="text"
+					nuMin="1"
 					nuMax="80"
 					label="Nombre de Alimento"
 					placeholder="ej: Platano"
 					name="nombre"
-					leyendaError=" El nombre tiene que ser de 4 a 80 caracteres, sin caracteres especiales. "
+					leyendaError=" El nombre tiene que ser de 1 a 80 caracteres, sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
 					requerido={true}
 				/>
@@ -134,7 +135,7 @@ const AñadirAlimento = () => {
 					label="Nombre opcional"
 					placeholder="ej: Banana "
 					name="opcional"
-					leyendaError=" El nombre opcional tiene que ser de 4 a 80 caracteres, sin caracteres especiales. "
+					leyendaError=" El nombre opcional tiene que ser de 1 a 80 caracteres, sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
 					requerido={""}
 				/>
@@ -142,11 +143,12 @@ const AñadirAlimento = () => {
 					estado={procedencia}
 					cambiarEstado={cambiarProcedencia}
 					tipo="text"
+					nuMin="1"
 					nuMax="80"
 					label="Procedencia"
 					placeholder="ej : Latinoamerica"
 					name="procedencia"
-					leyendaError=" La procedencia tiene que ser de 4 a 80 carcteres sin caracteres especiales. "
+					leyendaError=" La procedencia tiene que ser de 1 a 80 carcteres sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
 					requerido={true}
 				/>
@@ -154,6 +156,8 @@ const AñadirAlimento = () => {
 					estado={calorias}
 					cambiarEstado={cambiarCalorias}
 					tipo="text"
+					nuMin="1"
+					nuMax="9"
 					label="Calorias"
 					placeholder="ej: 15.12"
 					name="calorias"
@@ -179,7 +183,7 @@ const AñadirAlimento = () => {
 					label="Advertencias"
 					placeholder="No recomendable para..."
 					name="advertencias"
-					leyendaError="Las Advertencias tienen que ser de 4 a 80 caracteres sin caracteres especiales. "
+					leyendaError="Las Advertencias tienen que ser de 1 a 150 caracteres sin caracteres especiales. "
 					expresionRegular={expresiones.advert}
 					requerido={""}
 				/>
@@ -188,10 +192,10 @@ const AñadirAlimento = () => {
 					cambiarEstado={cambiarCombinacion}
 					tipo="text"
 					nuMax="100"
-					label="Combinacion de Alimentos"
+					label="Combinacion de Alimentos "
 					placeholder="ej: Platano-leche"
 					name="combinacion"
-					leyendaError=" La combinacion de alimentos deben ser de 4 a 80 caracteres sin caracteres especiales. "
+					leyendaError=" La combinacion de alimentos deben ser de 1 a 100 caracteres sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
 					requerido={""}
 				/>
@@ -204,7 +208,7 @@ const AñadirAlimento = () => {
 				<Descrip
 					estado={descripcion}
 					cambiarEstado={cambiarDescripcion}
-					leyendaError="La descripcion debe ser de 4 a 250 digitos sin caracteres especiales."
+					leyendaError="La descripcion debe ser de 1 a 250 digitos sin caracteres especiales."
 					expresionRegular={expresiones.descrip}
 
 				/>

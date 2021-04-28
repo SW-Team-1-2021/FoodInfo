@@ -2,8 +2,8 @@ import React from 'react';
 import { Input, Label, GrupoInput, LeyendaError } from './../estilosFormmulario';
 //import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
-const ComponenteInput = ({requerido,nuMax,estado, cambiarEstado, tipo, label, placeholder, name, leyendaError, expresionRegular, funcion}) => {
-	
+const ComponenteInput = ({ requerido, estado, nuMin, nuMax, cambiarEstado, tipo, label, placeholder, name, leyendaError, expresionRegular, funcion }) => {
+
 	const onChange = (e) => {
 		cambiarEstado({ ...estado, campo: e.target.value });
 	}
@@ -30,6 +30,7 @@ const ComponenteInput = ({requerido,nuMax,estado, cambiarEstado, tipo, label, pl
 			<GrupoInput>
 				<Input
 					type={tipo}
+					minLength={nuMin}
 					maxLength={nuMax}
 					placeholder={placeholder}
 					id={name}
