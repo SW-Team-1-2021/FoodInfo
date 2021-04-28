@@ -2,6 +2,9 @@
 
 // const fs = require('fs');
 const model = require('./food.model');
+const errorBuilder = require('../commons/error-builder');
+
+const CONFLICT = 'conflict';
 
 async function saveFood(req, res) {
   try {
@@ -11,6 +14,15 @@ async function saveFood(req, res) {
     //   contentType: 'image/jpg'
     // };
 
+    const result = await model.findByName(foodSave.nombre);
+    if (result.length > 0) {
+      throw errorBuilder.build(
+        CONFLICT,
+        {
+          name: 'Data Repetition',
+          message: `The ${foodSave.nombre} is already saved in the DB`
+        });
+    }
     const food = await model.save(foodSave);
     return res.status(200).json(food);
   } catch (error) {

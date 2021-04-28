@@ -5,7 +5,7 @@ const { SALT_ROUNDS } = '../config/global';
 
 const METHOD = ['PUT', 'POST'];
 const PASSWORD = 'password';
-const IGNORE = [PASSWORD, 'username', 'email', 'externalId'];
+const IGNORE = [PASSWORD, 'username', 'email', 'externalId', 'imagen', 'descripcion'];
 
 function findValue(array, string) {
   return array.find(value => value === string);

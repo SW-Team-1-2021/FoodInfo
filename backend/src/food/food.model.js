@@ -9,7 +9,12 @@ function save(data) {
 function getdata() {
   return foodDB.getdata();
 }
+
+function findByName(data) {
+  return foodDB.find({ nombre: data });
+}
 module.exports = {
   save,
-  getdata
+  getdata,
+  findByName
 };
