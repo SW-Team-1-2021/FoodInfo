@@ -37,7 +37,7 @@ const ComponenteInput = ({requerido,estado, cambiarEstado, tipo, label, placehol
 					onKeyUp={validacion}
 					onBlur={validacion}
 					valido={estado.valido}
-					requerido
+					required={requerido}
 				/>
 				
 			</GrupoInput>
