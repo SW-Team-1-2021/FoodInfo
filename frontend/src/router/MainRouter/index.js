@@ -9,19 +9,19 @@ import './style.css'
 function MainRouter() {
     return (
         <Router>
-            <Route path='/' component={Header} />
+            <Route path='/ui' component={Header} />
             <Switch>
-                <Route path='/inicio'>
+                <Route path='/ui/inicio'>
                     <div className='container-image inicio'>
                         <Inicio />
                     </div>
                 </Route>
-                <Route path='/alimentos'>
+                <Route path='/ui/alimentos'>
                     <div className='container-image alimentos'>
                         <Alimentos />
                     </div>
                 </Route>
-                <Route path='/añadir'>
+                <Route path='/ui/añadir'>
                     <div className='container-image anadir-alimento'>
                         <AñadirAlimento />
                     </div>
