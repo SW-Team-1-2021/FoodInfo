@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import { Table } from './Table';
 import axios from 'axios';
 
-const URL =  `http://localhost:8082/api/food`;
+const URL =  `/api/food`;
 
 export default function Index() {
 

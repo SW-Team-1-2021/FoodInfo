@@ -26,7 +26,7 @@ function MainRouter() {
                         <AñadirAlimento />
                     </div>
                 </Route>
-                <Redirect from='' to='/inicio' exact />
+                <Redirect from='' to='/ui/inicio' exact />
             </Switch>
         </Router >
     );
