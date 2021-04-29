@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+//const path = require('path');
 const db = require('./src/config/mongodb');
 const port = process.env.PORT || 8082;
 
