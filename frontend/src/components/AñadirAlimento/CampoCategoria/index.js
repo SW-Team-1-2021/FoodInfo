@@ -9,13 +9,14 @@ const Categoria=({estado,cambiarEstado,leyendaError})=>{
 
   }
     
-
+    
    return(
        
        <div>
            <Label>Categoria</Label>
           
-           <Select name="categorias" id="categoria" required
+           <Select name="categorias" id="categoria"
+            required
            value={estado.campo}
            onChange={onChange}
            > 

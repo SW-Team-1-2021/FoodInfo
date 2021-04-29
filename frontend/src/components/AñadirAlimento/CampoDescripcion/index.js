@@ -29,7 +29,7 @@ const Descripcion = ({ estado, cambiarEstado, expresionRegular, leyendaError, fu
       <Label htmlFor="" valido={estado.valido}>Descripcion</Label>
       <Input
         type="text"
-        minLength="4"
+        minLength="1"
         maxLength="250"
         placeholder="Descripcion"
         value={estado.campo}
@@ -37,6 +37,7 @@ const Descripcion = ({ estado, cambiarEstado, expresionRegular, leyendaError, fu
         onKeyUp={validacion}
         onBlur={validacion}
         valido={estado.valido}
+        required
       />
       <LeyendaError valido={estado.valido}>{leyendaError}</LeyendaError>
     </Descri>
