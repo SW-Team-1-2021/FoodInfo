@@ -8,7 +8,9 @@ function Header() {
         <Fragment>
             <div className='header'>
                 <div>
-                    <Link to='/ui/inicio'><img src={logo} className='image' alt='logo'/></Link>
+                    <Link to='/ui/inicio'>
+                        <img src={logo} className='image' alt='logo' width="50" height="50" />
+                    </Link>
                 </div>
                 <div className='link'>
                     <Link to='/ui/inicio' className='text-link'>Inicio</Link>
