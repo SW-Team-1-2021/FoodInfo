@@ -203,6 +203,7 @@ const AñadirAlimento = () => {
 				<Imagen
 					estado={imagen}
 					cambiarEstado={cambiarImagen}
+					requirido={true}
 				/>
 
 				<Descrip
@@ -220,7 +221,7 @@ const AñadirAlimento = () => {
 
 				{formularioValido === false && <MensajeError>
 					<p>
-						<b>Error:</b>No se pudo completar el registro. Por favor rellena el formulario correctamente.
+					< b > Error: </b>  { msg }
 					</p>
 				</MensajeError>}
 				<ContenedorBotonCentrado>
