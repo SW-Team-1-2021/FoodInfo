@@ -18,7 +18,7 @@ export default function Index() {
 
     return (
         <div className="index">
-            <h1 align="center">LISTA DE ALIMENTOS</h1>
+            <h1 align="center"><strong>LISTA DE ALIMENTOS</strong></h1>
             <Table data={data}/>
         </div>
     );
