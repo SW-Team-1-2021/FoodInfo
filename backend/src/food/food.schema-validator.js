@@ -21,7 +21,7 @@ const properties = {
     'minlength': 1,
     'maxlength': 80
   },
-  categorias: {
+  calorias: {
     'type': 'string',
     'minimum': 1
   },
@@ -52,7 +52,7 @@ const requiredSavePut = [
   'nombre',
   'segundonombre',
   'procedencia',
-  'categorias',
+  'calorias',
   'horainicio',
   'horafinal',
   'advertencia',

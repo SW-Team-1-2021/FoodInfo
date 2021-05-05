@@ -8,16 +8,18 @@ function Header() {
         <Fragment>
             <div className='header'>
                 <div>
-                    <Link to='/inicio'><img src={logo} className='image' alt='logo'/></Link>
+                    <Link to='/ui/inicio'>
+                        <img src={logo} className='image' alt='logo' width="50" height="50" />
+                    </Link>
                 </div>
                 <div className='link'>
-                    <Link to='/inicio' className='text-link'>Inicio</Link>
+                    <Link to='/ui/inicio' className='text-link'>Inicio</Link>
                 </div>
                 <div className='link'>
-                    <Link to='/alimentos' className='text-link'>Alimentos</Link>
+                    <Link to='/ui/alimentos' className='text-link'>Alimentos</Link>
                 </div>
                 <div className='link'>
-                    <Link to='/añadir' className='text-link'>Añadir</Link>
+                    <Link to='/ui/añadir' className='text-link'>Añadir</Link>
                 </div>
             </div>
         </Fragment>
