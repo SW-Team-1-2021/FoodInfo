@@ -115,7 +115,6 @@ const Select = styled.select`
 	padding: 0 10px 0 10px;
 	transition: .3s ease all;
 	border: 3px solid transparent;
-
 	&:focus {
 		border: 3px solid ${colores.borde};
 		outline: none;
@@ -151,7 +150,9 @@ const Boton = styled.button`
 	border-radius: 3px;
 	cursor: pointer;
 	transition: .1s ease all;
-
+	border-radius: 6px;
+	border: 2px solid #000000;
+	
 	&:hover {
 		box-shadow: 3px 0px 30px rgba(163,163,163, 1);
 	}
