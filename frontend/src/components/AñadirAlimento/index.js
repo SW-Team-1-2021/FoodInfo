@@ -17,23 +17,23 @@ var msg = 'Por favor rellena el formulario correctamente.';
 
 const AñadirAlimento = () => {
 
-	const [categoria, cambiarCategoria] = useState({ campo: '', valido: null });
+	const [categoria, cambiarCategoria] = useState({ campo: '', valido: false });
 
-	const [nombre, cambiarNombre] = useState({ campo: '', valido: null });
+	const [nombre, cambiarNombre] = useState({ campo: '', valido: false });
 	const [opcional, cambiarOpcional] = useState({ campo: '', valido: null });
-	const [procedencia, cambiarProcedencia] = useState({ campo: '', valido: null });
-	const [calorias, cambiarCalorias] = useState({ campo: '', valido: null });
+	const [procedencia, cambiarProcedencia] = useState({ campo: '', valido: false });
+	const [calorias, cambiarCalorias] = useState({ campo: '', valido: false });
 
 	const [horaDe, cambiarHoraDe] = useState({ campo: '', valido: null });
 	const [horaA, cambiarHoraA] = useState({ campo: '', valido: null });
 
-	const [imagen, cambiarImagen] = useState({ campo: '', valido: null });
+	const [imagen, cambiarImagen] = useState({ campo: '', valido: false});
 
 
 	const [advertencias, cambiarAdvertencias] = useState({ campo: '', valido: null });
 	const [combinacion, cambiarCombinacion] = useState({ campo: '', valido: null });
 
-	const [descripcion, cambiarDescripcion] = useState({ campo: '', valido: null });
+	const [descripcion, cambiarDescripcion] = useState({ campo: '', valido: false });
 
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
@@ -102,6 +102,8 @@ const AñadirAlimento = () => {
 		} else {
 			msg = 'Por favor rellena el formulario correctamente.';
 			cambiarFormularioValido(false);
+			/*cambiarNombre({campo:'',valido: false});
+			console.log(nombre.valido);*/
 		}
 	}
 
@@ -204,6 +206,7 @@ const AñadirAlimento = () => {
 				<Imagen
 					estado={imagen}
 					cambiarEstado={cambiarImagen}
+					leyendaError="Seleione una imagen. "
 					requirido={true}
 				/>
 

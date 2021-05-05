@@ -13,12 +13,13 @@ const Categoria = ({ estado, cambiarEstado, leyendaError }) => {
   return (
 
     <div>
-      <Label>*Categoria</Label>
+      <Label valido={estado.valido} >*Categoria</Label>
 
       <Select name="categorias" id="categoria"
         required
         value={estado.campo}
         onChange={onChange}
+        valido={estado.valido}
       >
 
         <option value="">- Seleccione una categoria</option>

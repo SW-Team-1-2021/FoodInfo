@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label, LeyendaError } from './../estilosFormmulario';
+import { Label, LeyendaError} from './../estilosFormmulario';
 
 
 const Imagen = ({ estado, cambiarEstado, leyendaError }) => {
@@ -35,7 +35,7 @@ const Imagen = ({ estado, cambiarEstado, leyendaError }) => {
 
     return (
         <div>
-            <Label htmlFor="imagen" >*Subir imagen</Label>
+            <Label htmlFor="imagen" valido={estado.valido} >*Subir imagen</Label>
 
             <input
                 id="archivoInput"

@@ -115,11 +115,20 @@ const Select = styled.select`
 	padding: 0 10px 0 10px;
 	transition: .3s ease all;
 	border: 3px solid transparent;
+
 	&:focus {
 		border: 3px solid ${colores.borde};
 		outline: none;
 		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 	}
+
+	${props => props.valido === true && css`
+		border: 3px solid transparent;
+	`}
+
+	${props => props.valido === false && css`
+		border: 3px solid ${colores.error} !important;
+	`}
  `;
 
 const Opction = styled.option`
