@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 const colores = {
 	borde: "#0075FF",
 	error: "#bb2929",
-	exito: "#1ed12d"
+	exito: "#008F39"
 }
 
 
@@ -168,7 +168,7 @@ const Boton = styled.button`
 `;
 
 const MensajeExito = styled.p`
-	font-size: 14px;
+	font-size: 16px;
 	color: ${colores.exito};
 `;
 

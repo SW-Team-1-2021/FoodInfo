@@ -206,7 +206,7 @@ const AñadirAlimento = () => {
 				<Imagen
 					estado={imagen}
 					cambiarEstado={cambiarImagen}
-					leyendaError="Seleione una imagen. "
+					leyendaError="Seleccione una imagen. "
 					requirido={true}
 				/>
 
