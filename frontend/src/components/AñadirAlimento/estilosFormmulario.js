@@ -1,9 +1,9 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const colores = {
 	borde: "#0075FF",
 	error: "#bb2929",
-	exito: "#1ed12d"
+	exito: "#008F39"
 }
 
 
@@ -37,7 +37,7 @@ const GrupoInput = styled.div`
 	z-index: 90;
 `;
 
-const SuperHorario=styled.div`
+const SuperHorario = styled.div`
 display: grid;
 grid-template-columns: 1fr  ;
 gad: 20px;
@@ -46,7 +46,7 @@ position: relative;
 z-index: 90;
 `;
 
-const Horario=styled.div`
+const Horario = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr ;
 gad: 20px;
@@ -93,7 +93,7 @@ const LeyendaError = styled.p`
 	`}
 `;
 
-const Descri=styled.div`  
+const Descri = styled.div`  
   grid-column: span 3;
    input {
       width: 100%;
@@ -105,7 +105,7 @@ const Descri=styled.div`
     }
  `;
 
- const Select=styled.select`
+const Select = styled.select`
    grid-template-columns: 1fr ;
    width: 100%;
 	background: #fff;
@@ -121,9 +121,17 @@ const Descri=styled.div`
 		outline: none;
 		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 	}
+
+	${props => props.valido === true && css`
+		border: 3px solid transparent;
+	`}
+
+	${props => props.valido === false && css`
+		border: 3px solid ${colores.error} !important;
+	`}
  `;
 
- const Opction=styled.option`
+const Opction = styled.option`
      windth: 100%;
  `;
 
@@ -144,21 +152,23 @@ const Boton = styled.button`
 	height: 45px;
 	line-height: 45px;
 	width: 30%;
-	background: #000;
+	background: #008F39;
 	color: #fff;
 	font-weight: bold;
 	border: none;
 	border-radius: 3px;
 	cursor: pointer;
 	transition: .1s ease all;
-
+	border-radius: 6px;
+	border: 2px solid #000000;
+	
 	&:hover {
 		box-shadow: 3px 0px 30px rgba(163,163,163, 1);
 	}
 `;
 
 const MensajeExito = styled.p`
-	font-size: 14px;
+	font-size: 16px;
 	color: ${colores.exito};
 `;
 
@@ -195,5 +205,5 @@ export {
 	Horario,
 	SuperHorario,
 	Select,
-    Opction
+	Opction
 };
