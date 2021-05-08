@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import MostrarDetalle from '../../components/MotrarDetalle';
 import Alimentos from '../../components/Alimentos';
 import AñadirAlimento from '../../components/AñadirAlimento';
 import Header from '../../components/Header';
@@ -24,6 +25,11 @@ function MainRouter() {
                 <Route path='/ui/añadir'>
                     <div className='container-image anadir-alimento'>
                         <AñadirAlimento />
+                    </div>
+                </Route>
+                <Route path='/ui/mostrar'>
+                    <div className='container-image anadir-alimento'>
+                        <MostrarDetalle />
                     </div>
                 </Route>
                 <Redirect from='' to='/ui/inicio' exact />
