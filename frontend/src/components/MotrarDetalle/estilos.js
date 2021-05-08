@@ -34,8 +34,13 @@ const Parrafos = styled.p`
    
    font-zise: 16px;
 `
-const Subtitulos = styled.p`
+const Subtitulos = styled.div`
   font-zise: 16px;
-  font-weight: 900;
+  font-weight: 700;
 `
-export { CajaMayor, Titulo, Imagen, Detalle, Parrafos, Subtitulos };
+const Subtitleespecial = styled.p`
+    line-height: 11;
+    font-weight: 700;
+    font-zise: 16px;
+`
+export { CajaMayor, Titulo, Imagen, Detalle, Parrafos, Subtitulos, Subtitleespecial };

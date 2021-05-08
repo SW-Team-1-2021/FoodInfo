@@ -1,5 +1,5 @@
 import React from 'react';
-import { CajaMayor, Titulo, Imagen, Detalle, Parrafos, Subtitulos } from './estilos';
+import { CajaMayor, Titulo, Imagen, Detalle, Parrafos, Subtitulos, Subtitleespecial } from './estilos';
 import logo from '../../images/logo.png';
 
 const mostrarDetalle = () => {
@@ -35,7 +35,11 @@ const mostrarDetalle = () => {
                 <Subtitulos>
                     ADVERTENCIAS
             </Subtitulos>
+                <Subtitleespecial>
 
+
+                    COMBINACION DE ALIMENTOS
+                </Subtitleespecial>
             </Detalle>
         </CajaMayor>
     );
