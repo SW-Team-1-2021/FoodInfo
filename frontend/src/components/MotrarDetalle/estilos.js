@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CajaMayor=styled.div`
+const CajaMayor = styled.div`
     width: 98%;
     max-width: 1000px;
     margin: 20px auto;
@@ -10,7 +10,7 @@ const CajaMayor=styled.div`
 	gap: 10px;
 
 `
-const Titulo=styled.div`
+const Titulo = styled.div`
   height:60px;
   grid-column: span 3;
   h1{
@@ -19,7 +19,7 @@ const Titulo=styled.div`
 
 `
 
-const Imagen=styled.div`
+const Imagen = styled.div`
   grid-column: span 1;
   h4{
     text-transform: uppercase;
@@ -27,12 +27,15 @@ const Imagen=styled.div`
   
   
 `
-const Detalle=styled.div`
+const Detalle = styled.div`
    grid-column: span 2;
 `
-const Parrafos=styled.p`
+const Parrafos = styled.p`
    
    font-zise: 16px;
 `
-
-export {CajaMayor,Titulo,Imagen, Detalle, Parrafos};
+const Subtitulos = styled.p`
+  font-zise: 16px;
+  font-weight: 900;
+`
+export { CajaMayor, Titulo, Imagen, Detalle, Parrafos, Subtitulos };
