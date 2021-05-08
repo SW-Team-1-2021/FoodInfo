@@ -17,23 +17,23 @@ var msg = 'Por favor rellena el formulario correctamente.';
 
 const AñadirAlimento = () => {
 
-	const [categoria, cambiarCategoria] = useState({ campo: '', valido: false });
+	const [categoria, cambiarCategoria] = useState({ campo: '', valido: null});
 
-	const [nombre, cambiarNombre] = useState({ campo: '', valido: false });
+	const [nombre, cambiarNombre] = useState({ campo: '', valido: null});
 	const [opcional, cambiarOpcional] = useState({ campo: '', valido: null });
-	const [procedencia, cambiarProcedencia] = useState({ campo: '', valido: false });
-	const [calorias, cambiarCalorias] = useState({ campo: '', valido: false });
+	const [procedencia, cambiarProcedencia] = useState({ campo: '', valido: null});
+	const [calorias, cambiarCalorias] = useState({ campo: '', valido: null});
 
 	const [horaDe, cambiarHoraDe] = useState({ campo: '', valido: null });
 	const [horaA, cambiarHoraA] = useState({ campo: '', valido: null });
 
-	const [imagen, cambiarImagen] = useState({ campo: '', valido: false});
+	const [imagen, cambiarImagen] = useState({ campo: '', valido: null});
 
 
 	const [advertencias, cambiarAdvertencias] = useState({ campo: '', valido: null });
 	const [combinacion, cambiarCombinacion] = useState({ campo: '', valido: null });
 
-	const [descripcion, cambiarDescripcion] = useState({ campo: '', valido: false });
+	const [descripcion, cambiarDescripcion] = useState({ campo: '', valido: null});
 
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
@@ -57,10 +57,13 @@ const AñadirAlimento = () => {
 
 
 		if (
+			categoria.valido===true &&
 			nombre.valido === true &&
 			procedencia.valido === true &&
 			calorias.valido === true &&
+			imagen.valido === true &&
 			descripcion.valido === true
+
 
 
 		) {
@@ -102,8 +105,26 @@ const AñadirAlimento = () => {
 		} else {
 			msg = 'Por favor rellena el formulario correctamente.';
 			cambiarFormularioValido(false);
-			/*cambiarNombre({campo:'',valido: false});
-			console.log(nombre.valido);*/
+		 if(categoria.valido==null){	
+			cambiarCategoria({valido: false});
+		 }
+		 if(nombre.valido==null){
+			cambiarNombre({valido: false});
+		 }
+		 if(procedencia.valido==null){
+			cambiarProcedencia({valido: false});
+		 }
+		 if(calorias.valido==null){
+			cambiarCalorias({valido: false});
+		 }
+		 if(imagen.valido==null){
+			cambiarImagen({valido: false});
+		 }
+		 if(descripcion.valido==null){
+			cambiarDescripcion({valido: false});
+		 }
+
+			
 		}
 	}
 
@@ -128,7 +149,7 @@ const AñadirAlimento = () => {
 					name="nombre"
 					leyendaError=" El nombre tiene que ser de 1 a 80 caracteres, sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
-					requerido={true}
+					requerido={""}
 				/>
 				<Input
 					estado={opcional}
@@ -153,7 +174,7 @@ const AñadirAlimento = () => {
 					name="procedencia"
 					leyendaError=" La procedencia tiene que ser de 1 a 80 carcteres sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
-					requerido={true}
+					requerido={""}
 				/>
 				<Input
 					estado={calorias}
@@ -166,7 +187,7 @@ const AñadirAlimento = () => {
 					name="calorias"
 					leyendaError=" ingrese solo numeros(maximo 4 enteros y 4 decimales)"
 					expresionRegular={expresiones.calor}
-					requerido={true}
+					requerido={""}
 				/>
 
 				<Hora
@@ -207,7 +228,7 @@ const AñadirAlimento = () => {
 					estado={imagen}
 					cambiarEstado={cambiarImagen}
 					leyendaError="Seleccione una imagen. "
-					requirido={true}
+					requirido={""}
 				/>
 
 				<Descrip
@@ -230,7 +251,7 @@ const AñadirAlimento = () => {
 				</MensajeError>}
 				<ContenedorBotonCentrado>
 					<Boton type="submit">Enviar</Boton>
-					{formularioValido === true && <MensajeExito>El alimento fue agregado correctamente</MensajeExito>}
+					{formularioValido === true && <MensajeExito><b>El alimento fue agregado correctamente</b></MensajeExito>}
 				</ContenedorBotonCentrado>
 			</Formulario>
 		</main>

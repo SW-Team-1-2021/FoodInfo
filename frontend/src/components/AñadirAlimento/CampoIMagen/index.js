@@ -42,7 +42,7 @@ const Imagen = ({ estado, cambiarEstado, leyendaError }) => {
                 type="file"
                 accept="image/*"
                 onChange={onChange}
-                required
+                //required
             />
             <LeyendaError valido={estado.valido}>{leyendaError} </LeyendaError>
 

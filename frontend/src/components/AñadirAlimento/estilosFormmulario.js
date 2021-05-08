@@ -168,8 +168,8 @@ const Boton = styled.button`
 `;
 
 const MensajeExito = styled.p`
-	font-size: 16px;
-	color: ${colores.exito};
+	font-size: 18px;
+	color: #000;
 `;
 
 const MensajeError = styled.div`
