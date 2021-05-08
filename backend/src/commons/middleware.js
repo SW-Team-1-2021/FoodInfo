@@ -22,6 +22,13 @@ function upercase(res, request, next) {
   next();
 }
 
+function trimQuery(res, request, next) {
+  for (const prop in request.req.query) {
+    request.req.query[prop] = request.req.query[prop].trim();
+  }
+  next();
+}
+
 function encrypt(res, request, next) {
   if (findValue(METHOD, request.req.method)) {
     for (const prop in request.req.body) {
@@ -37,5 +44,6 @@ function encrypt(res, request, next) {
 
 module.exports = {
   upercase,
-  encrypt
+  encrypt,
+  trimQuery
 };
