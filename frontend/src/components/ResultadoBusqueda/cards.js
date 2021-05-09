@@ -26,6 +26,126 @@ const cards = [
         title: "Fazt Web4",
         image: imagen,
         url: "https://www.youtube.com/"
+    },
+    {
+        id: 1,
+        title: "Fazt Web1",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 2,
+        title: "Fazt Web2",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 3,
+        title: "Fazt Web3",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 4,
+        title: "Fazt Web4",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 1,
+        title: "Fazt Web1",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 2,
+        title: "Fazt Web2",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 3,
+        title: "Fazt Web3",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 4,
+        title: "Fazt Web4",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 1,
+        title: "Fazt Web1",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 2,
+        title: "Fazt Web2",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 3,
+        title: "Fazt Web3",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 4,
+        title: "Fazt Web4",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 1,
+        title: "Fazt Web1",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 2,
+        title: "Fazt Web2",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 3,
+        title: "Fazt Web3",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 4,
+        title: "Fazt Web4",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 1,
+        title: "Fazt Web1",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 2,
+        title: "Fazt Web2",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 3,
+        title: "Fazt Web3",
+        image: imagen,
+        url: "https://www.youtube.com/"
+    },
+    {
+        id: 4,
+        title: "Fazt Web4",
+        image: imagen,
+        url: "https://www.youtube.com/"
     }
 ]
 
