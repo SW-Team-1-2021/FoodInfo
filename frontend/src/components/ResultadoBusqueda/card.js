@@ -1,21 +1,15 @@
-import React from 'react';
-import imagen from '../images/fondo.png'
+import React from 'react'
+import imagen from '../../images/logo.png'
 
-function Card(){
-    return(
-        <div className="card text-center">
-            <img src={imagen} alt="" />
+function Card({title,imagenSource,url}) {
+    return (
+        <div className="card align-items-center">
+            <img src={imagen} alt="" width="150" height="150"/>
             <div className="card-body">
-                <h4 className="card-title">Mi titulo</h4>
-                <p className="card-text">
-                    ajsgdjahsg kajhgsdkjahsgkdagsdkjag kajhgsdkjahsgkdagsdkjagjasgd
-                    ahsgdjagsdjka kashgdkjahgd kajshgdjakhsgdkja kasgdkjahgd kashgdkjahgd
-                </p>
-                <a href="" className="btn btn-outline-secondary rounded-0">
-                    Ir a la pagina
-                </a>
+               <h6><a href={url} className="card-title">{title} </a></h6>
             </div>
         </div>
     )
 }
+
 export default Card

@@ -4,6 +4,7 @@ import Alimentos from '../../components/Alimentos';
 import AñadirAlimento from '../../components/AñadirAlimento';
 import Header from '../../components/Header';
 import Inicio from '../../components/Inicio';
+import ResultadoBusqueda from '../../components/ResultadoBusqueda';
 import './style.css'
 
 function MainRouter() {
@@ -24,6 +25,11 @@ function MainRouter() {
                 <Route path='/ui/añadir'>
                     <div className='container-image anadir-alimento'>
                         <AñadirAlimento />
+                    </div>
+                </Route>
+                <Route path='/ui/resultados'>
+                    <div className='container-image resultado-busqueda'>
+                        <ResultadoBusqueda />
                     </div>
                 </Route>
                 <Redirect from='' to='/ui/inicio' exact />
