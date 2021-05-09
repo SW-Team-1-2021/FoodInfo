@@ -5,6 +5,7 @@ const middleware = require('../commons/middleware');
 
 function routes(app) {
   app.use(middleware.upercase);
+  app.use(middleware.trimQuery);
   app.use('/api/food', food);
 }
 
