@@ -3,7 +3,7 @@ import Cards from './Cards'
 import './resultado.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-function index() {
+export default function index() {
     return (
         <div className="resultado">
             <h1 align="center"><strong>RESULTADO DE BÚSQUEDA</strong></h1>
@@ -11,5 +11,3 @@ function index() {
         </div>
     )
 }
-
-export default index
