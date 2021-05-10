@@ -20,7 +20,9 @@ const mostrarDetalle = () => {
                     Además contiene fibra, la cual favorece el tránsito intestinal, regulando la digestión, facilita la eliminación de colesterol malo. Aporta vitamina C, tiene un 136% de la cantidad diaria recomendada, ayudando a fijar el hierro, potenciando el sistema inmune y siendo un poderoso antiroxidante
             </Parrafos>
                 <Subtitulos>
-
+                    NOMBRE OPCIONAL
+                </Subtitulos>
+                <Subtitulos>
                     CATEGORIA
             </Subtitulos>
                 <Subtitulos>
