@@ -3,10 +3,10 @@ import imagen from '../../images/pera.jpg'
 
 function Card({title,imagenSource,url}) {
     return (
-        <div className="card align-items-center">
-            <img src={imagen} alt="" width="180" height="150"/>
+        <div className="card align-items-center" width= "18rem">
+            <img src={imagen} classname="card-img-top" alt="" width="100" height="100" />
             <div className="card-body">
-               <h6><a href={url} className="card-title">{title} </a></h6>
+               <h7><a href={url} className="card-title">{title} </a></h7>
             </div>
         </div>
     )

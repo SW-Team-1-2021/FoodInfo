@@ -3,3 +3,24 @@
     height: 100vh;
     height: auto;
 }
+.card{
+    width: 130px;
+    height: 152px;
+    margin: auto auto;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+    padding-top: 10px;
+}
+
+.col-md-3{
+    padding-top: 0px;
+    align-content: center;
+}
+
+.card-img-top{
+    padding-top: 10px;
+}
+
+.card-body{
+    padding: 10px !important;
+}

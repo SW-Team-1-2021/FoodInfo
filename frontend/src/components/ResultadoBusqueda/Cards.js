@@ -5,7 +5,7 @@ import imagen from '../../images/logo.png'
 const cards = [
     {
         id: 1,
-        title: "Fazt Web1",
+        title: "Manzana Verde",
         image: imagen,
         url: "https://www.youtube.com/"
     },
