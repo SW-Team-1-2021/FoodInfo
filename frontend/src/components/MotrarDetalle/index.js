@@ -19,6 +19,12 @@ const mostrarDetalle = () => {
                 La papaya es una fruta tropical que se consume por su pulpa principalmente, que suele ser de color anaranjado y de sabor dulce y jugoso. ... La papaya es un alimento rico en agua y bajo en calorías, que aporta minerales como calcio, fósforo y hierro y vitaminas A y C. Contiene papaína, un enzima que favorece la digestión
                </Parrafos>
                <Otros>
+                <Subtitulos>
+                   <b> Nombre Opcional</b>
+                </Subtitulos> 
+                <Parrafos>
+                  kabaya-papaio
+                </Parrafos>  
                <Subtitulos>        
                     <b>CATEGORIA</b>
               </Subtitulos>

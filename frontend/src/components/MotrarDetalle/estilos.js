@@ -7,7 +7,7 @@ const CajaMayor = styled.div`
     display: grid;
 	  grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
-	  grid-gap: 20px;
+	  grid-gap: 30px;
 
 `
 const Titulo = styled.div`
@@ -48,6 +48,7 @@ const Otros = styled.div`
 const Subtitulos = styled.div`
   font-zise: 16px;
   font-weight: 700;
+  text-transform: uppercase;
   
 `
 const Subtitleespecial = styled.p`
