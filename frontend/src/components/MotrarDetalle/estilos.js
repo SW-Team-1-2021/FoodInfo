@@ -37,6 +37,12 @@ const Imagen = styled.div`
   h4{
     text-transform: uppercase;
   }
+  img{
+    display:block;
+    margin:auto;
+    max-width: 100%;
+    width: 80%;
+    }
 
   
 `
