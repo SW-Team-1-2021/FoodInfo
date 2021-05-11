@@ -9,5 +9,6 @@ export default function index() {
             <h1 align="center"><strong>RESULTADO DE BÚSQUEDA</strong></h1>
             <Cards/>
         </div>
+        
     )
 }
