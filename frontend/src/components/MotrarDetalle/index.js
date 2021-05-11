@@ -1,5 +1,5 @@
 import React from 'react';
-import { CajaMayor, Titulo, Imagen, Detalle, Parrafos, Subtitulos, Otros } from './estilos';
+import { CajaMayor, Titulo, Imagen, Detalle, Subtitulos,  Otros, Parrafos } from './estilos';
 import papaya from '../../images/papaya.jpg';
 
 const mostrarDetalle = () => {
@@ -17,28 +17,28 @@ const mostrarDetalle = () => {
             <Detalle>
                 <Parrafos>
                 La papaya es una fruta tropical que se consume por su pulpa principalmente, que suele ser de color anaranjado y de sabor dulce y jugoso. ... La papaya es un alimento rico en agua y bajo en calorías, que aporta minerales como calcio, fósforo y hierro y vitaminas A y C. Contiene papaína, un enzima que favorece la digestión
-               </Parrafos>
+                </Parrafos>
                <Otros>
                 <Subtitulos>
-                   <b> Nombre Opcional</b>
+                  Nombre Opcional
                 </Subtitulos> 
                 <Parrafos>
                   kabaya-papaio
                 </Parrafos>  
                <Subtitulos>        
-                    <b>CATEGORIA</b>
+                    CATEGORIA
               </Subtitulos>
               <Parrafos>
                   Frutas
               </Parrafos>
               <Subtitulos>
-                   <b>PROCEDENCIA</b> 
+                   PROCEDENCIA
               </Subtitulos>
               <Parrafos>
                   Latinoamerica
               </Parrafos>
               <Subtitulos>
-                    CALORIAS
+                   CALORIAS
               </Subtitulos>
               <Parrafos>
                   56

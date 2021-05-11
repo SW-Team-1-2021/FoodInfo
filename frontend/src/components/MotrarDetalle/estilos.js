@@ -8,6 +8,12 @@ const CajaMayor = styled.div`
 	  grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, auto);
 	  grid-gap: 30px;
+   div{
+     text-align: left;
+   }
+   b{
+    text-align: left;
+   }
 
 `
 const Titulo = styled.div`
@@ -30,30 +36,30 @@ const Imagen = styled.div`
   
 `
 const Detalle = styled.div`
+   display:grid;
    grid-column: span 2;
+   grid-gap:50px;
 
 `
-const Parrafos = styled.p`
+const Parrafos = styled.div`
   padding: 0 10px 0 10px;
-   font-zise: 16px;
+   font-size: 16px;
    font-weight: bold;
 `
 const Otros = styled.div`
    display:grid;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: repeat(2, auto);
+   column-gap:40px;
    
   
 `
 
 const Subtitulos = styled.div`
-  font-zise: 16px;
-  font-weight: 700;
+  padding: 0 10px 0 10px;
+  font-size: 17px;
   text-transform: uppercase;
+  font-weight: bold;
   
 `
-const Subtitleespecial = styled.p`
-    line-height: 7;
-    font-weight: 700;
-    font-zise: 16px;
-`
-export { CajaMayor, Titulo, Imagen, Detalle, Parrafos, Subtitulos, Subtitleespecial,Otros };
+
+export { CajaMayor, Titulo, Imagen, Detalle, Parrafos, Subtitulos, Otros };
