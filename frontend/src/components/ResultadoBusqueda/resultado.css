@@ -1,10 +1,10 @@
 .resultado{
     /* background: rgba(0, 0, 0, 0.1); */
-    height: 100vh;
-    height: auto;
+    height: 100%;
+    /* height: auto; */
     background-image: url(../../images/fondo3.png);
-    background-size: contain;
-    /* overflow: auto; */
+    background-size: inherit;
+    overflow: overlay;
     color: #000000;
 }
 .card{
