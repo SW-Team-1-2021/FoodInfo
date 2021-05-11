@@ -14,6 +14,9 @@ const CajaMayor = styled.div`
    b{
     text-align: left;
    }
+   @media only screen and (max-width:600px){
+      display: block;
+  }
 
 `
 const Titulo = styled.div`
@@ -23,7 +26,9 @@ const Titulo = styled.div`
   h1{
     text-transform: uppercase;
   }
-
+  @media only screen and (max-width:600px){
+      
+  }
 `
 
 const Imagen = styled.div`
@@ -32,14 +37,14 @@ const Imagen = styled.div`
   h4{
     text-transform: uppercase;
   }
-  
+
   
 `
 const Detalle = styled.div`
    display:grid;
    grid-column: span 2;
    grid-gap:50px;
-
+  
 `
 const Parrafos = styled.div`
   padding: 0 10px 0 10px;
@@ -50,8 +55,9 @@ const Otros = styled.div`
    display:grid;
    grid-template-columns: repeat(2, auto);
    column-gap:40px;
-   
-  
+  @media only screen and (max-width:600px){
+      column-gap:0%;
+  }
 `
 
 const Subtitulos = styled.div`
