@@ -51,7 +51,7 @@ const Subtitulos = styled.div`
   
 `
 const Subtitleespecial = styled.p`
-    line-height: 11;
+    line-height: 7;
     font-weight: 700;
     font-zise: 16px;
 `
