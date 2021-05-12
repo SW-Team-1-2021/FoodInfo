@@ -7,57 +7,403 @@ const cards = [
     {
         id: 1,
         title: "Manzana Verde",
-        image: imagen,
-        url: "https://www.youtube.com/"
+        image: imagen
     },
     {
         id: 1,
         title: "Manzana Verde",
-        image: imagen,
-        url: "https://www.youtube.com/"
+        image: imagen
     },
     {
         id: 1,
         title: "Manzana Verde",
-        image: imagen,
-        url: "https://www.youtube.com/"
+        image: imagen
     },
     {
         id: 1,
         title: "Manzana Verde",
-        image: imagen,
-        url: "https://www.youtube.com/"
+        image: imagen
     },
     {
         id: 1,
         title: "Manzana Verde",
-        image: imagen,
-        url: "https://www.youtube.com/"
+        image: imagen
     },
     {
         id: 1,
         title: "Manzana Verde",
-        image: imagen,
-        url: "https://www.youtube.com/"
+        image: imagen
     },
     {
         id: 1,
         title: "Manzana Verde",
-        image: imagen,
-        url: "https://www.youtube.com/"
+        image: imagen
     },
     {
         id: 1,
         title: "Manzana Verde",
-        image: imagen,
-        url: "https://www.youtube.com/"
+        image: imagen
     },
     {
         id: 1,
         title: "Manzana Verde",
-        image: imagen,
-        url: "https://www.youtube.com/"
+        image: imagen
+    },{
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },{
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },{
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },{
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },{
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },{
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
     }
+
 ]
 
 function Cards() {
@@ -90,9 +436,9 @@ function Cards() {
             <div className="row">
                 {
                     cards.map(card => (
-                        <a href = "#" onClick={() => redirect(card)}>
+                        <a href = "#" className="link" onClick={() => redirect(card)}>
                             <div className="col-md-3" key={card.id} >
-                                <Card title={card.title} imageSource={card.image} url={card.url}/>
+                                <Card title={card.title} imageSource={card.image}/>
                             </div>
                         </a>
 
