@@ -22,14 +22,14 @@ export default function Index() {
     }, []);
 
     return (
-        foods.map(food => (
-            <div className="col-md-3" key={food._id}>
-                <img src={food.imagen}  alt="" width="100" height="100" />
-            </div>
-        ))
-        // <div className="resultado">
-        //     <h1 align="center"><strong>RESULTADO DE BÚSQUEDA</strong></h1>
-        //     <Cards/>
-        // </div>
+        // foods.map(food => (
+        //     <div className="col-md-3" key={food._id}>
+        //         <img src={food.imagen}  alt="" width="100" height="100" />
+        //     </div>
+        // ))
+        <div className="resultado">
+            <h1 align="center"><strong>RESULTADO DE BÚSQUEDA</strong></h1>
+            <Cards/>
+        </div>
     )
 }
