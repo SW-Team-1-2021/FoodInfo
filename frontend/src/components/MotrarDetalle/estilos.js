@@ -15,7 +15,7 @@ const CajaMayor = styled.div`
     text-align: left;
    }
    @media only screen and (max-width:600px){
-      display: block;
+      grid-column: 1 /-1;
   }
 
 `
@@ -27,7 +27,7 @@ const Titulo = styled.div`
     text-transform: uppercase;
   }
   @media only screen and (max-width:600px){
-      
+    grid-column: 1 / -1;
   }
 `
 
@@ -42,6 +42,10 @@ const Imagen = styled.div`
     margin:auto;
     max-width: 100%;
     width: 80%;
+    
+    }
+    @media only screen and (max-width:600px){
+      grid-column: 1 / -1;
     }
 
   
@@ -50,7 +54,9 @@ const Detalle = styled.div`
    display:grid;
    grid-column: span 2;
    grid-gap:50px;
-  
+   @media only screen and (max-width:600px){
+    grid-column: 1 / -1;
+  }
 `
 const Parrafos = styled.div`
   padding: 0 10px 0 10px;
