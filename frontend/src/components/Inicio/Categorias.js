@@ -10,16 +10,12 @@ import img_legumbres from "../../images/categorias/legumbres.jpeg"
 export const Categorias = () => {
   return(
     <div className="catdiv">
-      <div>
-        <Boton className="imagen borde" img={img_frutas} alt="Frutas"/>
-        <Boton className="imagen borde" img={img_verduras} alt="Verduras"/>
-        <Boton className="imagen borde" img={img_carnes} alt="Carnes"/>
-      </div>
-      <div>
-        <Boton className="imagen borde" img={img_cereales} alt="Cereales"/>
-        <Boton className="imagen borde" img={img_secos} alt="Frutos Secos"/>
-        <Boton className="imagen borde" img={img_legumbres} alt="Legumbres"/>
-      </div>
+        <Boton className="borde" img={img_frutas} alt="Frutas"/>
+        <Boton className="borde" img={img_verduras} alt="Verduras"/>
+        <Boton className="borde" img={img_carnes} alt="Carnes"/>
+        <Boton className="borde" img={img_cereales} alt="Cereales"/>
+        <Boton className="borde" img={img_secos} alt="Frutos Secos"/>
+        <Boton className="borde" img={img_legumbres} alt="Legumbres"/>
     </div>
   )
 }

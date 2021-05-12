@@ -9,12 +9,12 @@ function Inicio() {
   };
 
   return (
-    <div className="container-title">
+    <div>
       <div className="container-title">
-        <h1 className="titulo-catalogo" align="center">
-          <strong>CATÁLOGO DE ALIMENTOS</strong>
-        </h1>
-        <ComponentBuscador accionBuscar={accionBuscar} />
+          <h1 className="titulo-catalogo" align="center">
+            <strong>CATÁLOGO DE ALIMENTOS</strong>
+          </h1>
+          <ComponentBuscador accionBuscar={accionBuscar} />
       </div>
       <div style={{ height: "50px" }}></div>
       <h2 className="categorias" align="center">
@@ -24,4 +24,5 @@ function Inicio() {
     </div>
   );
 }
+
 export default Inicio;
