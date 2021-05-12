@@ -10,30 +10,30 @@ import Hora from '../AñadirAlimento/CampoHorario/index';
 import Categoria from '../AñadirAlimento/CampoCategoria/index';
 import './style.css'
 
-const URL =  `/api/food`;
+const URL = `/api/food`;
 const MSG_ERROR_NAME = 'El nombre del alimento ya se encuentra registrado';
 
 var msg = 'Por favor rellena el formulario correctamente.';
 
 const AñadirAlimento = () => {
 
-	const [categoria, cambiarCategoria] = useState({ campo: '', valido: null });
+	const [categoria, cambiarCategoria] = useState({ campo: '', valido: null});
 
-	const [nombre, cambiarNombre] = useState({ campo: '', valido: null });
+	const [nombre, cambiarNombre] = useState({ campo: '', valido: null});
 	const [opcional, cambiarOpcional] = useState({ campo: '', valido: null });
-	const [procedencia, cambiarProcedencia] = useState({ campo: '', valido: null });
-	const [calorias, cambiarCalorias] = useState({ campo: '', valido: null });
+	const [procedencia, cambiarProcedencia] = useState({ campo: '', valido: null});
+	const [calorias, cambiarCalorias] = useState({ campo: '', valido: null});
 
 	const [horaDe, cambiarHoraDe] = useState({ campo: '', valido: null });
 	const [horaA, cambiarHoraA] = useState({ campo: '', valido: null });
 
-	const [imagen, cambiarImagen] = useState({ campo: '', valido: null });
+	const [imagen, cambiarImagen] = useState({ campo: '', valido: null});
 
 
 	const [advertencias, cambiarAdvertencias] = useState({ campo: '', valido: null });
 	const [combinacion, cambiarCombinacion] = useState({ campo: '', valido: null });
 
-	const [descripcion, cambiarDescripcion] = useState({ campo: '', valido: null });
+	const [descripcion, cambiarDescripcion] = useState({ campo: '', valido: null});
 
 	const [formularioValido, cambiarFormularioValido] = useState(null);
 
@@ -57,50 +57,74 @@ const AñadirAlimento = () => {
 
 
 		if (
+			categoria.valido===true &&
 			nombre.valido === true &&
 			procedencia.valido === true &&
 			calorias.valido === true &&
+			imagen.valido === true &&
 			descripcion.valido === true
+
 
 
 		) {
 
-			var datos = { categoria:categoria.campo,
-				nombre:nombre.campo,
-				segundonombre:opcional.campo,
-				procedencia:procedencia.campo,
-				calorias:calorias.campo,
-				horainicio:horaDe.campo,
-				horafinal:horaA.campo,
-				advertencia:advertencias.campo,
-				combinacion:combinacion.campo,
-				imagen:imagen.campo,
-				descripcion:descripcion.campo
+			var datos = {
+				categoria: categoria.campo,
+				nombre: nombre.campo,
+				segundonombre: opcional.campo,
+				procedencia: procedencia.campo,
+				calorias: calorias.campo,
+				horainicio: horaDe.campo,
+				horafinal: horaA.campo,
+				advertencia: advertencias.campo,
+				combinacion: combinacion.campo,
+				imagen: imagen.campo,
+				descripcion: descripcion.campo
 
 			};
 
 			axios.post(URL, datos)
-			.then(res => {
-				console.log(res);
-				console.log(res.data);
-				cambiarFormularioValido(true);
-				cambiarNombre({ campo: '', valido: null });
-				cambiarOpcional({ campo: '', valido: null });
-				cambiarProcedencia({ campo: '', valido: null });
-				cambiarCalorias({ campo: '', valido: null });
-				cambiarAdvertencias({ campo: '', valido: null });
-				cambiarCombinacion({ campo: '', valido: null });
-				cambiarDescripcion({ campo: '', valido: null });
-			})
-			.catch( error => {
-				if (error.response.status === 409) {
-					msg = MSG_ERROR_NAME;
-				}
-				cambiarFormularioValido(false);
-			})
+				.then(res => {
+					console.log(res);
+					console.log(res.data);
+					cambiarFormularioValido(true);
+					cambiarNombre({ campo: '', valido: null });
+					cambiarOpcional({ campo: '', valido: null });
+					cambiarProcedencia({ campo: '', valido: null });
+					cambiarCalorias({ campo: '', valido: null });
+					cambiarAdvertencias({ campo: '', valido: null });
+					cambiarCombinacion({ campo: '', valido: null });
+					cambiarDescripcion({ campo: '', valido: null });
+				})
+				.catch(error => {
+					if (error.response.status === 409) {
+						msg = MSG_ERROR_NAME;
+					}
+					cambiarFormularioValido(false);
+				})
 		} else {
 			msg = 'Por favor rellena el formulario correctamente.';
 			cambiarFormularioValido(false);
+		 if(categoria.valido==null){	
+			cambiarCategoria({valido: false});
+		 }
+		 if(nombre.valido==null){
+			cambiarNombre({valido: false});
+		 }
+		 if(procedencia.valido==null){
+			cambiarProcedencia({valido: false});
+		 }
+		 if(calorias.valido==null){
+			cambiarCalorias({valido: false});
+		 }
+		 if(imagen.valido==null){
+			cambiarImagen({valido: false});
+		 }
+		 if(descripcion.valido==null){
+			cambiarDescripcion({valido: false});
+		 }
+
+			
 		}
 	}
 
@@ -120,12 +144,12 @@ const AñadirAlimento = () => {
 					tipo="text"
 					nuMin="1"
 					nuMax="80"
-					label="Nombre de Alimento"
+					label="*Nombre de Alimento"
 					placeholder="ej: Platano"
 					name="nombre"
 					leyendaError=" El nombre tiene que ser de 1 a 80 caracteres, sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
-					requerido={true}
+					requerido={""}
 				/>
 				<Input
 					estado={opcional}
@@ -145,12 +169,12 @@ const AñadirAlimento = () => {
 					tipo="text"
 					nuMin="1"
 					nuMax="80"
-					label="Procedencia"
+					label="*Procedencia"
 					placeholder="ej : Latinoamerica"
 					name="procedencia"
 					leyendaError=" La procedencia tiene que ser de 1 a 80 carcteres sin caracteres especiales. "
 					expresionRegular={expresiones.nombre1}
-					requerido={true}
+					requerido={""}
 				/>
 				<Input
 					estado={calorias}
@@ -158,12 +182,12 @@ const AñadirAlimento = () => {
 					tipo="text"
 					nuMin="1"
 					nuMax="9"
-					label="Calorias"
+					label="*Calorias"
 					placeholder="ej: 15.12"
 					name="calorias"
 					leyendaError=" ingrese solo numeros(maximo 4 enteros y 4 decimales)"
 					expresionRegular={expresiones.calor}
-					requerido={true}
+					requerido={""}
 				/>
 
 				<Hora
@@ -203,7 +227,8 @@ const AñadirAlimento = () => {
 				<Imagen
 					estado={imagen}
 					cambiarEstado={cambiarImagen}
-					requirido={true}
+					leyendaError="Seleccione una imagen. "
+					requirido={""}
 				/>
 
 				<Descrip
@@ -221,12 +246,12 @@ const AñadirAlimento = () => {
 
 				{formularioValido === false && <MensajeError>
 					<p>
-					< b > Error: </b>  { msg }
+						< b > Error: </b>  {msg}
 					</p>
 				</MensajeError>}
 				<ContenedorBotonCentrado>
 					<Boton type="submit">Enviar</Boton>
-					{formularioValido === true && <MensajeExito>El alimento fue agregado correctamente</MensajeExito>}
+					{formularioValido === true && <MensajeExito><b>El alimento fue agregado correctamente</b></MensajeExito>}
 				</ContenedorBotonCentrado>
 			</Formulario>
 		</main>

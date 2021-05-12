@@ -26,7 +26,7 @@ const Descripcion = ({ estado, cambiarEstado, expresionRegular, leyendaError, fu
   return (
 
     <Descri >
-      <Label htmlFor="" valido={estado.valido}>Descripcion</Label>
+      <Label htmlFor="" valido={estado.valido}>*Descripcion</Label>
       <Input
         type="text"
         minLength="1"
@@ -37,7 +37,7 @@ const Descripcion = ({ estado, cambiarEstado, expresionRegular, leyendaError, fu
         onKeyUp={validacion}
         onBlur={validacion}
         valido={estado.valido}
-        required
+        //required
       />
       <LeyendaError valido={estado.valido}>{leyendaError}</LeyendaError>
     </Descri>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Horario,Label,Input,LeyendaError,SuperHorario} from './../estilosFormmulario';
+import './style.css'
 
 const horario =({mensajeError,cambiarEstadoDe,estadoDe,cambiarEstadoA,estadoA})=>{
 
