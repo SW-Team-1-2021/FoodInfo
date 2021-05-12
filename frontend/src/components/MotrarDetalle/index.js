@@ -1,5 +1,5 @@
 import React from 'react';
-import { CajaMayor, Titulo, Imagen, Detalle, Subtitulos, Otros, Parrafos } from './estilos';
+import { CajaMayor, Titulo, Imagen, Detalle, Subtitulos,  Otros, Parrafos } from './estilos';
 import papaya from '../../images/papaya.jpg';
 
 const mostrarDetalle = () => {
@@ -16,54 +16,54 @@ const mostrarDetalle = () => {
             </Imagen>
             <Detalle>
                 <Parrafos>
-                    La papaya es una fruta tropical que se consume por su pulpa principalmente, que suele ser de color anaranjado y de sabor dulce y jugoso. ... La papaya es un alimento rico en agua y bajo en calorías, que aporta minerales como calcio, fósforo y hierro y vitaminas A y C. Contiene papaína, un enzima que favorece la digestión
+                La papaya es una fruta tropical que se consume por su pulpa principalmente, que suele ser de color anaranjado y de sabor dulce y jugoso. ... La papaya es un alimento rico en agua y bajo en calorías, que aporta minerales como calcio, fósforo y hierro y vitaminas A y C. Contiene papaína, un enzima que favorece la digestión
                 </Parrafos>
-                <Otros>
-                    <Subtitulos>
-                        Nombre Opcional
-                </Subtitulos>
-                    <Parrafos>
-                        kabaya-papaio
-                </Parrafos>
-                    <Subtitulos>
-                        CATEGORIA
+               <Otros>
+                <Subtitulos>
+                  Nombre Opcional
+                </Subtitulos> 
+                <Parrafos>
+                  kabaya-papaio
+                </Parrafos>  
+               <Subtitulos>        
+                    CATEGORIA
               </Subtitulos>
-                    <Parrafos>
-                        Frutas
+              <Parrafos>
+                  Frutas
               </Parrafos>
-                    <Subtitulos>
-                        PROCEDENCIA
+              <Subtitulos>
+                   PROCEDENCIA
               </Subtitulos>
-                    <Parrafos>
-                        Latinoamerica
+              <Parrafos>
+                  Latinoamerica
               </Parrafos>
-                    <Subtitulos>
-                        CALORIAS
+              <Subtitulos>
+                   CALORIAS
               </Subtitulos>
-                    <Parrafos>
-                        56
+              <Parrafos>
+                  56
               </Parrafos>
-                    <Subtitulos>
-                        HORARIOS DE CONSUMO
+            <Subtitulos>
+                    HORARIOS DE CONSUMO
             </Subtitulos>
-                    <Parrafos>
-                        15:45 AM - 20:00 PM
+            <Parrafos>
+                15:45 AM - 20:00 PM
             </Parrafos>
-                    <Subtitulos>
-                        ADVERTENCIAS
+                <Subtitulos>
+                    ADVERTENCIAS
               </Subtitulos>
-                    <Parrafos>
-                        El consumo excesivo de papayas puede causar un efecto laxante poderoso en los intestinos y provocar irritación gastrointestinal, hinchazón dolores y diarrea. Evita comer grandes cantidades de papaya, especialmente si está inmadura.
+            <Parrafos>
+            El consumo excesivo de papayas puede causar un efecto laxante poderoso en los intestinos y provocar irritación gastrointestinal, hinchazón dolores y diarrea. Evita comer grandes cantidades de papaya, especialmente si está inmadura.
             </Parrafos>
-                    <Subtitulos>
-                        COMBINACION DE ALIMENTOS
+            <Subtitulos>
+                    COMBINACION DE ALIMENTOS
            </Subtitulos>
-                    <Parrafos>
-                        Papaya con limon
+           <Parrafos>
+               Papaya con limon
            </Parrafos>
-                </Otros>
+        </Otros>
             </Detalle>
-
+           
         </CajaMayor>
     );
 }
