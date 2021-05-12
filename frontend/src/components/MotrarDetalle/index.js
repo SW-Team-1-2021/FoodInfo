@@ -1,23 +1,21 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 import { CajaMayor, Titulo, Imagen, Detalle, Subtitulos,  Otros, Parrafos } from './estilos';
 import papaya from '../../images/papaya.jpg';
 
-const mostrarDetalle = () => {
+let alimento = '';
 
-    var datos = {
-        categoria: "Frutas",
-        nombre: "Papaya",
-        segundonombre: "Papio",
-        procedencia: "Latinoamerica",
-        calorias: "56",
-        horainicio: "13:00",
-        horafinal: "20:00",
-        advertencia: "y El consumo excesivo de papayas puede causar un efecto laxante poderoso en los intestinos provocar irritación gastrointestinal, hinchazón dolores y diarrea. Evita comer grandes cantidades de papaya, especialmente si está inmadura.",
-        combinacion: "Papaya con limon",
-        imagen: "imagen.campo",
-        descripcion: "La papaya es una fruta tropical que se consume por su pulpa principalmente, que suele ser de color anaranjado y de sabor dulce y jugoso. ... La papaya es un alimento rico en agua y bajo en calorías, que aporta minerales como calcio, fósforo y hierro y vitaminas A y C. Contiene papaína, un enzima que favorece la digestión."
+const MostrarDetalle = props => {
+    
+    const location = useLocation();
+    const [food, setFood] = useState({});
+    
+    
+    useEffect(() => {
+        alimento = location.state ? location.state.dato : alimento;
+        setFood(alimento);
+     }, [location]);
 
-    };
     return (
         <CajaMayor>
             <Titulo>
@@ -26,55 +24,55 @@ const mostrarDetalle = () => {
             <Imagen>
                 <img src={papaya} height="280px" width="280px" alt="" />
                 <br></br>
-                <h4 align="center"><b>{datos.nombre}</b></h4>
+                <h4 align="center"><b>{food.nombre}</b></h4>
 
             </Imagen>
             <Detalle>
                 <Parrafos>
-                  {datos.descripcion}
+                  {food.descripcion}
                 </Parrafos>
                <Otros>
                 <Subtitulos>
                   Nombre Opcional
                 </Subtitulos> 
                 <Parrafos>
-                  {datos.segundonombre}
+                  {food.segundonombre}
                 </Parrafos>  
                <Subtitulos>        
                     CATEGORIA
               </Subtitulos>
               <Parrafos>
-                  {datos.categoria}
+                  {food.categoria}
               </Parrafos>
               <Subtitulos>
                    PROCEDENCIA
               </Subtitulos>
               <Parrafos>
-                  {datos.procedencia}
+                  {food.procedencia}
               </Parrafos>
               <Subtitulos>
                    CALORIAS
               </Subtitulos>
               <Parrafos>
-                  {datos.calorias}
+                  {food.calorias}
               </Parrafos>
             <Subtitulos>
                     HORARIOS DE CONSUMO
             </Subtitulos>
             <Parrafos>
-                {datos.horainicio}-{datos.horafinal}
+                {food.horainicio}-{food.horafinal}
             </Parrafos>
                 <Subtitulos>
                     ADVERTENCIAS
               </Subtitulos>
             <Parrafos>
-              {datos.advertencia}
+              {food.advertencia}
             </Parrafos>
             <Subtitulos>
                     COMBINACION DE ALIMENTOS
            </Subtitulos>
            <Parrafos>
-               {datos.combinacion}
+               {food.combinacion}
            </Parrafos>
         </Otros>
             </Detalle>
@@ -82,4 +80,4 @@ const mostrarDetalle = () => {
         </CajaMayor>
     );
 }
-export default mostrarDetalle;
+export default MostrarDetalle;
