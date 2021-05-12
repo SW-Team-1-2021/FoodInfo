@@ -24,7 +24,7 @@ const mostrarDetalle = () => {
                 <h1 align="center">DETALLE DEL ALIMENTO</h1>
             </Titulo>
             <Imagen>
-                <img src={papaya} height="300px" width="300px" alt="" />
+                <img src={papaya} height="280px" width="280px" alt="" />
                 <br></br>
                 <h4 align="center"><b>{datos.nombre}</b></h4>
 
