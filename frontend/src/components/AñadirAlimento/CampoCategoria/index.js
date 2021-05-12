@@ -4,7 +4,7 @@ import { Label, Select,/*Opction*/LeyendaError } from './../estilosFormmulario';
 const Categoria = ({ estado, cambiarEstado, leyendaError }) => {
 
   const onChange = (e) => {
-    cambiarEstado({ campo: e.target.value, valido: 'true' })
+    cambiarEstado({ campo: e.target.value, valido: true })
 
 
   }
@@ -16,7 +16,7 @@ const Categoria = ({ estado, cambiarEstado, leyendaError }) => {
       <Label valido={estado.valido} >*Categoria</Label>
 
       <Select name="categorias" id="categoria"
-        required
+        //required
         value={estado.campo}
         onChange={onChange}
         valido={estado.valido}
