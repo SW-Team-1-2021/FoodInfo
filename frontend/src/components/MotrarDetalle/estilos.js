@@ -14,7 +14,7 @@ const CajaMayor = styled.div`
    b{
     text-align: left;
    }
-   @media only screen and (max-width:600px){
+   @media only screen and (max-width:800px){
       grid-column: 1 /-1;
   }
 
@@ -26,7 +26,7 @@ const Titulo = styled.div`
   h1{
     text-transform: uppercase;
   }
-  @media only screen and (max-width:600px){
+  @media only screen and (max-width:800px){
     grid-column: 1 / -1;
   }
 `
@@ -44,7 +44,7 @@ const Imagen = styled.div`
     width: 80%;
     
     }
-    @media only screen and (max-width:600px){
+    @media only screen and (max-width:800px){
       grid-column: 1 / -1;
     }
 
@@ -54,8 +54,10 @@ const Detalle = styled.div`
    display:grid;
    grid-column: span 2;
    grid-gap:50px;
-   @media only screen and (max-width:600px){
+
+   @media only screen and (max-width:800px){
     grid-column: 1 / -1;
+    margin:35px;
   }
 `
 const Parrafos = styled.div`
@@ -67,7 +69,7 @@ const Otros = styled.div`
    display:grid;
    grid-template-columns: repeat(2, auto);
    column-gap:40px;
-  @media only screen and (max-width:600px){
+  @media only screen and (max-width:800px){
       column-gap:0%;
   }
 `
