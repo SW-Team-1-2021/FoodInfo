@@ -26,9 +26,6 @@ const Titulo = styled.div`
   h1{
     text-transform: uppercase;
   }
-  @media only screen and (max-width:600px){
-      
-  }
 `
 
 const Imagen = styled.div`
@@ -50,7 +47,9 @@ const Detalle = styled.div`
    display:grid;
    grid-column: span 2;
    grid-gap:50px;
-  
+  @media only screen and (max-width:600px){
+      margin: 20px;
+  }
 `
 const Parrafos = styled.div`
   padding: 0 10px 0 10px;
