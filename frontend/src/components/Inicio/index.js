@@ -5,7 +5,7 @@ import ComponentBuscador from "../Buscador";
 import "./style.css";
 import { Categorias } from "./Categorias";
 
-const URL = "http://localhost:8082/api/food";
+const URL = "/api/food";
 
 function Inicio() {
   let history = useHistory();
