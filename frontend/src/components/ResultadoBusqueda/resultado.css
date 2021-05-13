@@ -27,11 +27,12 @@
 }
 
 .card-body{
-    padding: 0.5rem !important;
+    padding: 0.4rem !important;
 }
 
 .card-title{
     color: #000000;
+    
 }
 
 .row{
