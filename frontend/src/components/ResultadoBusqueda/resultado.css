@@ -49,3 +49,18 @@
     color: #000000;
     text-decoration-color: transparent !important; 
 }
+
+.contMensaje{
+    display: flex;
+    min-height: 50vh;
+}
+
+.mensaje{
+    color: #801818;
+    /* background-color: rgba(235, 227, 226, 0.4); */
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

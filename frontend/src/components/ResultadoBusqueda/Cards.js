@@ -29,8 +29,8 @@ function Cards(props) {
                         </div>
 
                     )) :
-                    <div>
-                        no hay nada
+                    <div className="contMensaje">
+                        <h3 className="mensaje">Alimento no encontrado</h3>
                     </div>
                 }
             </div>
