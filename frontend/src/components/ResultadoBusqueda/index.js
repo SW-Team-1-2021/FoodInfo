@@ -7,36 +7,32 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const URL = 'http://localhost:8082/api/food';
 
-export default function Index() {
-    const accionBuscar = (texto) => {
-        alert(texto);
-      };
-
+export default function Index(props) {
     const [foods, setFoods] = useState([]);
 
-function busquedadireccion(text) {
-    axios.get(URL).then((resultado)=>{
-      setFoods(resultado.data)
-    })
-
-
-}
-    useEffect(() => {
-        axios.get(URL,{
-            params: {
-                //name: 'PLATANO',
-                //category: 'fruta'
-            }
-        }).then((res) => {
-          setFoods(res.data);
-        });
-    }, []);
+    const accionBuscar = (texto) => {
+        if(texto.trim().length > 0) {
+            axios.get(URL,{
+                params: {
+                    name: texto,
+    
+                }
+            }).then((res) => {
+              setFoods(res.data);
+            }).catch(error => {
+                console.log(error);
+            });
+        }
+        else {
+            setFoods([]);
+        }
+      };
 
     return (
         <div className="resultado">
             <h1 align="center">RESULTADO DE BÚSQUEDA</h1>
             <ComponentBuscador accionBuscar={accionBuscar} />
-            <Cards/>
+            <Cards foods = {foods}/>
         </div>
         
     )

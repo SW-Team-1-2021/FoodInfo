@@ -14,7 +14,7 @@ const MostrarDetalle = props => {
     useEffect(() => {
         alimento = location.state ? location.state.dato : alimento;
         setFood(alimento);
-     }, [location]);
+    }, [location]);
 
     return (
         <CajaMayor>
