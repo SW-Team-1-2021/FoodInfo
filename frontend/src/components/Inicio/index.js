@@ -1,17 +1,28 @@
-import React from 'react';
+import React from "react";
+import ComponentBuscador from "../Buscador";
 import "./style.css";
+import { Categorias } from "./Categorias";
 
 function Inicio() {
-    return (
-        <div className="container-title">
-            <h1 className="titulo-catalogo" align='center'><strong>CATÁLOGO DE ALIMENTOS</strong></h1>
-            <h3 className="subtitulo" align='center'>
-                Tipos de alimentos: descubre las
-                distintas categorias y los
-                nutrientes que aportan
-            </h3>
-        </div>
-    );
+  const accionBuscar = (text) => {
+    alert(text);
+  };
+
+  return (
+    <div>
+      <div className="container-title">
+          <h1 className="titulo-catalogo" align="center">
+            <strong>CATÁLOGO DE ALIMENTOS</strong>
+          </h1>
+          <ComponentBuscador accionBuscar={accionBuscar} />
+      </div>
+      <div style={{ height: "50px" }}></div>
+      <h2 className="categorias" align="center">
+        CATEGORIAS
+      </h2>
+      <Categorias />
+    </div>
+  );
 }
 
 export default Inicio;
