@@ -1,4 +1,3 @@
-import "./alimentos.css";
 import React, { useEffect, useState } from "react";
 import { Table } from "./Table";
 import axios from "axios";
@@ -16,7 +15,7 @@ export default function Index() {
   }, []);
 
   return (
-    <div className="index">
+    <div>
       <h1 align="center">
         <strong>LISTA DE ALIMENTOS</strong>
       </h1>
