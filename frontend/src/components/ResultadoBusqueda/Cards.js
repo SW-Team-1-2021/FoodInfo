@@ -436,7 +436,7 @@ function Cards() {
             <div className="row">
                 {
                     cards.map(card => (
-                        <div className="col-md-3" key={card.id} >
+                        <div className="contenedor" key={card.id} >
                             <Card title={card.title} imageSource={card.image} click={() => redirect(card)}/>
                         </div>
 
