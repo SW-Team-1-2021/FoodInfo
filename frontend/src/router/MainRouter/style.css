@@ -11,6 +11,6 @@
 }
 
 .container-image.alimentos, .container-image.anadir-alimento {
-    background-image: url(../../images/detalle.jpeg);
     overflow: auto;
+    background-image: url(../../images/fondo-alimentos-e-anadir-alimento.png);
 }

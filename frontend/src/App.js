@@ -1,7 +1,6 @@
 import MainRouter from './router/MainRouter';
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "@fontsource/comic-neue"
 
 function App() {
   return (
