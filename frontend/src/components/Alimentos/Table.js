@@ -1,3 +1,4 @@
+import "./alimentos.css";
 import React from "react";
 import MaterialTable from "material-table";
 
@@ -22,7 +23,7 @@ export const Table = (props) => {
   ];
 
   return (
-    <div className="tablaMT">
+    <div className="tabla">
       <MaterialTable
         data={props.data}
         columns={columns}
