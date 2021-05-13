@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import { useLocation } from "react-router-dom";
 import Cards from './Cards'
 import './resultado.css'
 import ComponentBuscador from "../Buscador";
@@ -7,8 +8,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const URL = 'http://localhost:8082/api/food';
 
-export default function Index(props) {
+export default function Index() {
     const [foods, setFoods] = useState([]);
+
+    const location = useLocation();
+    
+    useEffect(() => {
+        setFoods(location.state.alimentos);
+    }, [location]);
 
     const accionBuscar = (texto) => {
         if(texto.trim().length > 0) {
