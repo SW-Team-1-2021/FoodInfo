@@ -6,10 +6,17 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const URL = 'http://localhost:8082/api/food';
 
-export default function Index() {
+export default function Index() {g
 
     const [foods, setFoods] = useState([]);
 
+function busquedadireccion(text) {
+    axios.get(URL).then((resultado)=>{
+      setFoods(resultado.data)
+    })
+
+
+}
     useEffect(() => {
         axios.get(URL,{
             params: {
@@ -28,4 +35,6 @@ export default function Index() {
         </div>
         
     )
+    }
+
 }
