@@ -4,7 +4,7 @@
     /* height: auto; */
     background-image: url(../../images/fondo3.png);
     background-size: inherit;
-    overflow: overlay;
+    overflow: auto;
     color: #000000;
 }
 .resultado h1{
@@ -32,11 +32,12 @@
 }
 
 .card-body{
-    padding: 10px !important;
+    padding: 0.4rem !important;
 }
 
 .card-title{
     color: #000000;
+    
 }
 
 .row{
