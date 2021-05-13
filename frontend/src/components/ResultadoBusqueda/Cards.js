@@ -11,27 +11,27 @@ const cards = [
     },
     {
         id: 1,
-        title: "Manzana Verde",
+        title: "Carambola",
         image: imagen
     },
     {
         id: 1,
-        title: "Manzana Verde",
+        title: "Plátano",
         image: imagen
     },
     {
         id: 1,
-        title: "Manzana Verde",
+        title: "Limón",
         image: imagen
     },
     {
         id: 1,
-        title: "Manzana Verde",
+        title: "Mandarina",
         image: imagen
     },
     {
         id: 1,
-        title: "Manzana Verde",
+        title: "Naranja",
         image: imagen
     },
     {
