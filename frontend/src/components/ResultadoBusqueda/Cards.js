@@ -48,7 +48,7 @@ const cards = [
         id: 1,
         title: "Manzana Verde",
         image: imagen
-    },{
+    }, {
         id: 1,
         title: "Manzana Verde",
         image: imagen
@@ -92,140 +92,7 @@ const cards = [
         id: 1,
         title: "Manzana Verde",
         image: imagen
-    },{
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },{
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },
-    {
-        id: 1,
-        title: "Manzana Verde",
-        image: imagen
-    },{
+    }, {
         id: 1,
         title: "Manzana Verde",
         image: imagen
@@ -314,7 +181,7 @@ const cards = [
         id: 1,
         title: "Manzana Verde",
         image: imagen
-    },{
+    }, {
         id: 1,
         title: "Manzana Verde",
         image: imagen
@@ -358,7 +225,140 @@ const cards = [
         id: 1,
         title: "Manzana Verde",
         image: imagen
-    },{
+    }, {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    }, {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    },
+    {
+        id: 1,
+        title: "Manzana Verde",
+        image: imagen
+    }, {
         id: 1,
         title: "Manzana Verde",
         image: imagen
@@ -427,8 +427,8 @@ function Cards() {
         }
 
         history.push({
-            pathname: '/ui/mostrar', 
-            state:{ dato }
+            pathname: '/ui/mostrar',
+            state: { dato }
         });
     }
     return (
@@ -436,11 +436,9 @@ function Cards() {
             <div className="row">
                 {
                     cards.map(card => (
-                        <a href = "#" className="link" onClick={() => redirect(card)}>
-                            <div className="col-md-3" key={card.id} >
-                                <Card title={card.title} imageSource={card.image}/>
-                            </div>
-                        </a>
+                        <div className="col-md-3" key={card.id} >
+                            <Card title={card.title} imageSource={card.image} click={() => redirect(card)}/>
+                        </div>
 
                     ))
                 }
