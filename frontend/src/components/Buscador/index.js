@@ -8,8 +8,8 @@ function ComponentBuscador({ accionBuscar }) {
 
     const accionEnter = (event) => {
         if (event.keyCode === 13) {
-            console.log(busqueda);
-            accionBuscar(event.target.value)
+            cambiarBusqueda(event.target.value);
+            accionBuscar(event.target.value);
         }
     }
 
@@ -17,7 +17,7 @@ function ComponentBuscador({ accionBuscar }) {
         <div className="input-container" >
             <span className="material-icons icon">search</span>
             <ComponenteInput className="input-field" type="text" placeholder="Buscar" pattern={SOLO_LETRAS_ESPACIOS_ACEPTOS}
-                nuMax={80} onKeyDown={(e) => accionEnter(e)} estado={busqueda} cambiarEstado={cambiarBusqueda} />
+                nuMax={80} onKeyDown={(e) => accionEnter(e)} estado={busqueda} cambiarEstado={cambiarBusqueda}/>
         </div>
     );
 }
