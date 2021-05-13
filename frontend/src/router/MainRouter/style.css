@@ -11,5 +11,11 @@
 }
 
 .container-image.alimentos, .container-image.anadir-alimento {
+    overflow: auto;
     background-image: url(../../images/fondo-alimentos-e-anadir-alimento.png);
+}
+
+.container-image.alimentos, .container-image.mostrar-detalle {
+    overflow: auto;
+    background-image: url(../../images/fondo3.png);
 }
