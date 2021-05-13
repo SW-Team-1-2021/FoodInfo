@@ -34,7 +34,7 @@ function MainRouter() {
                     </div>
                 </Route>
                 <Route path='/ui/mostrar'>
-                    <div className='container-image anadir-alimento'>
+                    <div className='container-image mostrar-detalle'>
                         <MostrarDetalle />
                     </div>
                 </Route>

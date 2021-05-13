@@ -61,9 +61,12 @@ const Detalle = styled.div`
   }
 `
 const Parrafos = styled.div`
-  padding: 0 10px 0 10px;
+   padding: 0 10px 0 10px;
    font-size: 16px;
    font-weight: bold;
+
+   text-transform: lowercase;
+
 `
 const Otros = styled.div`
    display:grid;
