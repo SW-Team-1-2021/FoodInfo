@@ -1,7 +1,6 @@
 import React, {useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 import { CajaMayor, Titulo, Imagen, Detalle, Subtitulos,  Otros, Parrafos } from './estilos';
-import papaya from '../../images/papaya.jpg';
 
 let alimento = '';
 
@@ -12,7 +11,7 @@ const MostrarDetalle = props => {
     
     
     useEffect(() => {
-        alimento = location.state ? location.state.dato : alimento;
+        alimento = location.state ? location.state.food : alimento;
         setFood(alimento);
     }, [location]);
 
@@ -22,7 +21,7 @@ const MostrarDetalle = props => {
                 <h1 align="center">DETALLE DEL ALIMENTO</h1>
             </Titulo>
             <Imagen>
-                <img src={papaya} height="280px" width="280px" alt="" />
+                <img src={food.imagen} height="280px" width="280px" alt="" />
                 <br></br>
                 <h4 align="center"><b>{food.nombre}</b></h4>
 
