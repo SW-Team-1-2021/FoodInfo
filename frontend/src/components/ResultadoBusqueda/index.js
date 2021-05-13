@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const URL = 'http://localhost:8082/api/food';
 
-export default function Index() {g
+export default function Index() {
 
     const [foods, setFoods] = useState([]);
 
@@ -35,6 +35,4 @@ function busquedadireccion(text) {
         </div>
         
     )
-    }
-
 }
