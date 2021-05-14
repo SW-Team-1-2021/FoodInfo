@@ -1,24 +1,38 @@
 import React, { useState } from 'react';
+import { Fragment } from 'react';
 import ComponenteInput from '../AñadirAlimento/CampoInput';
 import './style.css';
 
 function ComponentBuscador({ accionBuscar }) {
-    const [busqueda, cambiarBusqueda] = useState({ campo: '', valido: null });
-    const SOLO_LETRAS_ESPACIOS_ACEPTOS = /^[A-zÀ-ú\s]+$/;
+    const [busqueda, cambiarBusqueda] = useState({ campo: '', validoExpReg: true });
+    const SOLO_LETRAS_ESPACIOS_ACENTOS = /^[A-zÀ-ú\s]+$/;
+
+    const ponerTexto = (value) => {
+        if (SOLO_LETRAS_ESPACIOS_ACENTOS.test(value.campo)) {
+            cambiarBusqueda({ ...value, validoExpReg: true });
+        } else {
+            cambiarBusqueda({ ...value, validoExpReg: false });
+        }
+    }
 
     const accionEnter = (event) => {
-        if (event.keyCode === 13) {
-            cambiarBusqueda(event.target.value);
-            accionBuscar(event.target.value);
+        const texto = event.target.value;
+        if (event.keyCode === 13 && texto) {
+            accionBuscar(texto);
         }
     }
 
     return (
-        <div className="input-container" >
-            <span className="material-icons icon">search</span>
-            <ComponenteInput className="input-field" type="text" placeholder="Buscar" pattern={SOLO_LETRAS_ESPACIOS_ACEPTOS}
-                nuMax={80} onKeyDown={(e) => accionEnter(e)} estado={busqueda} cambiarEstado={cambiarBusqueda}/>
-        </div>
+        <Fragment>
+            <div className="container">
+                <div className={`input-container`} >
+                    <span className={`material-icons icon ${!busqueda.validoExpReg && 'error-icon'}`}>search</span>
+                    <ComponenteInput className={`input-field ${!busqueda.validoExpReg && 'error-input-container'}`} type="text" placeholder="Buscar"
+                        nuMax={80} onKeyDown={(e) => accionEnter(e)} estado={busqueda} cambiarEstado={ponerTexto} />
+                </div>
+                {!busqueda.validoExpReg && <h6 className="error">Debe ser solo letras</h6>}
+            </div>
+        </Fragment>
     );
 }
 
