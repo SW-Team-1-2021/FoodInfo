@@ -27,7 +27,7 @@ const Categoria = ({ estado, cambiarEstado, leyendaError }) => {
         <option value="Verduras">Verduras</option>
         <option value="Carnes">Carnes</option>
         <option value="Cereales">Cereales</option>
-        <option value="Frutas Secos">Frutos Secos</option>
+        <option value="Frutos Secos">Frutos Secos</option>
         <option value="Legumbres">Legumbres</option>
 
       </Select>

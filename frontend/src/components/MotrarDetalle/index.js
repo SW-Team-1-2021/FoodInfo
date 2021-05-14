@@ -5,11 +5,11 @@ import { CajaMayor, Titulo, Imagen, Detalle, Subtitulos,  Otros, Parrafos } from
 let alimento = '';
 
 const MostrarDetalle = props => {
-    
+
     const location = useLocation();
     const [food, setFood] = useState({});
-    
-    
+
+
     useEffect(() => {
         alimento = location.state ? location.state.food : alimento;
         setFood(alimento);
@@ -33,11 +33,11 @@ const MostrarDetalle = props => {
                <Otros>
                 <Subtitulos>
                   Nombre Opcional
-                </Subtitulos> 
+                </Subtitulos>
                 <Parrafos>
                   {food.segundonombre}
-                </Parrafos>  
-               <Subtitulos>        
+                </Parrafos>
+               <Subtitulos>
                     CATEGORIA
               </Subtitulos>
               <Parrafos>
@@ -75,7 +75,7 @@ const MostrarDetalle = props => {
            </Parrafos>
         </Otros>
             </Detalle>
-           
+
         </CajaMayor>
     );
 }

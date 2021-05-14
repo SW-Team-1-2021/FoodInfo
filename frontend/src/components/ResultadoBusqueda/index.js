@@ -6,13 +6,13 @@ import './resultado.css'
 import ComponentBuscador from "../Buscador";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const URL = 'http://localhost:8082/api/food';
+const URL = '/api/food';
 
 export default function Index() {
     const [foods, setFoods] = useState([]);
 
     const location = useLocation();
-    
+
     useEffect(() => {
         setFoods(location.state.alimentos);
     }, [location]);
@@ -22,7 +22,7 @@ export default function Index() {
             axios.get(URL,{
                 params: {
                     name: texto,
-    
+
                 }
             }).then((res) => {
               setFoods(res.data);
@@ -41,6 +41,6 @@ export default function Index() {
             <ComponentBuscador accionBuscar={accionBuscar} />
             <Cards foods = {foods}/>
         </div>
-        
+
     )
 }
