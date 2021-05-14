@@ -42,14 +42,14 @@ function Inicio() {
   };
 
   return (
-    <div>
+    <div style={{position:'relative', top:'60px'}}>
       <div className="container-title">
         <h1 className="titulo-catalogo" align="center">
           <strong>CATÁLOGO DE ALIMENTOS</strong>
         </h1>
         <ComponentBuscador accionBuscar={accionBuscar} />
       </div>
-      <div style={{ height: "50px" }}></div>
+      <div style={{ height: "20px" }}></div>
       <h2 className="categorias" align="center">
         CATEGORIAS
       </h2>
