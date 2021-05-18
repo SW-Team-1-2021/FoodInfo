@@ -59,6 +59,10 @@ const Detalle = styled.div`
     grid-column: 1 / -1;
     margin:35px;
   }
+  @media only screen and (min-width: 800px) and (max-width:1000px){
+    column-gap:0%;
+    margin-right: 40px;
+  }
 `
 const Parrafos = styled.div`
    padding: 0 10px 0 10px;
@@ -66,7 +70,7 @@ const Parrafos = styled.div`
    font-weight: bold;
 
    text-transform: lowercase;
-
+   
 `
 const Otros = styled.div`
    display:grid;
