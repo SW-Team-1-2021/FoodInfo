@@ -4,8 +4,7 @@ import axios from "axios";
 import ComponentBuscador from "../Buscador";
 import "./style.css";
 import { Categorias } from "./Categorias";
-
-const URL = "/api/food";
+import { URL } from '../../global/const';
 
 function Inicio() {
   let history = useHistory();

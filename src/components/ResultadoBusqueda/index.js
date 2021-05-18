@@ -5,8 +5,7 @@ import Cards from './Cards'
 import './resultado.css'
 import ComponentBuscador from "../Buscador";
 import 'bootstrap/dist/css/bootstrap.min.css'
-
-const URL = '/api/food';
+import { URL } from '../../global/const';
 
 export default function Index() {
     const [foods, setFoods] = useState([]);
