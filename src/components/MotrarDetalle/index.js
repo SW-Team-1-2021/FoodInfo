@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-import { useLocation } from "react-router-dom";
+import { useLocation, useHistory } from "react-router-dom";
 import { CajaMayor, Titulo, Imagen, Detalle, Subtitulos,  Otros, Parrafos } from './estilos';
 
 let alimento = '';
@@ -8,11 +8,19 @@ const MostrarDetalle = props => {
 
     const location = useLocation();
     const [food, setFood] = useState({});
+    let history = useHistory();
 
 
     useEffect(() => {
         alimento = location.state ? location.state.food : alimento;
-        setFood(alimento);
+        if(alimento) {
+            setFood(alimento);
+        }
+        else {
+            history.push({
+                pathname: "/ui/inicio"
+            });
+        }
     }, [location]);
 
     return (
