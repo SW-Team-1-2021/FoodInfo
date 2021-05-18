@@ -5,7 +5,7 @@ import './style.css';
 
 function ComponentBuscador({ accionBuscar }) {
     const [busqueda, cambiarBusqueda] = useState({ campo: '', validoExpReg: true });
-    const SOLO_LETRAS_ESPACIOS_ACENTOS = /^[A-zÀ-ú\s]+$/;
+    const SOLO_LETRAS_ESPACIOS_ACENTOS = /^[A-zÀ-ú\s]*$/;
 
     const ponerTexto = (value) => {
         if (SOLO_LETRAS_ESPACIOS_ACENTOS.test(value.campo)) {
