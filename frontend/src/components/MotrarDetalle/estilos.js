@@ -59,6 +59,10 @@ const Detalle = styled.div`
     grid-column: 1 / -1;
     margin:35px;
   }
+  @media only screen and (min-width:801px) and (max-width:1000px){
+    column-gap:0%;
+    margin:40px;
+  }
 `
 const Parrafos = styled.div`
    padding: 0 10px 0 10px;
