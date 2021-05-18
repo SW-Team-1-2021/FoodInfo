@@ -9,8 +9,8 @@ import Imagen from '../AñadirAlimento/CampoIMagen/index';
 import Hora from '../AñadirAlimento/CampoHorario/index';
 import Categoria from '../AñadirAlimento/CampoCategoria/index';
 import './style.css'
+import { URL } from '../../global/const';
 
-const URL = `/api/food`;
 const MSG_ERROR_NAME = 'El nombre del alimento ya se encuentra registrado';
 
 var msg = 'Por favor rellena el formulario correctamente.';
