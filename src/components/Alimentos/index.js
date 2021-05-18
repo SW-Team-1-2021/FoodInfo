@@ -8,7 +8,6 @@ export default function Index() {
 
   useEffect(() => {
     axios.get(URL).then((res) => {
-      console.log(res);
       setData(res.data);
     });
   }, []);
