@@ -85,8 +85,6 @@ const AñadirAlimento = () => {
 
 			axios.post(URL, datos)
 				.then(res => {
-					console.log(res);
-					console.log(res.data);
 					cambiarFormularioValido(true);
 					cambiarNombre({ campo: '', valido: null });
 					cambiarOpcional({ campo: '', valido: null });

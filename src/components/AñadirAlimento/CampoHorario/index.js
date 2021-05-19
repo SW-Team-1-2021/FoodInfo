@@ -12,8 +12,6 @@ const horario =({mensajeError,cambiarEstadoDe,estadoDe,cambiarEstadoA,estadoA})=
         cambiarEstadoA({campo:e.target.value,valido:true})
 
     }
-    /*console.log(estadoDe.campo,estadoA.campo);
-    console.log(estadoDe.valido,estadoA.valido);*/
 
     return(
        <div> 

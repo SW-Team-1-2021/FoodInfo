@@ -1,18 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { useLocation } from "react-router-dom";
-import { CajaMayor, Titulo, Imagen, Detalle, Subtitulos, Otros, Parrafos } from './estilos';
+import React, {useState, useEffect } from 'react';
+import axios from "axios";
+import { useLocation, useHistory } from "react-router-dom";
+import { CajaMayor, Titulo, Imagen, Detalle, Subtitulos,  Otros, Parrafos } from './estilos';
+import { URL } from '../../global/const';
+
 
 let alimento = '';
+function useQuery() {
+    return new URLSearchParams(useLocation().search);
+}
 
 const MostrarDetalle = props => {
-
+    const query = useQuery();
     const location = useLocation();
     const [food, setFood] = useState({});
+    let history = useHistory();
 
+    const redirect  = () => {
+        history.push({
+            pathname: "/ui/inicio"
+        });
+    }
 
     useEffect(() => {
-        alimento = location.state ? location.state.food : alimento;
-        setFood(alimento);
+        const id = query.get('food');
+        const URLID = `${URL}/${id}`;
+        if(id) {
+            axios.get(URLID)
+            .then((res) => {
+              alimento = res.data;
+              if(alimento) {
+                  setFood(alimento)
+              }
+              else {
+                  redirect();
+              }
+            }).catch(error => {
+                console.log(error);
+                redirect();
+            });
+        } else {
+            redirect();
+        }
     }, [location]);
 
     return (
