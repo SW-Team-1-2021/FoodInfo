@@ -15,7 +15,7 @@ function Cards(props) {
     const redirect = (food) => {
         history.push({
             pathname: '/ui/mostrar',
-            state: { food }
+            search: `?food=${food._id}`
         });
     }
     return (
