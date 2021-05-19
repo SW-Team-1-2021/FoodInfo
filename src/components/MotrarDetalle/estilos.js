@@ -17,7 +17,10 @@ const CajaMayor = styled.div`
    @media only screen and (max-width:800px){
       grid-column: 1 /-1;
   }
-
+  @media only screen and (min-width: 800px) and (max-width:1000px){
+    column-gap:0%;
+    margin-right: 40px;
+  }
 `
 const Titulo = styled.div`
   height:60px;
@@ -59,9 +62,9 @@ const Detalle = styled.div`
     grid-column: 1 / -1;
     margin:35px;
   }
-  @media only screen and (min-width: 800px) and (max-width:1000px){
+  @media only screen and (min-device-width: 801px){
     column-gap:0%;
-    margin-right: 40px;
+    margin-right: 50px;
   }
 `
 const Parrafos = styled.div`

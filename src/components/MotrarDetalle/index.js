@@ -1,6 +1,6 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
-import { CajaMayor, Titulo, Imagen, Detalle, Subtitulos,  Otros, Parrafos } from './estilos';
+import { CajaMayor, Titulo, Imagen, Detalle, Subtitulos, Otros, Parrafos } from './estilos';
 
 let alimento = '';
 
@@ -28,52 +28,52 @@ const MostrarDetalle = props => {
             </Imagen>
             <Detalle>
                 <Parrafos>
-                  {food.descripcion}
+                    {food.descripcion}
                 </Parrafos>
-               <Otros>
-                <Subtitulos>
-                  Nombre Opcional
+                <Otros>
+                    <Subtitulos>
+                        Nombre Opcional
                 </Subtitulos>
-                <Parrafos>
-                  {food.segundonombre}
-                </Parrafos>
-               <Subtitulos>
-                    CATEGORIA
+                    <Parrafos>
+                        {food.segundonombre}
+                    </Parrafos>
+                    <Subtitulos>
+                        CATEGORIA
               </Subtitulos>
-              <Parrafos>
-                  {food.categoria}
-              </Parrafos>
-              <Subtitulos>
-                   PROCEDENCIA
+                    <Parrafos>
+                        {food.categoria}
+                    </Parrafos>
+                    <Subtitulos>
+                        PROCEDENCIA
               </Subtitulos>
-              <Parrafos>
-                  {food.procedencia}
-              </Parrafos>
-              <Subtitulos>
-                   CALORIAS
+                    <Parrafos>
+                        {food.procedencia}
+                    </Parrafos>
+                    <Subtitulos>
+                        CALORIAS
               </Subtitulos>
-              <Parrafos>
-                  {food.calorias}
-              </Parrafos>
-            <Subtitulos>
-                    HORARIOS DE CONSUMO
+                    <Parrafos>
+                        {food.calorias}
+                    </Parrafos>
+                    <Subtitulos>
+                        HORARIOS DE CONSUMO
             </Subtitulos>
-            <Parrafos>
-                {food.horainicio}-{food.horafinal}
-            </Parrafos>
-                <Subtitulos>
-                    ADVERTENCIAS
+                    <Parrafos>
+                        {food.horainicio}-{food.horafinal}
+                    </Parrafos>
+                    <Subtitulos>
+                        ADVERTENCIAS
               </Subtitulos>
-            <Parrafos>
-              {food.advertencia}
-            </Parrafos>
-            <Subtitulos>
-                    COMBINACION DE ALIMENTOS
+                    <Parrafos>
+                        {food.advertencia}
+                    </Parrafos>
+                    <Subtitulos>
+                        COMBINACION DE ALIMENTOS
            </Subtitulos>
-           <Parrafos>
-               {food.combinacion}
-           </Parrafos>
-        </Otros>
+                    <Parrafos>
+                        {food.combinacion}
+                    </Parrafos>
+                </Otros>
             </Detalle>
 
         </CajaMayor>
