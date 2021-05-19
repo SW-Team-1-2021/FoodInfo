@@ -42,17 +42,6 @@ const MostrarDetalle = props => {
         } else {
             redirect();
         }
-
-
-        // alimento = location.state ? location.state.food : alimento;
-        // if(alimento) {
-        //     setFood(alimento);
-        // }
-        // else {
-        //     history.push({
-        //         pathname: "/ui/inicio"
-        //     });
-        // }
     }, [location]);
 
     return (
@@ -68,52 +57,52 @@ const MostrarDetalle = props => {
             </Imagen>
             <Detalle>
                 <Parrafos>
-                  {food.descripcion}
+                    {food.descripcion}
                 </Parrafos>
-               <Otros>
-                <Subtitulos>
-                  Nombre Opcional
+                <Otros>
+                    <Subtitulos>
+                        Nombre Opcional
                 </Subtitulos>
-                <Parrafos>
-                  {food.segundonombre}
-                </Parrafos>
-               <Subtitulos>
-                    CATEGORIA
+                    <Parrafos>
+                        {food.segundonombre}
+                    </Parrafos>
+                    <Subtitulos>
+                        CATEGORIA
               </Subtitulos>
-              <Parrafos>
-                  {food.categoria}
-              </Parrafos>
-              <Subtitulos>
-                   PROCEDENCIA
+                    <Parrafos>
+                        {food.categoria}
+                    </Parrafos>
+                    <Subtitulos>
+                        PROCEDENCIA
               </Subtitulos>
-              <Parrafos>
-                  {food.procedencia}
-              </Parrafos>
-              <Subtitulos>
-                   CALORIAS
+                    <Parrafos>
+                        {food.procedencia}
+                    </Parrafos>
+                    <Subtitulos>
+                        CALORIAS
               </Subtitulos>
-              <Parrafos>
-                  {food.calorias}
-              </Parrafos>
-            <Subtitulos>
-                    HORARIOS DE CONSUMO
+                    <Parrafos>
+                        {food.calorias}
+                    </Parrafos>
+                    <Subtitulos>
+                        HORARIOS DE CONSUMO
             </Subtitulos>
-            <Parrafos>
-                {food.horainicio}-{food.horafinal}
-            </Parrafos>
-                <Subtitulos>
-                    ADVERTENCIAS
+                    <Parrafos>
+                        {food.horainicio}-{food.horafinal}
+                    </Parrafos>
+                    <Subtitulos>
+                        ADVERTENCIAS
               </Subtitulos>
-            <Parrafos>
-              {food.advertencia}
-            </Parrafos>
-            <Subtitulos>
-                    COMBINACION DE ALIMENTOS
+                    <Parrafos>
+                        {food.advertencia}
+                    </Parrafos>
+                    <Subtitulos>
+                        COMBINACION DE ALIMENTOS
            </Subtitulos>
-           <Parrafos>
-               {food.combinacion}
-           </Parrafos>
-        </Otros>
+                    <Parrafos>
+                        {food.combinacion}
+                    </Parrafos>
+                </Otros>
             </Detalle>
 
         </CajaMayor>
