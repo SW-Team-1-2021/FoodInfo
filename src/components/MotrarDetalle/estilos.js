@@ -45,7 +45,7 @@ const Imagen = styled.div`
     margin:auto;
     max-width: 100%;
     width: 80%;
-    
+    border: 4px solid #000000;
     }
     @media only screen and (max-width:800px){
       grid-column: 1 / -1;
