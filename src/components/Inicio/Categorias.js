@@ -12,37 +12,31 @@ export const Categorias = ({ accionBuscarCategoria }) => {
     <div className="catdiv">
       <Boton
         redirigir={accionBuscarCategoria}
-        className="borde"
         img={img_frutas}
         alt="Frutas"
       />
       <Boton
         redirigir={accionBuscarCategoria}
-        className="borde"
         img={img_verduras}
         alt="Verduras"
       />
       <Boton
         redirigir={accionBuscarCategoria}
-        className="borde"
         img={img_carnes}
         alt="Carnes"
       />
       <Boton
         redirigir={accionBuscarCategoria}
-        className="borde"
         img={img_cereales}
         alt="Cereales"
       />
       <Boton
         redirigir={accionBuscarCategoria}
-        className="borde"
         img={img_secos}
         alt="Frutos Secos"
       />
       <Boton
         redirigir={accionBuscarCategoria}
-        className="borde"
         img={img_legumbres}
         alt="Legumbres"
       />
