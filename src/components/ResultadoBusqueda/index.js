@@ -60,7 +60,7 @@ export default function Index() {
         <div className="contenedorRes">
             <h1 align="center"><strong>RESULTADO DE BÚSQUEDA</strong></h1>
             <div className="buscador">
-                <ComponentBuscador accionBuscar={accionBuscar} />
+                <ComponentBuscador accionBuscar={buscadorTexto} />
             </div>
             <div className="resultado">
                 <Cards foods={foods} />
