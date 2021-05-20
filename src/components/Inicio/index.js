@@ -22,11 +22,11 @@ function Inicio() {
       pathname: "/ui/resultados",
       search: `?${params}`
     });
-    
+
   };
 
   return (
-    <div style={{position:'relative', top:'30px'}}>
+    <div>
       <div className="container-title">
         <h1 className="titulo-catalogo" align="center">
           <strong>CATÁLOGO DE ALIMENTOS</strong>

@@ -1,4 +1,7 @@
 @media screen and (orientation: portrait) {
+.container-title{
+  padding-top: 35%;
+}
   .titulo-catalogo {
     margin: 0;
     color: #000000;
@@ -8,6 +11,9 @@
 }
 
 @media screen and (orientation: landscape) {
+.container-title{
+  padding-top: 12%;
+}
   .titulo-catalogo, .categorias {
     margin: 0;
     color: #000000;
@@ -15,7 +21,7 @@
     font-size: 4vw;
   }
 }
-
+/*
 @media screen and (min-width: 323px) {
   .container-image.inicio {
     display: flex;
@@ -33,16 +39,12 @@
     height: 100%;
   }
 }
-
-.container-title {
-  display: flex;
-  flex-direction: column;
-}
-
+*/
 .catdiv{
+  margin-left: 12%;
+  margin-right: 12%;
   display: grid;
   justify-items: center;
-  grid-column-gap: 4em;
   grid-row-gap: 1em;
   grid-template-columns: 1fr 1fr 1fr;
 }
