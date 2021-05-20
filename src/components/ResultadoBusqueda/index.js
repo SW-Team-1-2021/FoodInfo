@@ -57,10 +57,14 @@ export default function Index() {
     };
 
     return (
-        <div className="resultado">
+        <div className="contenedorRes">
             <h1 align="center"><strong>RESULTADO DE BÚSQUEDA</strong></h1>
-            <ComponentBuscador accionBuscar={buscadorTexto} />
-            <Cards foods = {foods}/>
+            <div className="buscador">
+                <ComponentBuscador accionBuscar={buscadorTexto} />
+            </div>
+            <div className="resultado">
+                <Cards foods={foods} />
+            </div>
         </div>
 
     )
