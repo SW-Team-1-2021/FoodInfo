@@ -1,29 +1,29 @@
 'use strict';
 
-const foodDB = require('./food.db');
+const administratorDB = require('./administrator.db');
 
 function save(data) {
-  return foodDB.save(data);
+  return administratorDB.save(data);
 }
 
 function getdata() {
-  return foodDB.getdata();
+  return administratorDB.getdata();
 }
 
 function getDataById(id) {
-  return foodDB.getDataById(id);
+  return administratorDB.getDataById(id);
 }
 
 function findByName(data) {
-  return foodDB.find({ nombre: data });
+  return administratorDB.find({ nombre: data });
 }
 
 function findByNameAndOptional(data) {
-  return foodDB.find({$or:[{ nombre: {'$regex': data,$options:'i'}}, {segundonombre: {'$regex': data,$options:'i'}}]});
+  return administratorDB.find({$or:[{ nombre: {'$regex': data,$options:'i'}}, {segundonombre: {'$regex': data,$options:'i'}}]});
 }
 
 function findByCategory(data) {
-  return foodDB.find({ categoria: {'$regex': data,$options:'i'} });
+  return administratorDB.find({ categoria: {'$regex': data,$options:'i'} });
 }
 module.exports = {
   save,

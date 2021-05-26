@@ -1,12 +1,13 @@
 'use strict';
 
 const express = require('express');
-const foodController = require('../food/food.controller');
+const administratorController = require('../administrator/administrator.controller');
 const middleware = require('../food/food.middleware');
 
 const router = express.Router();
 
 router
-  .post('/', middleware.schemaValidatorSavePut, foodController.saveFood);
+  .post('/', middleware.schemaValidatorSavePut,
+    administratorController.saveAdministrator);
 
 module.exports = router;

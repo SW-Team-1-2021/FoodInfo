@@ -1,6 +1,6 @@
 'use strict';
 
-const ajvSchemaValidator = require('./food.schema-validator');
+const ajvSchemaValidator = require('./administrator.schema-validator');
 const errorBuilder = require('../commons/error-builder');
 
 async function schemaValidatorSavePut(req, res, next) {

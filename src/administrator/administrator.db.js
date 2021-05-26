@@ -1,17 +1,17 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const schema = require('./food.schema');
+const schema = require('./administrator.schema');
 const errorBuilder = require('../commons/error-builder');
 
-const DOCUMENT = 'food';
+const DOCUMENT = 'administrator';
 const MONGOOSE = 'mongoose';
 
-let food = mongoose.model(DOCUMENT, schema.foodSchema);
+let administrator = mongoose.model(DOCUMENT, schema.administratorSchema);
 
 async function save(data) {
   try {
-    return await food.create(data);
+    return await administrator.create(data);
   } catch (error) {
     console.log(MONGOOSE);
     throw error;
@@ -20,7 +20,7 @@ async function save(data) {
 
 async function getdata() {
   try {
-    return await food.find();
+    return await administrator.find();
   } catch (error) {
     console.log(MONGOOSE);
     throw error;
@@ -29,7 +29,7 @@ async function getdata() {
 
 async function getDataById(id) {
   try {
-    const res = await food.findById(id);
+    const res = await administrator.findById(id);
     if (res)
       return res;
     throw errorBuilder.build('configure-status', {name: 'database - findById', message: 'not found speciality id', status: 404});
@@ -42,7 +42,7 @@ async function getDataById(id) {
 
 async function find(data) {
   try {
-    return await food.find(data);
+    return await administrator.find(data);
   } catch (error) {
     throw errorBuilder.build(MONGOOSE, error);
   }
