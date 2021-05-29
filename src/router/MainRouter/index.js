@@ -6,6 +6,7 @@ import AñadirAlimento from '../../components/AñadirAlimento';
 import Header from '../../components/Header';
 import Inicio from '../../components/Inicio';
 import ResultadoBusqueda from '../../components/ResultadoBusqueda';
+import Administrador from '../../components/Administrador';
 import './style.css'
 
 function MainRouter() {
@@ -36,6 +37,11 @@ function MainRouter() {
                 <Route path='/ui/mostrar'>
                     <div className='container-image mostrar-detalle'>
                         <MostrarDetalle />
+                    </div>
+                </Route>
+                <Route path='/ui/administrador'>
+                    <div className='container-image mostrar-detalle'>
+                        <Administrador />
                     </div>
                 </Route>
                 <Redirect from='' to='/ui/inicio' exact />
