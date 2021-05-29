@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Formulario=styled.form`
+const Formulario = styled.form`
     display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 65px;
@@ -9,7 +9,33 @@ const Formulario=styled.form`
 		grid-template-columns: 1fr;
 	}
 `
-const ContenedorBotonCentrado=styled.div`
+const Select = styled.select`
+   grid-template-columns: 1fr ;
+   width: 100%;
+	background: #fff;
+	border-radius: 3px;
+	height: 40px;
+	line-height: 45px;
+	padding: 0 10px 0 10px;
+	transition: .3s ease all;
+	border: 3px solid transparent;
+
+	&:focus {
+		outline: none;
+		box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+	}
+
+ `;
+const Label = styled.label`
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	min-height: 40px;
+	cursor: pointer;
+	
+`;
+
+const ContenedorBotonCentrado = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,4 +46,4 @@ const ContenedorBotonCentrado=styled.div`
     grid-column: span 1;
   }
 `
-export{Formulario,ContenedorBotonCentrado};
+export { Formulario, ContenedorBotonCentrado, Label, Select };
