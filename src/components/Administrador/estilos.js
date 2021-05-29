@@ -7,6 +7,7 @@ const Formulario = styled.form`
 
 	@media (max-width: 800px){
 		grid-template-columns: 1fr;
+    
 	}
 `
 const Select = styled.select`
