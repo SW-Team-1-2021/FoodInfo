@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Input from '../AñadirAlimento/CampoInput'
 import { Boton } from '../AñadirAlimento/estilosFormmulario'
-import { Formulario, ContenedorBotonCentrado } from './estilos';
+import { Formulario, ContenedorBotonCentrado,H1 } from './estilos';
 import Genero from '../Administrador/Genero/index'
+
 const Administrador = () => {
   const [nombres, cambiarNombres] = useState({ campo: '', valido: null });
   const [apellidos, cambiarApellidos] = useState({ campo: '', valido: null });
@@ -21,7 +22,7 @@ const Administrador = () => {
 
   return (
     <main>
-      <h1 align="center">Agregar Administrador</h1>
+      <H1 >Agregar Administrador</H1>
 
       <Formulario>
         <Input
@@ -33,7 +34,9 @@ const Administrador = () => {
           label="*Nombres"
           placeholder="ej: Michel"
           name="nombre"
+          leyendaError=" Los nombres tienen que ser de 1 a 30 caracteres, sin caracteres especiales. "
           expresionRegular={expresiones.nombre}
+
           requerido={""}
         />
         <Input
@@ -45,6 +48,7 @@ const Administrador = () => {
           label="*Apellidos"
           placeholder="ej: Mamani choquehuanca"
           name="apellido"
+          leyendaError=" Los apellidos tiene que ser de 1 a 40 caracteres, sin caracteres especiales. "
           expresionRegular={expresiones.apellido}
           requerido={""}
         />
@@ -57,6 +61,7 @@ const Administrador = () => {
           label="*Carnet de Identidad"
           placeholder="ej: 3490293"
           name="ci"
+          leyendaError=" El ci tiene que ser de 1 a 40 caracteres, sin caracteres especiales. "
           expresionRegular={expresiones.carnet}
           requerido={""}
         />
@@ -79,7 +84,6 @@ const Administrador = () => {
           nuMin="1"
           nuMax="80"
           label="*Fecha Nacimiento"
-          placeholder="ej: mevale90@gmail.com"
           name="nacimiento"
           requerido={""}
         />

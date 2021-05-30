@@ -21,9 +21,11 @@ const Formulario = styled.form`
 const Label = styled.label`
 	display: block;
 	font-weight: 700;
+	font-size:16px;
 	padding: 10px;
 	min-height: 40px;
 	cursor: pointer;
+	color:#000000;
 	
 
 
@@ -79,7 +81,8 @@ const Input = styled.input`
 `;
 
 const LeyendaError = styled.p`
-	font-size: 12px;
+    font-weight: bold;
+	font-size: 15px;
 	margin-bottom: 0;
 	color: ${colores.error};
 	display: none;

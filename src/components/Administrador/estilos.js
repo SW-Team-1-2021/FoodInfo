@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
+const H1=styled.h1`
+  text-align: center;
+  color:#000000;
+`
+
 const Formulario = styled.form`
     display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 65px;
-
+  
 	@media (max-width: 800px){
 		grid-template-columns: 1fr;
 	}
@@ -27,6 +32,7 @@ font-weight: 700;
 padding: 10px;
 min-height: 40px;
 cursor: pointer;
+font-size:16px;
 `;
 
 const Select = styled.select`
@@ -44,4 +50,4 @@ outline: none;
 box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 }
 `;
-export { Formulario, ContenedorBotonCentrado, Label, Select };
+export { Formulario, ContenedorBotonCentrado, Label, Select,H1 };

@@ -22,7 +22,8 @@ const ComponenteInput = ({ className, requerido, estado, nuMin, nuMax, cambiarEs
 			funcion();
 		}
 	}
-
+	// console.log(estado.campo);
+	 console.log(estado.valido);
 	return (
 		<div>
 			{label && <Label htmlFor={name} valido={estado.valido}>{label}</Label>}

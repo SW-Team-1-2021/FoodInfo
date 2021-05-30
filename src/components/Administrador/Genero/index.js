@@ -1,7 +1,7 @@
 import React from 'react';
 import { Label, Select } from '../estilos';
 
-const Genero = ({ estado, cambiarEstado, }) => {
+const Genero = ({ estado, cambiarEstado }) => {
 
   const onChange = (e) => {
     cambiarEstado({ campo: e.target.value, valido: true })
@@ -9,7 +9,8 @@ const Genero = ({ estado, cambiarEstado, }) => {
 
   }
 
-
+//  console.log(estado.campo);
+ console.log(estado.valido);
   return (
 
     <div>
@@ -23,7 +24,7 @@ const Genero = ({ estado, cambiarEstado, }) => {
       >
 
         <option value="">- Seleccione un genero</option>
-        <option value="Masculinoi">Masculino</option>
+        <option value="Masculino">Masculino</option>
         <option value="Femenino">Femenino</option>
       </Select>
     </div>
