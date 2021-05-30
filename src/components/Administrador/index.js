@@ -14,10 +14,10 @@ const Administrador = () => {
 
   const expresiones = {
 
-    nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ_\s_ñ-]{1,30}$/,
-    apellido: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ_\s_ñ-]{1,40}$/,
-    correo_electronico: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_-___@_.-]{1,100}$/,
-    carnet: /^[0-9\b]+$/,
+    nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ_\s_ñ-]*$/,
+    apellido: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ_\s_ñ-]*$/,
+    correo_electronico: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_-___@_.-]*$/,
+    carnet: /^[0-9\b]*$/,
   }
 
   return (

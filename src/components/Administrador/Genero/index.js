@@ -6,11 +6,10 @@ const Genero = ({ estado, cambiarEstado }) => {
   const onChange = (e) => {
     cambiarEstado({ campo: e.target.value, valido: true })
 
-
   }
 
 //  console.log(estado.campo);
- console.log(estado.valido);
+  // console.log(estado.valido);
   return (
 
     <div>

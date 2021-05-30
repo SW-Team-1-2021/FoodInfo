@@ -13,6 +13,9 @@ const ComponenteInput = ({ className, requerido, estado, nuMin, nuMax, cambiarEs
 		if (expresionRegular) {
 			if (expresionRegular.test(estado.campo)) {
 				cambiarEstado({ ...estado, valido: true });
+				if(estado.campo===""){
+					cambiarEstado({ ...estado, valido: null});
+				  }
 			} else {
 				cambiarEstado({ ...estado, valido: false });
 			}
