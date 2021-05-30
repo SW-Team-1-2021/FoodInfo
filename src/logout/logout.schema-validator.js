@@ -3,21 +3,15 @@
 const ajvValidator = require('../commons/ajv-validator');
 
 const properties = {
-  username: {
+  token: {
     'type': 'string',
     'minlength': 1,
-    'maxlength': 80
-  },
-  password: {
-    'type': 'string',
-    'minlength': 2,
-    'maxlength': 20
+    'maxlength': 250
   }
 };
 
 const requiredSavePut = [
-  'username',
-  'password'
+  'token'
 ];
 
 const schemaSavePut = {

@@ -1,6 +1,6 @@
 'use strict';
 
-const ajvSchemaValidator = require('./login.schema-validator');
+const ajvSchemaValidator = require('./logout.schema-validator');
 const errorBuilder = require('../commons/error-builder');
 
 async function schemaValidatorSavePut(req, res, next) {
