@@ -1,17 +1,26 @@
 'use strict';
 
-// const fs = require('fs');
-var jwt = require('jsonwebtoken');
-// const model = require('./food.model');
-// const errorBuilder = require('../commons/error-builder');
+const jwt = require('jsonwebtoken');
+const modelAdministrator = require('../administrator/administrator.model');
+const { KEY, TEAM } = require('../config/global');
+const errorBuilder = require('../commons/error-builder');
 
-const CONFLICT = 'conflict';
+const UNAUTHORIZED = 'unauthorized';
 
 
 async function createToken(req, res) {
   try {
-    let token = jwt.sign({ zoo: 'barito' }, 'shhhhh');
-    return res.status(200).json(token);
+    const admin = await modelAdministrator.findByEmailAndCi({ email: req.body.username, ci: req.body.password });
+    if (admin.length === 1) {
+      let token = jwt.sign({ team: TEAM }, KEY);
+      return res.status(200).json(token);
+    }
+    throw errorBuilder.build(
+      UNAUTHORIZED,
+      {
+        name: 'Unauthorized',
+        message: `The ${req.body.username} or ${req.body.password} was wrong`
+      });
   } catch (error) {
     return res.status(error.status).json(error.body);
   }

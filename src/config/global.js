@@ -2,5 +2,6 @@
 
 module.exports = {
   SALT_ROUNDS: 12,
-  KEY: '_swteam_'
+  KEY: '_swteam_',
+  TEAM: 'swteam'
 };
