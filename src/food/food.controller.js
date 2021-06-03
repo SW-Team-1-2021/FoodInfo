@@ -1,6 +1,5 @@
 'use strict';
 
-// const fs = require('fs');
 const model = require('./food.model');
 const errorBuilder = require('../commons/error-builder');
 
@@ -11,10 +10,6 @@ const NAME = 'name';
 async function saveFood(req, res) {
   try {
     let foodSave = req.body;
-    // foodSave.imagen = {
-    //   data: fs.readFileSync(req.file.path),
-    //   contentType: 'image/jpg'
-    // };
 
     const result = await model.findByName(foodSave.nombre);
     if (result.length > 0) {
@@ -35,19 +30,19 @@ async function saveFood(req, res) {
 async function getFood(req, res) {
   try {
     const QUERY = [];
-    for(const key in req.query) {
+    for (const key in req.query)
       QUERY.push(key);
-    }
+
     let food;
     switch (QUERY[0]) {
       case CATEGORY : food = await model.findByCategory(req.query[CATEGORY]);
-      break;
+        break;
       case NAME : food = await model.findByNameAndOptional(req.query[NAME]);
-      break;
+        break;
       default : food = await model.getdata();
-      break;
+        break;
     }
-    
+
     return res.status(200).json(food);
   } catch (error) {
     return res.status(error.status).json(error.body);
