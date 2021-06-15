@@ -1,0 +1,24 @@
+.contenedorPrincipal{
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    padding: 50px;
+    background-color: white;
+
+}
+
+.contenedorSecundario{
+    text-align: left;
+    display: flex;
+    min-height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.titulo{
+    text-align: center;
+}
+
