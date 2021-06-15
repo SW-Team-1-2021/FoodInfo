@@ -21,6 +21,9 @@ function Header() {
                 <div className='link'>
                     <Link to='/ui/añadir' className='text-link'>Añadir</Link>
                 </div>
+                <div className='link'>
+                    <Link to='/ui/login' className='text-link'>Login</Link>
+                </div>
             </div>
         </Fragment>
     );
