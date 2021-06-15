@@ -13,7 +13,10 @@ async function createToken(req, res) {
   try {
     const admin = await modelAdministrator.findByEmailAndCi({ email: req.body.username, ci: req.body.password });
     if (admin.length === 1) {
-      let token = jwt.sign({ team: TEAM }, KEY);
+      let token = jwt.sign(
+        { team: TEAM },
+        KEY,
+        { expiresIn: 60 * 15 });
       await model.save({ token });
       return res.status(200).json(token);
     }
