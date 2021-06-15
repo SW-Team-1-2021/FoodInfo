@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const H1=styled.h1`
   text-align: center;
@@ -8,7 +8,7 @@ const H1=styled.h1`
 const Formulario = styled.form`
     display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	gap: 65px;
+	gap: 60px;
   
 	@media (max-width: 800px){
 		grid-template-columns: 1fr;
@@ -33,6 +33,9 @@ padding: 10px;
 min-height: 40px;
 cursor: pointer;
 font-size:16px;
+${props => props.valido === false && css`
+		color: ${"#bb2929"};
+	`}
 `;
 
 const Select = styled.select`
@@ -49,5 +52,12 @@ border: 3px solid transparent;
 outline: none;
 box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
 }
+${props => props.valido === true && css`
+		border: 3px solid transparent;
+	`}
+
+	${props => props.valido === false && css`
+		border: 3px solid ${"#bb2929"} !important;
+	`}
 `;
 export { Formulario, ContenedorBotonCentrado, Label, Select,H1 };

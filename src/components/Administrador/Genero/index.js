@@ -1,7 +1,8 @@
 import React from 'react';
+import { LeyendaError } from '../../AñadirAlimento/estilosFormmulario';
 import { Label, Select } from '../estilos';
 
-const Genero = ({ estado, cambiarEstado }) => {
+const Genero = ({ estado, cambiarEstado, leyendaError }) => {
 
   const onChange = (e) => {
     cambiarEstado({ campo: e.target.value, valido: true })
@@ -26,6 +27,7 @@ const Genero = ({ estado, cambiarEstado }) => {
         <option value="Masculino">Masculino</option>
         <option value="Femenino">Femenino</option>
       </Select>
+      <LeyendaError valido={estado.valido}>{leyendaError}</LeyendaError>
     </div>
   );
 
