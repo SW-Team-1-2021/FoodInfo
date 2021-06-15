@@ -1,6 +1,7 @@
 'use strict';
 
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const errorBuilder = require('../commons/error-builder');
 const { findByToken } = require('../login/login.model');
 const { SALT_ROUNDS } = require('../config/global');
@@ -52,6 +53,7 @@ async function decoded(res, request, next) {
     const token = request.req.query.token;
     if (token) {
       const found = await findByToken(token);
+      jwt.verify(token, '_swteam_');
       if (found.length !== 1) {
         throw errorBuilder.build(
           INVALID_TOKEN,
@@ -70,7 +72,17 @@ async function decoded(res, request, next) {
     }
     next();
   } catch (error) {
-    return res.res.status(error.status).json(error.body);
+    if (error.status) {
+      return res.res.status(error.status).json(error.body);
+    } else {
+      const newError = errorBuilder.build(
+        INVALID_TOKEN,
+        {
+          name: 'unauthorized',
+          message: `TokenExpiredError - The jwt expired.`
+        });
+      return res.res.status(newError.status).json(newError.body);
+    }
   }
 }
 
