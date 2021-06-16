@@ -27,12 +27,12 @@
 .titulo{
     text-align: center;
     width: 200px;
-    height: 150px;
 }
+
 .image1{
-    position: absolute;
-    top: 24%;
-    left: 35%;
-    height: 18%;
-    width: 30%;
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
 }
