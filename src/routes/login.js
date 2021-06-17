@@ -1,14 +1,14 @@
 'use strict';
 
 const express = require('express');
-const foodController = require('../food/food.controller');
-const middleware = require('../food/food.middleware');
+const loginController = require('../login/login.controller');
+const middleware = require('../login/login.middleware');
 
 const router = express.Router();
 
 router
-  .post('/', middleware.schemaValidatorSavePut, foodController.saveFood)
-  .get('/', foodController.getFood)
-  .get('/:id', foodController.getFoodById);
+  .post('/',
+    middleware.schemaValidatorSavePut,
+    loginController.createToken);
 
 module.exports = router;

@@ -14,22 +14,13 @@ function getDataById(id) {
   return administratorDB.getDataById(id);
 }
 
-function findByName(data) {
-  return administratorDB.find({ nombre: data });
+function findByEmailAndCi(data) {
+  return administratorDB.find({ email: data.email, ci: data.ci });
 }
 
-function findByNameAndOptional(data) {
-  return administratorDB.find({$or:[{ nombre: {'$regex': data,$options:'i'}}, {segundonombre: {'$regex': data,$options:'i'}}]});
-}
-
-function findByCategory(data) {
-  return administratorDB.find({ categoria: {'$regex': data,$options:'i'} });
-}
 module.exports = {
   save,
   getdata,
-  findByName,
   getDataById,
-  findByNameAndOptional,
-  findByCategory
+  findByEmailAndCi
 };

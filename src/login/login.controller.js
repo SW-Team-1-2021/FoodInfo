@@ -1,69 +1,36 @@
 'use strict';
 
-// const fs = require('fs');
-const model = require('./food.model');
+const jwt = require('jsonwebtoken');
+const modelAdministrator = require('../administrator/administrator.model');
+const model = require('../login/login.model');
+const { KEY, TEAM } = require('../config/global');
 const errorBuilder = require('../commons/error-builder');
 
-const CONFLICT = 'conflict';
-const CATEGORY = 'category';
-const NAME = 'name';
+const UNAUTHORIZED = 'unauthorized';
 
-async function saveFood(req, res) {
+
+async function createToken(req, res) {
   try {
-    let foodSave = req.body;
-    // foodSave.imagen = {
-    //   data: fs.readFileSync(req.file.path),
-    //   contentType: 'image/jpg'
-    // };
-
-    const result = await model.findByName(foodSave.nombre);
-    if (result.length > 0) {
-      throw errorBuilder.build(
-        CONFLICT,
-        {
-          name: 'Data Repetition',
-          message: `The ${foodSave.nombre} is already saved in the DB`
-        });
+    const admin = await modelAdministrator.findByEmailAndCi({ email: req.body.username, ci: req.body.password });
+    if (admin.length === 1) {
+      let token = jwt.sign(
+        { team: TEAM },
+        KEY,
+        { expiresIn: 60 * 15 });
+      await model.save({ token });
+      return res.status(200).json(token);
     }
-    const food = await model.save(foodSave);
-    return res.status(200).json(food);
-  } catch (error) {
-    return res.status(error.status).json(error.body);
-  }
-}
-
-async function getFood(req, res) {
-  try {
-    const QUERY = [];
-    for (const key in req.query)
-      QUERY.push(key);
-    let food;
-    switch (QUERY[0]) {
-      case CATEGORY : food = await model.findByCategory(req.query[CATEGORY]);
-        break;
-      case NAME : food = await model.findByNameAndOptional(req.query[NAME]);
-        break;
-      default : food = await model.getdata();
-        break;
-    }
-
-    return res.status(200).json(food);
-  } catch (error) {
-    return res.status(error.status).json(error.body);
-  }
-}
-
-async function getFoodById(req, res) {
-  try {
-    const food = await model.getDataById(req.params.id);
-    return res.status(200).json(food);
+    throw errorBuilder.build(
+      UNAUTHORIZED,
+      {
+        name: 'Unauthorized',
+        message: `The ${req.body.username} or ${req.body.password} was wrong`
+      });
   } catch (error) {
     return res.status(error.status).json(error.body);
   }
 }
 
 module.exports = {
-  saveFood,
-  getFood,
-  getFoodById
+  createToken
 };
