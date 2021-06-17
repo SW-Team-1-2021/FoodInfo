@@ -65,6 +65,14 @@ const Input = styled.input`
 	transition: .3s ease all;
 	border: 3px solid transparent;
 
+	::-webkit-calendar-picker-indicator{
+		// background: none;
+		background: transparent;
+		width: 52%;
+		// display: none;
+	}
+	
+
 	&:focus {
 		border: 3px solid ${colores.borde};
 		outline: none;

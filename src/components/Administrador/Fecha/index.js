@@ -1,6 +1,5 @@
 import React from 'react';
 import { Input, Label, GrupoInput, LeyendaError } from '../../AñadirAlimento/estilosFormmulario';
-//import { faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Fecha = ({ className, requerido, estado, nuMin, nuMax, cambiarEstado,  label,
 	 placeholder, name, leyendaError, onKeyDown,  }) => {

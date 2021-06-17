@@ -5,6 +5,7 @@ import { Formulario, ContenedorBotonCentrado,H1 } from './estilos';
 import Genero from '../Administrador/Genero/index';
 import Fecha from './Fecha';
 
+
 const Administrador = () => {
   const [nombres, cambiarNombres] = useState({ campo: '', valido: null });
   const [apellidos, cambiarApellidos] = useState({ campo: '', valido: null });
