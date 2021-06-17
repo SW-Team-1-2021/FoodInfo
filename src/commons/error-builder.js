@@ -32,14 +32,34 @@ let build = (errorName, error) => {
         message: error.message
       };
       break;
-    case 'conflict': {
+    case 'conflict':
       status = 409;
       body = {
         name: error.name,
         message: error.message
       };
       break;
-    }
+    case 'unauthorized':
+      status = 401;
+      body = {
+        name: error.name,
+        message: error.message
+      };
+      break;
+    case 'no token':
+      status = 401;
+      body = {
+        name: error.name,
+        message: error.message
+      };
+      break;
+    case 'invalid token':
+      status = 401;
+      body = {
+        name: error.name,
+        message: error.message
+      };
+      break;
     case 'default':
       status = 400;
       body = error.message;
