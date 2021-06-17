@@ -1,6 +1,8 @@
 {
   "name": "frontend",
   "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "private": true,
   "dependencies": {
     "@fontsource/comic-neue": "^4.2.2",
