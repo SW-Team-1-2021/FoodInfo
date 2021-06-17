@@ -3,62 +3,43 @@
 const ajvValidator = require('../commons/ajv-validator');
 
 const properties = {
-  categoria: {
+  name: {
     'type': 'string',
     'minlength': 1,
-    'maxlength': 80
+    'maxlength': 50
   },
-  nombre: {
+  lastname: {
     'type': 'string',
     'minlength': 2,
-    'maxlength': 80
+    'maxlength': 50
   },
-  segundonombre: {
-    'type': 'string'
-  },
-  procedencia: {
+  ci: {
     'type': 'string',
     'minlength': 1,
-    'maxlength': 80
+    'maxlength': 10
   },
-  calorias: {
-    'type': 'string',
-    'minimum': 1
-  },
-  horainicio: {
-    'type': 'string'
-  },
-  horafinal: {
-    'type': 'string'
-  },
-  advertencia: {
-    'type': 'string',
-    'maxlength': 150
-  },
-  combinacion: {
-    'type': 'string',
-    'minlength': 1,
-    'maxlength': 100
-  },
-  descripcion: {
+  email: {
     'type': 'string',
     'minlength': 1,
     'maxlength': 250
+  },
+  datebirth: {
+    'type': 'string',
+    'minlength': 1
+  },
+  gender: {
+    'type': 'string',
+    'minlength': 1
   }
 };
 
 const requiredSavePut = [
-  'categoria',
-  'nombre',
-  'segundonombre',
-  'procedencia',
-  'calorias',
-  'horainicio',
-  'horafinal',
-  'advertencia',
-  'combinacion',
-  'descripcion',
-  'imagen'
+  'name',
+  'lastname',
+  'ci',
+  'email',
+  'datebirth',
+  'gender'
 ];
 
 const schemaSavePut = {
