@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import Input from '../AñadirAlimento/CampoInput';
-import { Boton, MensajeError } from '../AñadirAlimento/estilosFormmulario';
+import { Boton, MensajeError, MensajeExito } from '../AñadirAlimento/estilosFormmulario';
 import { Formulario, ContenedorBotonCentrado,H1 } from './estilos';
 import Genero from '../Administrador/Genero/index';
 import Fecha from './Fecha';
+import axios from "axios"
+import { URL1} from '../../global/const1';
+
+const MSG_ERROR_NAME = 'El nombre del alimento ya se encuentra registrado';
+
+var msg = 'Por favor rellena el formulario correctamente.';
 
 
 const Administrador = () => {
@@ -34,7 +40,6 @@ const Administrador = () => {
       nacimiento.valido===true&&
       genero.valido===true){
 
-        cambiarFormulario(true);
         var datos={
           nombres:nombres.campo,
           apellidos:apellidos.campo,
@@ -43,11 +48,23 @@ const Administrador = () => {
           nacimiento:nacimiento.campo,
           genero:genero.campo
         }
-        console.log(datos);
+
+       // console.log(datos);
+       axios.post(URL1, datos)
+				.then(res => {
+					cambiarFormulario(true);
+					cambiarNombres({ campo: '', valido: null });
+					cambiarApellidos({ campo: '', valido: null });
+					cambiarCi({ campo: '', valido: null });
+					cambiarCorreo({ campo: '', valido: null });
+					cambiarNacimiento({ campo: '', valido: null });
+					cambiarGenero({ campo: '', valido: null });
+				})
 
 
     }
     else{
+      msg = 'Por favor rellena el formulario correctamente.';
          cambiarFormulario(false);
         if(nombres.valido==null){	
           cambiarNombres({valido: false});
@@ -163,12 +180,13 @@ const Administrador = () => {
 
         {formulario === false && <MensajeError>
 					<p>
-						< b > Error: </b> 
+						< b > Error: </b>  {msg}
 					</p>
 				</MensajeError>}
 
         <ContenedorBotonCentrado>
           <Boton type="submit">Enviar</Boton>
+          {formulario === true && <MensajeExito><b>El alimento fue agregado correctamente</b></MensajeExito>}
         </ContenedorBotonCentrado>
 
       </Formulario>

@@ -9,7 +9,7 @@ import Imagen from '../AñadirAlimento/CampoIMagen/index';
 import Hora from '../AñadirAlimento/CampoHorario/index';
 import Categoria from '../AñadirAlimento/CampoCategoria/index';
 import './style.css'
-import { URL } from '../../global/const';
+import { URL} from '../../global/const';
 
 const MSG_ERROR_NAME = 'El nombre del alimento ya se encuentra registrado';
 
@@ -101,6 +101,7 @@ const AñadirAlimento = () => {
 					cambiarFormularioValido(false);
 				})
 		} else {
+			//console.log(datos);
 			msg = 'Por favor rellena el formulario correctamente.';
 			cambiarFormularioValido(false);
 		 if(categoria.valido==null){	
@@ -125,7 +126,13 @@ const AñadirAlimento = () => {
 			
 		}
 	}
-
+	console.log(categoria.valido);
+	console.log(nombre.valido);
+	console.log(procedencia.valido);
+	console.log(calorias.valido);
+	console.log(advertencias.valido);
+	console.log(imagen.valido);
+     console.log(descripcion.valido);
 	return (
 		<main>
 			<h1 align="center" >AGREGAR  ALIMENTO</h1>
