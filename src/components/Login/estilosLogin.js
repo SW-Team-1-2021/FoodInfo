@@ -17,7 +17,6 @@ const Formulario = styled.form`
 const Label = styled.label`
     display: block;
     font-weight: 700;
-    // padding: 10px;
     // min-height: 40px;
     cursor: pointer;
     font-size:16px;  
@@ -38,7 +37,7 @@ const Input = styled.input`
     border-radius: 3px;
     height: 35px;
     line-height:45px;
-    padding: 0 10px 0 10px;
+    padding: 0px 10px 0px 10px;
     transition: .3s ease all;
 	border: 3px solid transparent;
 
@@ -60,9 +59,9 @@ const LeyendaError = styled.p`
 	font-size: 12px;
 	margin-bottom: 0;
 	color: ${colores.error};
-    width: 200px;
+    width: 250px;
     display:none;
-
+    padding-bottom: 20px;
     ${props => props.valido === 'true' && css `
         display:none;
     `}
@@ -75,6 +74,7 @@ const ContenedorBotonCentrado = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+    padding: 15px 0px 0px 0px;
 
 	@media (max-width: 800px){
 		grid-column: span 1;
@@ -100,16 +100,16 @@ const Boton = styled.button`
 const MensajeExito = styled.p`
     font-size:14px;
     color:${colores.exito};
-    display:none;
+    padding-top: 20px;
 `;
 
 const MensajeError = styled.div`
-    height:45px;
-    line-height:45px;
+    height:35px;
+    width: 250px;
+    line-height:35px;
     background:${colores.error};
-    padding: 0px 15px;
     border-radius: 3px;
-
+    font-size:12px;
     p{
         margin:0;
     }
