@@ -9,14 +9,14 @@ const EMAIL= 'email';
 async function saveAdministrator(req, res) {
   try {
     let adminSave = req.body;
-    const result = await model.findByName(foodSave.nombre);
+    const result = await model.findByName(adminSave.nombre);
     
     if (result.length > 0) {
       throw errorBuilder.build(
         CONFLICT,
         {
           name: 'Data Repetition',
-          message: `The ${adminSave.nombres} is already saved in the DB`
+          message: `The ${adminSave.ci} is already saved in the DB`
         });
     }
     const admin = await model.save(adminSave);
@@ -35,13 +35,13 @@ async function getAdmin(req, res) {
     }
     let admin;
     switch (QUERY[0]) {
-      case EMAIL : admin = await model.findByEmailAndCi(req.query[CATEGORY]);
+      case EMAIL : admin = await model.findByEmailAndCi(req.query[EMAIL]);
       break;
       default : admin= await model.getdata();
       break;
     }
     
-    return res.status(200).json(food);
+    return res.status(200).json(admin);
   } catch (error) {
     return res.status(error.status).json(error.body);
   }

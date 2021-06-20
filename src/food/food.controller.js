@@ -32,7 +32,7 @@ async function saveFood(req, res) {
   }
 }
 
-async function getAdmin(req, res) {
+async function getFood(req, res) {
   try {
     const QUERY = [];
     for(const key in req.query) {
@@ -41,6 +41,8 @@ async function getAdmin(req, res) {
     let food;
     switch (QUERY[0]) {
       case CATEGORY : food = await model.findByCategory(req.query[CATEGORY]);
+      break;
+      case NAME : food = await model.findByNameAndOptional(req.query[NAME]);
       break;
       default : food = await model.getdata();
       break;
@@ -52,10 +54,10 @@ async function getAdmin(req, res) {
   }
 }
 
-async function getAdminById(req, res) {
+async function getFoodById(req, res) {
   try {
-    const admin= await model.getDataById(req.params.id);
-    return res.status(200).json(admmin);
+    const food = await model.getDataById(req.params.id);
+    return res.status(200).json(food);
   } catch (error) {
     return res.status(error.status).json(error.body);
   }
@@ -63,6 +65,6 @@ async function getAdminById(req, res) {
 
 module.exports = {
   saveFood,
-  getAdmin,
-  getAdminById
+  getFood,
+  getFoodById
 };
