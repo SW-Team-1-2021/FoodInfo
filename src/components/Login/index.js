@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation, useHistory } from "react-router-dom";
 import './login.css'
 import logo from '../../images/logo.png'
 import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from './estilosLogin'
@@ -14,6 +15,7 @@ const Index = () => {
     const [correo, cambiarCorreo] = useState({ campo: '', valido: null });
     const [password, cambiarPassword] = useState({ campo: '', valido: null });
     const [formularioValido, cambiarFormularioValido] = useState(null);
+    let history = useHistory();
 
     const expresiones = {
         password: /^.{4,30}$/,
@@ -37,6 +39,7 @@ const Index = () => {
                     cambiarCorreo({ campo: '', valido: null });
                     cambiarPassword({ campo: '', valido: null });
                     console.log("token:", res);
+                    history.push("/ui/inicio");
                 })
                 .catch(error => {
                     if (error.response.status === 401) {
