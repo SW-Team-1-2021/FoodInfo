@@ -48,9 +48,18 @@ async function find(data) {
   }
 }
 
+async function removeById(id) {
+  try {
+    return await token.findOneAndRemove({ _id: id});
+  } catch (error) {
+    throw errorBuilder.build(MONGOOSE, error);
+  }
+}
+
 module.exports = {
   save,
   getdata,
   find,
-  getDataById
+  getDataById,
+  removeById
 };

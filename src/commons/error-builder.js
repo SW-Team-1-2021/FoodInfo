@@ -46,6 +46,20 @@ let build = (errorName, error) => {
         message: error.message
       };
       break;
+    case 'no token':
+      status = 401;
+      body = {
+        name: error.name,
+        message: error.message
+      };
+      break;
+    case 'invalid token':
+      status = 401;
+      body = {
+        name: error.name,
+        message: error.message
+      };
+      break;
     case 'default':
       status = 400;
       body = error.message;

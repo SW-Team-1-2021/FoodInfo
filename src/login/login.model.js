@@ -1,16 +1,20 @@
 'use strict';
 
-const administratorDB = require('./login.db');
+const loginDB = require('./login.db');
 
 function save(data) {
-  return administratorDB.save(data);
+  return loginDB.save(data);
 }
 
 function findByToken(data) {
-  return administratorDB.find({ token: data });
+  return loginDB.find({ token: data });
+}
+function removeById(id) {
+  return loginDB.removeById(id);
 }
 
 module.exports = {
   save,
-  findByToken
+  findByToken,
+  removeById
 };
