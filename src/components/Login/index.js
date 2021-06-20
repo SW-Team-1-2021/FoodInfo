@@ -1,52 +1,62 @@
 import React, { useState } from 'react';
 import './login.css'
 import logo from '../../images/logo.png'
-import {Formulario,ContenedorBotonCentrado,Boton,MensajeExito,MensajeError } from './estilosLogin'
+import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from './estilosLogin'
 import ComponenteInput from './componentes/input';
+import axios from "axios"
+import { URL } from '../../global/const';
 
-export default function Index() {
-    const [correo, cambiarCorreo]=useState({campo:'',valido:null});
-    const [password, cambiarPassword]=useState({campo:'',valido:null});
-    const [formularioValido,cambiarFormularioValido]=useState(null);
+const MSG_ERROR_NAME = 'El correo electrónico no se encuentra registrado ';
+
+var msg = 'Llenar todos los espacios requeridos';
+
+const Index = () => {
+    const [correo, cambiarCorreo] = useState({ campo: '', valido: null });
+    const [password, cambiarPassword] = useState({ campo: '', valido: null });
+    const [formularioValido, cambiarFormularioValido] = useState(null);
 
     const expresiones = {
         password: /^.{4,30}$/,
-        correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{1,10}$/
+        // correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{1,10}$/
+        correo: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_-___@_.-]*$/
     }
 
-    const onSubmit=(e) =>{
+    const onSubmit = (e) => {
         e.preventDefault();
-        if(
-            correo.valido === 'true' && 
-            password.valido === 'true')
-        {
-            cambiarFormularioValido(true);
-            cambiarCorreo({campo:'', valido: ''});
-            cambiarPassword({campo:'', valido:null });
-        }else{
+        if (
+            correo.valido === true &&
+            password.valido === true
+        ) {
+            var datos = {
+                correo: correo.campo,
+                password: password.campo,
+            };
+            axios.post(URL, datos)
+                .then(res => {
+                    cambiarFormularioValido(true);
+                    cambiarCorreo({ campo: '', valido: null });
+                    cambiarPassword({ campo: '', valido: null });
+                })
+                .catch(error => {
+                    if (error.response.status === 409) {
+                        msg = MSG_ERROR_NAME;
+                    }
+                    cambiarFormularioValido(false);
+                })
+
+        } else {
+            msg = 'Llenar todos los espacios requeridos';
             cambiarFormularioValido(false);
+            if (correo.valido == null) {
+                cambiarCorreo({ valido: false });
+            }
+            if (password.valido == null) {
+                cambiarPassword({ valido: false });
+            }
         }
     }
 
-    // const correoValido="yara.ale.ok.20@gmail.com";
-    // const passwordValido="12345"
-    // const validarLogin = () => {
-    //     if(correo.campo.length!=0 && password.campo.length!=0){
-    //         if(correo.campo.equals(correoValido)){
-    //             if(password.campo.equals(passwordValido)){
-    //                 alert("Datos correctos");
-    //             }else{
-    //                 alert("Contraseña incorrecta");
-    //             }
-    //         }else{
-    //             alert("Usuario incorrecto");
-    //         }
-    //     }else{
-    //         alert("Llenar todos los espacios");
-    //     }
-    // }
-
-    return (        
+    return (
         <div className="contenedorPrincipal ">
             <div className="contenedorSecundario">
                 <h2 className="titulo">Iniciar Sesión</h2>
@@ -74,16 +84,18 @@ export default function Index() {
                     />
 
                     {formularioValido === false && <MensajeError>
-                        <p><b>Error:</b> Llenar todos los espacios requeridos </p>
+                        <p><b>Error: </b>{msg} </p>
                     </MensajeError>}
-                    
+
                     <ContenedorBotonCentrado>
                         <Boton type="submit">Ingresar</Boton>
                         {formularioValido === true && <MensajeExito>Sesion correctamente iniciada</MensajeExito>}
                     </ContenedorBotonCentrado>
                 </Formulario>
-                
+
             </div>
         </div>
     )
 }
+
+export default Index;
