@@ -1,7 +1,7 @@
 import React from 'react';
 import { Label, GrupoInput, Input, LeyendaError } from './../estilosLogin'
 
-const ComponenteInput = ({ estado, cambiarEstado, tipo, label, placeholder, name, leyendaError, expresionRegular }) => {
+const ComponenteInput = ({ estado, cambiarEstado, tipo, label, placeholder, name, leyendaError, expresionRegular,funcion }) => {
     const onChange = (e) => {
         cambiarEstado({ ...estado, campo: e.target.value });
     }
@@ -9,11 +9,15 @@ const ComponenteInput = ({ estado, cambiarEstado, tipo, label, placeholder, name
     const validacion = () => {
         if(expresionRegular){
             if(expresionRegular.test(estado.campo)){
-                cambiarEstado({ ...estado, valido: 'true'});
+                cambiarEstado({ ...estado, valido: true});
             }else{
-                cambiarEstado({ ...estado, valido: 'false'});
+                cambiarEstado({ ...estado, valido: false});
             }
         }
+
+        if (funcion) {
+			funcion();
+		}
     }
 
     return (

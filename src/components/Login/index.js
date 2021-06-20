@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation, useHistory } from "react-router-dom";
 import "./login.css";
 import logo from "../../images/logo.png";
 import {
@@ -9,25 +10,56 @@ import {
   MensajeError,
 } from "./estilosLogin";
 import ComponenteInput from "./componentes/input";
+import axios from "axios";
+import { URL_LOGIN } from "../../global/const";
 
-export default function Index() {
+const MSG_ERROR_NAME = "El correo electrónico o contrasena son incorrectos!!!";
+
+var msg = "Llenar todos los espacios requeridos";
+
+const Index = () => {
   const [correo, cambiarCorreo] = useState({ campo: "", valido: null });
   const [password, cambiarPassword] = useState({ campo: "", valido: null });
   const [formularioValido, cambiarFormularioValido] = useState(null);
+  let history = useHistory();
 
   const expresiones = {
     password: /^.{4,30}$/,
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{1,10}$/,
+    // correo: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_-___@_.-]*$/
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (correo.valido === "true" && password.valido === "true") {
-      cambiarFormularioValido(true);
-      cambiarCorreo({ campo: "", valido: "" });
-      cambiarPassword({ campo: "", valido: null });
+    if (correo.valido === true && password.valido === true) {
+      var datos = {
+        username: correo.campo,
+        password: password.campo,
+      };
+      axios
+        .post(URL_LOGIN, datos)
+        .then((res) => {
+          cambiarFormularioValido(true);
+          cambiarCorreo({ campo: "", valido: null });
+          cambiarPassword({ campo: "", valido: null });
+          console.log("token:", res);
+          history.push("/ui/inicio");
+        })
+        .catch((error) => {
+          if (error.response.status === 401) {
+            msg = MSG_ERROR_NAME;
+          }
+          cambiarFormularioValido(false);
+        });
     } else {
+      msg = "Llenar todos los espacios requeridos";
       cambiarFormularioValido(false);
+      if (correo.valido == null) {
+        cambiarCorreo({ valido: false });
+      }
+      if (password.valido == null) {
+        cambiarPassword({ valido: false });
+      }
     }
   };
 
@@ -85,7 +117,8 @@ export default function Index() {
           {formularioValido === false && (
             <MensajeError>
               <p>
-                <b>Error:</b> Llenar todos los espacios requeridos{" "}
+                <b>Error: </b>
+                {msg}{" "}
               </p>
             </MensajeError>
           )}
@@ -100,4 +133,6 @@ export default function Index() {
       </div>
     </div>
   );
-}
+};
+
+export default Index;
