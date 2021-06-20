@@ -12,7 +12,7 @@ import {
 import ComponenteInput from "./componentes/input";
 import axios from "axios";
 import { URL_LOGIN } from "../../global/const";
-
+import Header from "../Header";
 const MSG_ERROR_NAME = "El correo electrónico o contrasena son incorrectos!!!";
 
 var msg = "Llenar todos los espacios requeridos";
@@ -29,6 +29,8 @@ const Index = () => {
     // correo: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_-___@_.-]*$/
   };
 
+  const [bLogout, setBLogout] = useState(false);
+
   const onSubmit = (e) => {
     e.preventDefault();
     if (correo.valido === true && password.valido === true) {
@@ -43,15 +45,19 @@ const Index = () => {
           cambiarCorreo({ campo: "", valido: null });
           cambiarPassword({ campo: "", valido: null });
           console.log("token:", res);
+          localStorage.setItem("token", res);
           history.push("/ui/inicio");
+          setBLogout(true);
         })
         .catch((error) => {
           if (error.response.status === 401) {
             msg = MSG_ERROR_NAME;
+            setBLogout(false);
           }
           cambiarFormularioValido(false);
         });
     } else {
+      setBLogout(false);
       msg = "Llenar todos los espacios requeridos";
       cambiarFormularioValido(false);
       if (correo.valido == null) {

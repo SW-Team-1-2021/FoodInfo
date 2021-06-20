@@ -5,7 +5,7 @@ import logo from "../../images/logo.png";
 import BotonLogin from "../BotonLogin/Login";
 import BotonLogout from "../BotonLogout/Logout";
 
-function Header() {
+function Header(props) {
   return (
     <Fragment>
       <div className="header">
@@ -38,8 +38,9 @@ function Header() {
           </div>
         </div>
         <div className="sec2">
-          <div className="botonLoginYLogout"></div>
-          <BotonLogout />
+          <div className="botonLoginYLogout">
+            {localStorage.getItem("token") ? <BotonLogout /> : <BotonLogin />}
+          </div>
         </div>
       </div>
     </Fragment>

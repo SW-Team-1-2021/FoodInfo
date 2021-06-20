@@ -5,7 +5,12 @@ import logout50 from "../../images/logout50.png";
 const BotonLogout = () => {
   return (
     <Link to="/api/logout">
-      <div className="botonlogout">
+      <div
+        onClick={() => {
+          localStorage.removeItem("token");
+        }}
+        className="botonlogout"
+      >
         <img className="logoutImage" src={logout50} alt="logout" />
         <div className="labellogout">Logout</div>
       </div>
