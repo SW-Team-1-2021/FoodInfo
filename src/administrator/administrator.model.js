@@ -18,9 +18,14 @@ function findByEmailAndCi(data) {
   return administratorDB.find({ email: data.email, ci: data.ci });
 }
 
+function findByEmail(data) {
+  return administratorDB.find({ email: data.email});
+}
+
 module.exports = {
   save,
   getdata,
   getDataById,
-  findByEmailAndCi
+  findByEmailAndCi,
+  findByEmail
 };

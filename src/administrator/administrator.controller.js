@@ -4,19 +4,19 @@ const model = require('./administrator.model');
 const errorBuilder = require('../commons/error-builder');
 
 const CONFLICT = 'conflict';
-const EMAIL= 'email';
+const EMAIL = 'email';
 
 async function saveAdministrator(req, res) {
   try {
     let adminSave = req.body;
-    const result = await model.findByName(adminSave.nombre);
-    
+    const result = await model.findByEmail(adminSave);
+
     if (result.length > 0) {
       throw errorBuilder.build(
         CONFLICT,
         {
           name: 'Data Repetition',
-          message: `The ${adminSave.ci} is already saved in the DB`
+          message: `The ${adminSave.email} is already saved in the DB`
         });
     }
     const admin = await model.save(adminSave);
@@ -30,17 +30,17 @@ async function saveAdministrator(req, res) {
 async function getAdmin(req, res) {
   try {
     const QUERY = [];
-    for(const key in req.query) {
+    for (const key in req.query)
       QUERY.push(key);
-    }
+
     let admin;
     switch (QUERY[0]) {
       case EMAIL : admin = await model.findByEmailAndCi(req.query[EMAIL]);
-      break;
-      default : admin= await model.getdata();
-      break;
+        break;
+      default : admin = await model.getdata();
+        break;
     }
-    
+
     return res.status(200).json(admin);
   } catch (error) {
     return res.status(error.status).json(error.body);
