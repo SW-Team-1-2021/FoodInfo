@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const H1=styled.h1`
+const H1 = styled.h1`
   text-align: center;
   color:#000000;
 `
@@ -12,6 +12,7 @@ const Formulario = styled.form`
   
 	@media (max-width: 800px){
 		grid-template-columns: 1fr;
+		line-heigth: 0.1;
 	}
 `
 const ContenedorBotonCentrado = styled.div`
@@ -23,6 +24,7 @@ const ContenedorBotonCentrado = styled.div`
 
   @media (max-width: 800px){
     grid-column: span 1;
+		line-heigth: 10%;
   }
 `
 
@@ -60,4 +62,4 @@ ${props => props.valido === true && css`
 		border: 3px solid ${"#bb2929"} !important;
 	`}
 `;
-export { Formulario, ContenedorBotonCentrado, Label, Select,H1 };
+export { Formulario, ContenedorBotonCentrado, Label, Select, H1 };
