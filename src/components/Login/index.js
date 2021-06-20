@@ -4,9 +4,9 @@ import logo from '../../images/logo.png'
 import { Formulario, ContenedorBotonCentrado, Boton, MensajeExito, MensajeError } from './estilosLogin'
 import ComponenteInput from './componentes/input';
 import axios from "axios"
-import { URL } from '../../global/const';
+import { URL_LOGIN } from '../../global/const';
 
-const MSG_ERROR_NAME = 'El correo electrónico no se encuentra registrado ';
+const MSG_ERROR_NAME = 'El correo electrónico o contrasena son incorrectos!!!';
 
 var msg = 'Llenar todos los espacios requeridos';
 
@@ -28,17 +28,18 @@ const Index = () => {
             password.valido === true
         ) {
             var datos = {
-                correo: correo.campo,
+                username: correo.campo,
                 password: password.campo,
             };
-            axios.post(URL, datos)
+            axios.post(URL_LOGIN, datos)
                 .then(res => {
                     cambiarFormularioValido(true);
                     cambiarCorreo({ campo: '', valido: null });
                     cambiarPassword({ campo: '', valido: null });
+                    console.log("token:", res);
                 })
                 .catch(error => {
-                    if (error.response.status === 409) {
+                    if (error.response.status === 401) {
                         msg = MSG_ERROR_NAME;
                     }
                     cambiarFormularioValido(false);
