@@ -7,7 +7,7 @@ import ComponenteInput from './componentes/input';
 import axios from "axios"
 import { URL_LOGIN } from '../../global/const';
 
-const MSG_ERROR_NAME = 'El correo electrónico o contrasena son incorrectos!!!';
+const MSG_ERROR_NAME = 'Correo y/o contraseña incorrecto';
 
 var msg = 'Llenar todos los espacios requeridos';
 
