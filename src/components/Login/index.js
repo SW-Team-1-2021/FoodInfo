@@ -63,7 +63,7 @@ const Index = () => {
     return (
         <div className="contenedorPrincipal ">
             <div className="contenedorSecundario">
-                <h2 className="titulo">Iniciar Sesión</h2>
+                <h2 className="titulo"><b>Iniciar Sesión</b></h2>
                 <img src={logo} className='image1' alt='logo' width="100px" height="100px" />
                 <Formulario action="" onSubmit={onSubmit}>
                     <ComponenteInput

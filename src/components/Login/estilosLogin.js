@@ -59,7 +59,7 @@ const LeyendaError = styled.p`
 	font-size: 12px;
 	margin-bottom: 0;
 	color: ${colores.error};
-    width: 250px;
+    width: 240px;
     display:none;
     padding-bottom: 20px;
     ${props => props.valido === true && css `
@@ -105,7 +105,7 @@ const MensajeExito = styled.p`
 
 const MensajeError = styled.div`
     height:35px;
-    width: 250px;
+    width: 240px;
     line-height:35px;
     background:${colores.error};
     border-radius: 3px;

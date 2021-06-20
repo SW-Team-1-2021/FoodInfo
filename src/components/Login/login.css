@@ -17,11 +17,11 @@
 .contenedorSecundario{
     text-align: left;
     display: flex;
-    min-height: 50vh;
+    min-height: 25vh;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    width: 250px;
+    width: 240px;
 
 }
 
