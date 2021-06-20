@@ -1,0 +1,12 @@
+.botonlogin {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.loginImage {
+  width: 30px;
+  height: 30px;
+}

@@ -19,8 +19,8 @@ const Label = styled.label`
     font-weight: 700;
     // min-height: 40px;
     cursor: pointer;
-    font-size:16px;  
-    
+    font-size:16px;
+
     ${props => props.valido === 'false' && css `
         color: ${colores.error};
     `}
@@ -28,7 +28,7 @@ const Label = styled.label`
 
 const GrupoInput = styled.div`
     position: relative;
-    z-index: 90;  
+    z-index: 90;
 `;
 
 const Input = styled.input`
@@ -91,7 +91,7 @@ const Boton = styled.button`
 	border-radius: 3px;
 	cursor: pointer;
 	transition: .1s ease all;
-	
+
 	&:hover {
 		box-shadow: 3px 0px 30px rgba(163,163,163, 1);
 	}
@@ -127,5 +127,5 @@ export {
     ContenedorBotonCentrado,
     Boton,
     MensajeExito,
-    MensajeError    
+    MensajeError
 };
