@@ -27,7 +27,7 @@ async function saveAdministrator(req, res) {
 }
 
 
-async function getFood(req, res) {
+async function getAdmin(req, res) {
   try {
     const QUERY = [];
     for(const key in req.query) {
@@ -58,5 +58,7 @@ async function getAdminById(req, res) {
 }
 
 module.exports = {
-  saveAdministrator
+  saveAdministrator,
+  getAdmin,
+  getAdminById
 };
