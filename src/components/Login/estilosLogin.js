@@ -62,16 +62,15 @@ const Input = styled.input`
 `;
 
 const LeyendaError = styled.p`
-  font-size: 12px;
-  margin-bottom: 0;
-  color: ${colores.error};
-  width: 250px;
-  display: none;
-  padding-bottom: 20px;
-  ${(props) =>
-    props.valido === true &&
-    css`
-      display: none;
+	font-size: 12px;
+	margin-bottom: 0;
+	color: ${colores.error};
+    width: 240px;
+    display:none;
+    padding-bottom: 20px;
+    ${props => props.valido === true && css `
+        display:none;
+
     `}
   ${(props) =>
     props.valido === false &&
@@ -114,18 +113,18 @@ const MensajeExito = styled.p`
 `;
 
 const MensajeError = styled.div`
-  height: 35px;
-  width: 250px;
-  line-height: 35px;
-  background: ${colores.error};
-  border-radius: 3px;
-  font-size: 12px;
-  p {
-    margin: 0;
-  }
-  b {
-    margin-left: 10px;
-  }
+    height:35px;
+    width: 240px;
+    line-height:35px;
+    background:${colores.error};
+    border-radius: 3px;
+    font-size:12px;
+    p{
+        margin:0;
+    }
+    b{
+        margin-left:10px;
+    }
 `;
 
 export {
