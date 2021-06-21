@@ -1,17 +1,20 @@
 import axios from 'axios';
-import cookies from 'js-cookie';
 
 axios.interceptors.request.use(
     (req) => {
-        if (req.url.includes('/api/food') && cookies.get('token')) {
-            const token = cookies.get('token');
+        if (req.url.includes('/api/food') && localStorage.getItem('token')) {
+            const token = localStorage.getItem('token');
+            req.params = { token: token };
+        }
+        if (req.url.includes('/api/administrator') && localStorage.getItem('token')) {
+            const token = localStorage.getItem('token');
             req.params = { token: token };
         }
         return req;
     },
     (err) => {
         if (err.response.data.message.include('TokenExpiredError')) {
-            cookies.remove('token');
+            localStorage.removeItem('token');
             window.location = '/ui/login';
         }
         return Promise.reject(err);
@@ -21,14 +24,18 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
     (res) => {
         if (res.status === 200 && res.config.url.includes('/api/login')) {
-            cookies.set('token', res.data);
+            localStorage.setItem('token', res.data);
             window.location = '/ui/inicio';
+        }
+        if (res.status === 200 && res.config.url.includes('/api/logout')) {
+            localStorage.removeItem('token');
+            window.location = '/ui/login';
         }
         return res;
     },
     (err) => {
         if (err.response.data.message.includes('TokenExpiredError')) {
-            cookies.remove('token');
+            localStorage.removeItem('token');
             window.location = '/ui/login';
         }
         return Promise.reject(err);

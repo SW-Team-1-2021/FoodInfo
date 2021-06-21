@@ -1,13 +1,16 @@
 import "./style.css";
 import { Link } from "react-router-dom";
 import logout50 from "../../images/logout50.png";
+import axios from "axios";
+import { URL_LOGOUT } from "../../global/const";
 
 const BotonLogout = () => {
   return (
-    <Link to="/api/logout">
+    <Link>
       <div
         onClick={() => {
-          localStorage.removeItem("token");
+          const token = localStorage.getItem('token');
+          axios.post(URL_LOGOUT, { token: token });
         }}
         className="botonlogout"
       >

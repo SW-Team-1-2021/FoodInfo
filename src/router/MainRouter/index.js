@@ -7,8 +7,8 @@ import Header from '../../components/Header';
 import Inicio from '../../components/Inicio';
 import ResultadoBusqueda from '../../components/ResultadoBusqueda';
 import Login from '../../components/Login';
-import cookies from 'js-cookie';
 import './style.css'
+import Administrador from '../../components/Administrador';
 
 function MainRouter() {
     return (
@@ -20,20 +20,26 @@ function MainRouter() {
                         <Inicio />
                     </div>
                 </Route>
-                {cookies.get('token') !== null && cookies.get('token') !== '' && cookies.get('token') !== undefined &&
+                {localStorage.getItem('token') !== null && localStorage.getItem('token') !== '' && localStorage.getItem('token') !== undefined &&
                     <Route path='/ui/alimentos'>
                         <div className='container-image alimentos'>
                             <Alimentos />
                         </div>
                     </Route>
                 }
-                {cookies.get('token') !== null && cookies.get('token') !== '' && cookies.get('token') !== undefined &&
+                {localStorage.getItem('token') !== null && localStorage.getItem('token') !== '' && localStorage.getItem('token') !== undefined &&
                     <Route path='/ui/añadir'>
                         <div className='container-image anadir-alimento'>
                             <AñadirAlimento />
                         </div>
                     </Route>
                 }
+                {localStorage.getItem('token') !== null && localStorage.getItem('token') !== '' && localStorage.getItem('token') !== undefined &&
+                 <Route path='/ui/administrador'>
+                    <div className='container-image mostrar-detalle'>
+                        <Administrador />
+                    </div>
+                </Route>}
                 <Route path='/ui/resultados'>
                     <div className='container-image resultado-busqueda'>
                         <ResultadoBusqueda />
@@ -54,7 +60,7 @@ function MainRouter() {
                         <MostrarDetalle />
                     </div>
                 </Route>
-                {(cookies.get('token') === null || cookies.get('token') === '' || cookies.get('token') === undefined) &&
+                {(localStorage.getItem('token') === null || localStorage.getItem('token') === '' || localStorage.getItem('token') === undefined) &&
                     <Route path='/ui/login'>
                         <div className='container-image login'>
                             <Login />
