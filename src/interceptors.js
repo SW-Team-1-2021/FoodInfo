@@ -2,10 +2,6 @@ import axios from 'axios';
 
 axios.interceptors.request.use(
     (req) => {
-        if (req.url.includes('/api/food') && localStorage.getItem('token')) {
-            const token = localStorage.getItem('token');
-            req.params = { token: token };
-        }
         if (req.url.includes('/api/administrator') && localStorage.getItem('token')) {
             const token = localStorage.getItem('token');
             req.params = { token: token };
