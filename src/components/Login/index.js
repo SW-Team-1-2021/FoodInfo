@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./login.css";
 import logo from "../../images/logo.png";
 import {
@@ -12,12 +12,10 @@ import {
 import ComponenteInput from "./componentes/input";
 import axios from "axios";
 import { URL_LOGIN } from "../../global/const";
-import Header from "../Header";
-const MSG_ERROR_NAME = "El correo electrónico o contrasena son incorrectos!!!";
 
-const MSG_ERROR_NAME = 'Correo y/o contraseña incorrecto';
+const MSG_ERROR_NAME = "Correo y/o contraseña incorrecto";
 
-var msg = 'Llenar todos los espacios requeridos';
+var msg = "Llenar todos los espacios requeridos";
 
 const Index = () => {
   const [correo, cambiarCorreo] = useState({ campo: "", valido: null });
@@ -30,8 +28,6 @@ const Index = () => {
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{1,10}$/,
     // correo: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_-___@_.-]*$/
   };
-
-  const [bLogout, setBLogout] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -49,17 +45,14 @@ const Index = () => {
           console.log("token:", res);
           localStorage.setItem("token", res);
           history.push("/ui/inicio");
-          setBLogout(true);
         })
         .catch((error) => {
           if (error.response.status === 401) {
             msg = MSG_ERROR_NAME;
-            setBLogout(false);
           }
           cambiarFormularioValido(false);
         });
     } else {
-      setBLogout(false);
       msg = "Llenar todos los espacios requeridos";
       cambiarFormularioValido(false);
       if (correo.valido == null) {
@@ -71,32 +64,40 @@ const Index = () => {
     }
   };
 
-    return (
-        <div className="contenedorPrincipal ">
-            <div className="contenedorSecundario">
-                <h2 className="titulo"><b>Iniciar Sesión</b></h2>
-                <img src={logo} className='image1' alt='logo' width="100px" height="100px" />
-                <Formulario action="" onSubmit={onSubmit}>
-                    <ComponenteInput
-                        estado={correo}
-                        cambiarEstado={cambiarCorreo}
-                        tipo="text"
-                        label="Correo electrónico"
-                        placeholder="ejemplo@gmail.com"
-                        name="correo"
-                        leyendaError="Solo acepta un máximo de 250 caracteres, y solamente se permitiran letras, numeros, guion, guion bajo, punto y arroba"
-                        expresionRegular={expresiones.correo}
-                    />
-                    <ComponenteInput
-                        estado={password}
-                        cambiarEstado={cambiarPassword}
-                        tipo="password"
-                        label="Contraseña"
-                        placeholder="Escriba su password"
-                        name="password"
-                        leyendaError="Solo se acepta un máximo de 30 caracteres"
-                        expresionRegular={expresiones.password}
-                    />
+  return (
+    <div className="contenedorPrincipal ">
+      <div className="contenedorSecundario">
+        <h2 className="titulo">
+          <b>Iniciar Sesión</b>
+        </h2>
+        <img
+          src={logo}
+          className="image1"
+          alt="logo"
+          width="100px"
+          height="100px"
+        />
+        <Formulario action="" onSubmit={onSubmit}>
+          <ComponenteInput
+            estado={correo}
+            cambiarEstado={cambiarCorreo}
+            tipo="text"
+            label="Correo electrónico"
+            placeholder="ejemplo@gmail.com"
+            name="correo"
+            leyendaError="Solo acepta un máximo de 250 caracteres, y solamente se permitiran letras, numeros, guion, guion bajo, punto y arroba"
+            expresionRegular={expresiones.correo}
+          />
+          <ComponenteInput
+            estado={password}
+            cambiarEstado={cambiarPassword}
+            tipo="password"
+            label="Contraseña"
+            placeholder="Escriba su password"
+            name="password"
+            leyendaError="Solo se acepta un máximo de 30 caracteres"
+            expresionRegular={expresiones.password}
+          />
 
           {formularioValido === false && (
             <MensajeError>
