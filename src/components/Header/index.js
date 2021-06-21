@@ -1,7 +1,7 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import "./style.css";
-import logo from "../../images/logo.png";
+import './style.css'
+import logo from '../../images/logo.png'
 import BotonLogin from "../BotonLogin/Login";
 import BotonLogout from "../BotonLogout/Logout";
 
@@ -26,19 +26,21 @@ function Header(props) {
               Inicio
             </Link>
           </div>
-          <div className="link">
-            <Link to="/ui/alimentos" className="text-link">
-              Alimentos
-            </Link>
-          </div>
-          <div className="link">
-            <Link to="/ui/añadir" className="text-link">
-              Añadir
-            </Link>
-          </div>
-<div className='link'>
-                    <Link to='/ui/administrador' className='text-link'>Administrador</Link>
-                </div>
+          {localStorage.getItem('token') !== null && localStorage.getItem('token') !== '' && localStorage.getItem('token') !== undefined &&
+            <><div className="link">
+              <Link to="/ui/alimentos" className="text-link">
+                Alimentos
+              </Link>
+            </div>
+              <div className="link">
+                <Link to="/ui/añadir" className="text-link">
+                  Añadir
+                </Link>
+              </div>
+              <div className='link'>
+                <Link to='/ui/administrador' className='text-link'>Administrador</Link>
+              </div>
+            </>}
         </div>
         <div className="sec2">
           <div className="botonLoginYLogout">
@@ -46,7 +48,7 @@ function Header(props) {
           </div>
         </div>
       </div>
-    </Fragment>
+    </Fragment >
   );
 }
 
