@@ -34,7 +34,7 @@ function Inicio() {
         <ComponentBuscador accionBuscar={accionBuscar} />
       </div>
       <h3 className="categorias" align="center">
-        CATEGORIAS
+        <strong>CATEGORIAS</strong>
       </h3>
       <Categorias accionBuscarCategoria={accionBuscarCategoria} />
     </div>
