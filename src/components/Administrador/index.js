@@ -5,9 +5,9 @@ import { Formulario, ContenedorBotonCentrado,H1 } from './estilos';
 import Genero from '../Administrador/Genero/index';
 import Fecha from './Fecha';
 import axios from "axios"
-import { URL1} from '../../global/const1';
+import { URL_ADMINISTRATOR} from '../../global/const';
 
-const MSG_ERROR_NAME = 'El nombre del alimento ya se encuentra registrado';
+const MSG_ERROR_NAME = 'El usuario ya se encuentra registrado';
 
 var msg = 'Por favor rellena el formulario correctamente.';
 
@@ -41,16 +41,16 @@ const Administrador = () => {
       genero.valido===true){
 
         var datos={
-          nombres:nombres.campo,
-          apellidos:apellidos.campo,
+          name:nombres.campo,
+          lastname:apellidos.campo,
           ci:ci.campo,
-          correo:correo.campo,
-          nacimiento:nacimiento.campo,
-          genero:genero.campo
+          email:correo.campo,
+          datebirth:nacimiento.campo,
+          gender:genero.campo
         }
 
        // console.log(datos);
-       axios.post(URL1, datos)
+       axios.post(URL_ADMINISTRATOR, datos)
 				.then(res => {
 					cambiarFormulario(true);
 					cambiarNombres({ campo: '', valido: null });
@@ -186,7 +186,7 @@ const Administrador = () => {
 
         <ContenedorBotonCentrado>
           <Boton type="submit">Enviar</Boton>
-          {formulario === true && <MensajeExito><b>El alimento fue agregado correctamente</b></MensajeExito>}
+          {formulario === true && <MensajeExito><b>El usuario fue agregado correctamente</b></MensajeExito>}
         </ContenedorBotonCentrado>
 
       </Formulario>
