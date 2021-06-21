@@ -20,19 +20,20 @@ function MainRouter() {
                         <Inicio />
                     </div>
                 </Route>
-                {cookies.get('token') !== null && cookies.get('token') !== '' &&
-                    <>
-                        <Route path='/ui/alimentos'>
-                            <div className='container-image alimentos'>
-                                <Alimentos />
-                            </div>
-                        </Route>
-                        <Route path='/ui/añadir'>
-                            <div className='container-image anadir-alimento'>
-                                <AñadirAlimento />
-                            </div>
-                        </Route>
-                    </>}
+                {cookies.get('token') !== null && cookies.get('token') !== '' && cookies.get('token') !== undefined &&
+                    <Route path='/ui/alimentos'>
+                        <div className='container-image alimentos'>
+                            <Alimentos />
+                        </div>
+                    </Route>
+                }
+                {cookies.get('token') !== null && cookies.get('token') !== '' && cookies.get('token') !== undefined &&
+                    <Route path='/ui/añadir'>
+                        <div className='container-image anadir-alimento'>
+                            <AñadirAlimento />
+                        </div>
+                    </Route>
+                }
                 <Route path='/ui/resultados'>
                     <div className='container-image resultado-busqueda'>
                         <ResultadoBusqueda />
@@ -50,13 +51,21 @@ function MainRouter() {
                 </Route>
                 <Route path='/ui/mostrar'>
                     <div className='container-image mostrar-detalle'>
-                        <Administrador />
+                        <MostrarDetalle />
                     </div>
                 </Route>
-        <Redirect from="" to="/ui/inicio" exact />
-      </Switch>
-    </Router>
-  );
+                {(cookies.get('token') === null || cookies.get('token') === '' || cookies.get('token') === undefined) &&
+                    <Route path='/ui/login'>
+                        <div className='container-image login'>
+                            <Login />
+                        </div>
+                    </Route>
+                }
+                <Redirect from='/ui/*' to='/ui/inicio' />
+            </Switch>
+            <Redirect from='/*' to='/ui/inicio' />
+        </Router >
+    );
 }
 
 export default MainRouter;

@@ -1,24 +1,18 @@
 import axios from 'axios';
 import cookies from 'js-cookie';
-import { useHistory } from 'react-router-dom';
-
 
 axios.interceptors.request.use(
     (req) => {
-        if (req.url === '/api/food' && cookies.get('token')) {
+        if (req.url.includes('/api/food') && cookies.get('token')) {
             const token = cookies.get('token');
-            const authorization = token ? `Bearer ${token}` : token;
-            req.headers = { Authorization: authorization, ...req.headers }
+            req.params = { token: token };
         }
         return req;
     },
     (err) => {
-        if (err.message.include('TokenExpiredError')) {
+        if (err.response.data.message.include('TokenExpiredError')) {
             cookies.remove('token');
-            let history = useHistory();
-            history.push({
-                pathname: "/ui/login"
-            });
+            window.location = '/ui/login';
         }
         return Promise.reject(err);
     }
@@ -26,18 +20,16 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
     (res) => {
-        if (res.config.code === 200 && res.config.url === '/api/login') {
+        if (res.status === 200 && res.config.url.includes('/api/login')) {
             cookies.set('token', res.data);
+            window.location = '/ui/inicio';
         }
         return res;
     },
     (err) => {
-        if (err.response.status === 419) {
+        if (err.response.data.message.includes('TokenExpiredError')) {
             cookies.remove('token');
-            let history = useHistory();
-            history.push({
-                pathname: "/ui/login"
-            });
+            window.location = '/ui/login';
         }
         return Promise.reject(err);
     }
