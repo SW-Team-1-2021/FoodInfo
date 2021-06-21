@@ -11,6 +11,7 @@ import AñadirAlimento from "../../components/AñadirAlimento";
 import Header from "../../components/Header";
 import Inicio from "../../components/Inicio";
 import ResultadoBusqueda from "../../components/ResultadoBusqueda";
+import Administrador from '../../components/Administrador';
 import Login from "../../components/Login";
 import "./style.css";
 
@@ -55,6 +56,11 @@ function MainRouter() {
             <Login />
           </div>
         </Route>
+    <Route path='/ui/administrador'>
+                    <div className='container-image mostrar-detalle'>
+                        <Administrador />
+                    </div>
+                </Route>
         <Redirect from="" to="/ui/inicio" exact />
       </Switch>
     </Router>

@@ -13,7 +13,7 @@ const Formulario = styled.form`
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 10px;
 
-	@media (max-width: 800px){
+	@media (max-width: 883px){
 		grid-template-columns: 1fr;
 	}
 `;
@@ -21,9 +21,11 @@ const Formulario = styled.form`
 const Label = styled.label`
 	display: block;
 	font-weight: 700;
+	font-size:16px;
 	padding: 10px;
 	min-height: 40px;
 	cursor: pointer;
+	color:#000000;
 	
 
 
@@ -63,6 +65,14 @@ const Input = styled.input`
 	transition: .3s ease all;
 	border: 3px solid transparent;
 
+	::-webkit-calendar-picker-indicator{
+		// background: none;
+		background: transparent;
+		width: 52%;
+		// display: none;
+	}
+	
+
 	&:focus {
 		border: 3px solid ${colores.borde};
 		outline: none;
@@ -79,7 +89,8 @@ const Input = styled.input`
 `;
 
 const LeyendaError = styled.p`
-	font-size: 12px;
+    font-weight: bold;
+	font-size: 15px;
 	margin-bottom: 0;
 	color: ${colores.error};
 	display: none;

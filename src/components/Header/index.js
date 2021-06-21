@@ -36,6 +36,9 @@ function Header(props) {
               Añadir
             </Link>
           </div>
+<div className='link'>
+                    <Link to='/ui/administrador' className='text-link'>Administrador</Link>
+                </div>
         </div>
         <div className="sec2">
           <div className="botonLoginYLogout">
