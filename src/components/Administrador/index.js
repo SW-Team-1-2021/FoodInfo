@@ -25,7 +25,7 @@ const Administrador = () => {
 
     nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ_\s_ñ-]*$/,
     apellido: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ_\s_ñ-]*$/,
-    correo_electronico: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_-___@_.-]*$/,
+    correo_electronico: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/,
     carnet: /^[0-9\b]*$/,
   }
 
@@ -132,7 +132,7 @@ const Administrador = () => {
           label="*Carnet de Identidad"
           placeholder="ej: 3490293"
           name="ci"
-          leyendaError=" El CI tiene que ser de 1 a 40 caracteres, sin caracteres especiales. "
+          leyendaError=" El CI tiene que ser de 1 a 10 caracteres, sin caracteres especiales. "
           expresionRegular={expresiones.carnet}
           requerido={""}
         />
