@@ -9,12 +9,12 @@ const Genero = ({ estado, cambiarEstado, leyendaError }) => {
 
   }
 
-//  console.log(estado.campo);
+  //  console.log(estado.campo);
   // console.log(estado.valido);
   return (
 
     <div>
-      <Label valido={estado.valido} >*Genero</Label>
+      <Label valido={estado.valido} >*Género</Label>
 
       <Select name="categorias" id="categoria"
         //required

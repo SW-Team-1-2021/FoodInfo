@@ -142,10 +142,10 @@ const Administrador = () => {
           tipo="email"
           nuMin="1"
           nuMax="250"
-          label="*Correo Electronico"
+          label="*Correo Electrónico"
           placeholder="ej: mevale90@gmail.com"
           name="correo"
-          leyendaError=" Introdusca un coorreo valido "
+          leyendaError=" Introdusca un correo valido "
           expresionRegular={expresiones.correo_electronico}
           requerido={""}
         />
