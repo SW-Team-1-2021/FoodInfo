@@ -22,8 +22,9 @@ const Index = () => {
   const [formularioValido, cambiarFormularioValido] = useState(null);
 
   const expresiones = {
-    password: /^.{4,30}$/,
+    password: /^.{1,10}$/,
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{1,10}$/,
+    // correo: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/,
   };
 
   const onSubmit = (e) => {
@@ -89,7 +90,7 @@ const Index = () => {
             label="Contraseña"
             placeholder="Escriba su password"
             name="password"
-            leyendaError="Solo se acepta un máximo de 30 caracteres"
+            leyendaError="Solo se acepta un máximo de 10 caracteres"
             expresionRegular={expresiones.password}
           />
 
