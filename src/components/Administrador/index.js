@@ -101,11 +101,11 @@ const Administrador = () => {
           cambiarEstado={cambiarNombres}
           tipo="text"
           nuMin="1"
-          nuMax="30"
+          nuMax="50"
           label="*Nombres"
           placeholder="ej: Michel"
           name="nombre"
-          leyendaError=" Los nombres tienen que ser de 1 a 30 caracteres, sin caracteres especiales. "
+          leyendaError=" Los nombres tienen que ser de 1 a 50 caracteres, sin caracteres especiales. "
           expresionRegular={expresiones.nombre}
 
           requerido={""}
