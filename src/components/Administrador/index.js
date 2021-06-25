@@ -7,7 +7,7 @@ import Fecha from './Fecha';
 import axios from "axios"
 import { URL_ADMINISTRATOR } from '../../global/const';
 
-const MSG_ERROR_NAME = 'El usuario ya se encuentra registrado';
+const MSG_ERROR_NAME = 'El correo y/o CI. ya se encuentra registrado';
 
 var msg = 'Por favor rellena el formulario correctamente.';
 
@@ -25,63 +25,74 @@ const Administrador = () => {
 
     nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ_\s_ñ-]*$/,
     apellido: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ_\s_ñ-]*$/,
-    correo_electronico: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_-___@_.-]*$/,
+    correo_electronico: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/,
     carnet: /^[0-9\b]*$/,
   }
 
   const onSubmit = (e) => {
-    e.preventDefault();
 
-    if (
-      nombres.valido === true &&
-      apellidos.valido === true &&
-      ci.valido === true &&
-      correo.valido === true &&
-      nacimiento.valido === true &&
-      genero.valido === true) {
+		e.preventDefault();
 
-      var datos = {
-        name: nombres.campo,
-        lastname: apellidos.campo,
-        ci: ci.campo,
-        email: correo.campo,
-        datebirth: nacimiento.campo,
-        gender: genero.campo
-      }
+    if(
+      nombres.valido===true&&
+      apellidos.valido===true&&
+      ci.valido===true&&
+      correo.valido===true&&
+      nacimiento.valido===true&&
+      genero.valido===true){
 
-      // console.log(datos);
-      axios.post(URL_ADMINISTRATOR, datos)
-        .then(res => {
-          cambiarFormulario(true);
-          cambiarNombres({ campo: '', valido: null });
-          cambiarApellidos({ campo: '', valido: null });
-          cambiarCi({ campo: '', valido: null });
-          cambiarCorreo({ campo: '', valido: null });
-          cambiarNacimiento({ campo: '', valido: null });
-          cambiarGenero({ campo: '', valido: null });
-        })
+        var datos={
+          name:nombres.campo,
+          lastname:apellidos.campo,
+          ci:ci.campo,
+          email:correo.campo,
+          datebirth:nacimiento.campo,
+          gender:genero.campo
+        }
+
+       // console.log(datos);
+       axios.post(URL_ADMINISTRATOR, datos)
+				.then(res => {
+					cambiarFormulario(true);
+					cambiarNombres({ campo: '', valido: null });
+					cambiarApellidos({ campo: '', valido: null });
+					cambiarCi({ campo: '', valido: null });
+					cambiarCorreo({ campo: '', valido: null });
+					cambiarNacimiento({ campo: '', valido: null });
+					cambiarGenero({ campo: '', valido: null });
+				})
+        .catch(error => {
+					if (error.response.status === 409) {
+						msg = MSG_ERROR_NAME;
+					}
+					cambiarFormulario(false);
+				})
 
 
     }
     else {
       msg = 'Por favor rellena el formulario correctamente.';
-      cambiarFormulario(false);
-      if (nombres.valido == null) {
-        cambiarNombres({ valido: false });
-      }
-      if (apellidos.valido == null) {
-        cambiarApellidos({ valido: false });
-      }
 
-      if (ci.valido == null) {
-        cambiarCi({ valido: false });
-      }
-      if (correo.valido == null) {
-        cambiarCorreo({ valido: false });
+         cambiarFormulario(false);
 
-      }
-      if (nacimiento.valido == null) {
-        cambiarNacimiento({ valido: false });
+        if(nombres.valido==null){	
+          cambiarNombres({valido: false});
+         
+         }
+        if(apellidos.valido==null){
+           cambiarApellidos({valido: false});
+         }
+
+         if(ci.valido==null){
+          cambiarCi({valido: false});
+          }
+        if(correo.valido==null){
+            cambiarCorreo({valido: false});
+
+        }
+        if(nacimiento.valido==null){
+          cambiarNacimiento({valido: false});
+
 
       }
       if (genero.valido == null) {
@@ -90,7 +101,7 @@ const Administrador = () => {
       }
     }
   }
-  console.log(nacimiento.valido);
+
   return (
     <main>
       <H1 >Agregar Administrador</H1>
@@ -132,7 +143,7 @@ const Administrador = () => {
           label="*Carnet de Identidad"
           placeholder="ej: 3490293"
           name="ci"
-          leyendaError=" El CI tiene que ser de 1 a 40 caracteres, sin caracteres especiales. "
+          leyendaError=" El CI tiene que ser de 1 a 10 caracteres, sin caracteres especiales. "
           expresionRegular={expresiones.carnet}
           requerido={""}
         />
@@ -149,17 +160,7 @@ const Administrador = () => {
           expresionRegular={expresiones.correo_electronico}
           requerido={""}
         />
-        {/* <Input
-          estado={nacimiento}
-          cambiarEstado={cambiarNacimiento}
-          tipo="date"
-          nuMin="1"
-          nuMax="80"
-          label="*Fecha Nacimiento"
-          name="nacimiento"
-          requerido={""}
-        /> */}
-
+        
         <Fecha
           estado={nacimiento}
           cambiarEstado={cambiarNacimiento}
@@ -186,7 +187,7 @@ const Administrador = () => {
 
         <ContenedorBotonCentrado>
           <Boton type="submit">Enviar</Boton>
-          {formulario === true && <MensajeExito><b>El usuario fue agregado correctamente</b></MensajeExito>}
+          {formulario === true && <MensajeExito ><b>El usuario fue agregado correctamente</b></MensajeExito>}
         </ContenedorBotonCentrado>
 
       </Formulario>
