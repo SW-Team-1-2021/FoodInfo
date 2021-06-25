@@ -37,7 +37,7 @@ const Fecha = ({ className, requerido, estado, cambiarEstado,  label,
 				<Input
 					className={className}
 					type="date"
-					min="1800-01-01" 
+					min="1900-01-01" 
 					max={fechaActual()}
 					placeholder={placeholder}
 					id={name}

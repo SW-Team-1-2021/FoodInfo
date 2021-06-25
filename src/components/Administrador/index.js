@@ -60,6 +60,12 @@ const Administrador = () => {
 					cambiarNacimiento({ campo: '', valido: null });
 					cambiarGenero({ campo: '', valido: null });
 				})
+        .catch(error => {
+					if (error.response.status === 409) {
+						msg = MSG_ERROR_NAME;
+					}
+					cambiarFormulario(false);
+				})
 
 
     }
