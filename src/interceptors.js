@@ -11,6 +11,7 @@ axios.interceptors.request.use(
     (err) => {
         if (err.response.data.message.include('TokenExpiredError')) {
             localStorage.removeItem('token');
+            localStorage.removeItem('startTime');
             window.location = '/ui/login';
         }
         return Promise.reject(err);
@@ -25,6 +26,7 @@ axios.interceptors.response.use(
         }
         if (res.status === 200 && res.config.url.includes('/api/logout')) {
             localStorage.removeItem('token');
+            localStorage.removeItem('startTime');
             window.location = '/ui/login';
         }
         return res;
@@ -32,6 +34,7 @@ axios.interceptors.response.use(
     (err) => {
         if (err.response.data.message.includes('TokenExpiredError')) {
             localStorage.removeItem('token');
+            localStorage.removeItem('startTime');
             window.location = '/ui/login';
         }
         return Promise.reject(err);
