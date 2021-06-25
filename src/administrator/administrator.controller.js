@@ -9,14 +9,25 @@ const EMAIL = 'email';
 async function saveAdministrator(req, res) {
   try {
     let adminSave = req.body;
-    const result = await model.findByEmail(adminSave);
+    let result = await model.findByEmail(adminSave);
 
     if (result.length > 0) {
       throw errorBuilder.build(
         CONFLICT,
         {
           name: 'Data Repetition',
-          message: `The ${adminSave.email} is already saved in the DB`
+          message: `The email '${adminSave.email}' is already saved in the DB`
+        });
+    }
+
+    result = await model.findByCi(adminSave);
+
+    if (result.length > 0) {
+      throw errorBuilder.build(
+        CONFLICT,
+        {
+          name: 'Data Repetition',
+          message: `The ci '${adminSave.ci}' is already saved in the DB`
         });
     }
     const admin = await model.save(adminSave);
