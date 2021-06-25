@@ -7,7 +7,7 @@ import Fecha from './Fecha';
 import axios from "axios"
 import { URL_ADMINISTRATOR} from '../../global/const';
 
-const MSG_ERROR_NAME = 'El usuario ya se encuentra registrado';
+const MSG_ERROR_NAME = 'El correo y/o CI. ya se encuentra registrado';
 
 var msg = 'Por favor rellena el formulario correctamente.';
 
@@ -72,8 +72,10 @@ const Administrador = () => {
     else{
       msg = 'Por favor rellena el formulario correctamente.';
          cambiarFormulario(false);
+
         if(nombres.valido==null){	
           cambiarNombres({valido: false});
+         
          }
         if(apellidos.valido==null){
            cambiarApellidos({valido: false});
@@ -96,7 +98,10 @@ const Administrador = () => {
       }
     }
   }
-  console.log(nacimiento.valido);
+  
+ 
+
+
   return (
     <main>
       <H1 >Agregar Administrador</H1>
@@ -155,17 +160,7 @@ const Administrador = () => {
           expresionRegular={expresiones.correo_electronico}
           requerido={""}
         />
-        {/* <Input
-          estado={nacimiento}
-          cambiarEstado={cambiarNacimiento}
-          tipo="date"
-          nuMin="1"
-          nuMax="80"
-          label="*Fecha Nacimiento"
-          name="nacimiento"
-          requerido={""}
-        /> */}
-
+        
         <Fecha
          estado={nacimiento}
          cambiarEstado={cambiarNacimiento}
@@ -192,7 +187,7 @@ const Administrador = () => {
 
         <ContenedorBotonCentrado>
           <Boton type="submit">Enviar</Boton>
-          {formulario === true && <MensajeExito><b>El usuario fue agregado correctamente</b></MensajeExito>}
+          {formulario === true && <MensajeExito ><b>El usuario fue agregado correctamente</b></MensajeExito>}
         </ContenedorBotonCentrado>
 
       </Formulario>
