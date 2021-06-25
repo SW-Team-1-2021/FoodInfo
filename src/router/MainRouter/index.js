@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 import MostrarDetalle from '../../components/MotrarDetalle';
 import Alimentos from '../../components/Alimentos';
@@ -12,13 +12,27 @@ import Administrador from '../../components/Administrador';
 
 function MainRouter() {
 
-    if (localStorage.getItem('token') !== null && localStorage.getItem('nuevaSesion') === null) {
-        localStorage.setItem('nuevaSesion', 'nuevaSesion');
-        setTimeout(function () {
-            localStorage.removeItem('token');
-            localStorage.removeItem('nuevaSesion');
-            window.location = '/ui/login';
-        }, 15 * 60 * 1000);
+    const [session, setSession] = useState(false);
+
+    if (localStorage.getItem('token') !== null && !session) {
+        setSession(true);
+        const time = 15 * 60 * 1000;
+        if (localStorage.getItem('startTime') === null) {
+            localStorage.setItem('startTime', new Date().getTime());
+            setTimeout(() => {
+                localStorage.removeItem('token');
+                localStorage.removeItem('startTime');
+                window.location = '/ui/login';
+            }, time);
+        } else {
+            const startTime = localStorage.getItem('startTime');
+            const milisegundos = time - (new Date().getTime() - startTime)
+            setTimeout(() => {
+                localStorage.removeItem('token');
+                localStorage.removeItem('startTime');
+                window.location = '/ui/login';
+            }, milisegundos);
+        }
     }
 
     return (
