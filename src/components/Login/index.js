@@ -25,9 +25,8 @@ const Index = () => {
     password: /^.{1,10}$/,
     // correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{1,10}$/,
     // correo: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/,
-    correo: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/,
-
-    // correo: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_-___@_.-]*$/,
+    correo: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$/,
+    // correo: /^[a-zA-Z\d._-@a-zA-Z0-9._-\.a-zA-Z]*$/,
     // correo: /^[a-zA-Z0-9._-\s@a-zA-Z0-9._-\s\.a-zA-Z.-\s]*$/,
 
   };
@@ -81,12 +80,15 @@ const Index = () => {
           <ComponenteInput
             estado={correo}
             cambiarEstado={cambiarCorreo}
-            tipo="text"
+            tipo="email"
+            nuMin="1"
+            nuMax="250"
             label="Correo electrónico"
             placeholder="ejemplo@gmail.com"
             name="correo"
-            leyendaError="Solo acepta un máximo de 250 caracteres, y solamente se permitiran letras, numeros, guion, guion bajo, punto y arroba"
+            leyendaError="Introduzca un correo válido. No se permite caracteres especiales, a excepción de guion, guion bajo, punto y arroba"
             expresionRegular={expresiones.correo}
+            requerido={""}
           />
           {/* <ComponenteInput
             estado={correo}
