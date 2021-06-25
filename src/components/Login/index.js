@@ -23,8 +23,13 @@ const Index = () => {
 
   const expresiones = {
     password: /^.{1,10}$/,
-    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{1,10}$/,
+    // correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{1,10}$/,
     // correo: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/,
+    correo: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]+$/,
+
+    // correo: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_-___@_.-]*$/,
+    // correo: /^[a-zA-Z0-9._-\s@a-zA-Z0-9._-\s\.a-zA-Z.-\s]*$/,
+
   };
 
   const onSubmit = (e) => {
@@ -83,15 +88,29 @@ const Index = () => {
             leyendaError="Solo acepta un máximo de 250 caracteres, y solamente se permitiran letras, numeros, guion, guion bajo, punto y arroba"
             expresionRegular={expresiones.correo}
           />
+          {/* <ComponenteInput
+            estado={correo}
+            cambiarEstado={cambiarCorreo}
+            tipo="email"
+            nuMin="1"
+            nuMax="100"
+            label="*Correo electrónico"
+            placeholder="ejemplo@gmail.com"
+            name="correo"
+            leyendaError=" Introdusca un coorreo valido "
+            expresionRegular={expresiones.correo}
+            requerido={""}
+          /> */}
           <ComponenteInput
             estado={password}
             cambiarEstado={cambiarPassword}
             tipo="password"
             label="Contraseña"
-            placeholder="Escriba su password"
+            placeholder="Escriba su contraseña"
             name="password"
-            leyendaError="Solo se acepta un máximo de 10 caracteres"
+            leyendaError="La contraseña debe ser de 1 a 10 caracteres"
             expresionRegular={expresiones.password}
+            requerido={""}
           />
 
           {formularioValido === false && (

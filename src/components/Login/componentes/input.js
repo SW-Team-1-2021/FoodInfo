@@ -1,7 +1,7 @@
 import React from 'react';
 import { Label, GrupoInput, Input, LeyendaError } from './../estilosLogin'
 
-const ComponenteInput = ({ estado, cambiarEstado, tipo, label, placeholder, name, leyendaError, expresionRegular,funcion }) => {
+const ComponenteInput = ({ estado, nuMin,nuMax,requerido,onKeyDown,cambiarEstado, tipo, label, placeholder, name, leyendaError, expresionRegular,funcion }) => {
     const onChange = (e) => {
         cambiarEstado({ ...estado, campo: e.target.value });
     }
@@ -26,6 +26,8 @@ const ComponenteInput = ({ estado, cambiarEstado, tipo, label, placeholder, name
             <GrupoInput>
                 <Input
                     type={tipo}
+                    minLength={nuMin}
+					maxLength={nuMax}
                     placeholder={placeholder}
                     id={name}
                     value={estado.campo}
@@ -33,6 +35,8 @@ const ComponenteInput = ({ estado, cambiarEstado, tipo, label, placeholder, name
                     onKeyUp={validacion}
                     onBlur={validacion}
                     valido={estado.valido}
+                    required={requerido}
+					onKeyDown={onKeyDown}
                 />
             </GrupoInput>
             <LeyendaError valido={estado.valido}>{leyendaError}</LeyendaError>
