@@ -115,11 +115,11 @@ const Administrador = () => {
           cambiarEstado={cambiarApellidos}
           tipo="text"
           nuMin="1"
-          nuMax="40"
+          nuMax="50"
           label="*Apellidos"
           placeholder="ej: Mamani choquehuanca"
           name="apellido"
-          leyendaError=" Los apellidos tiene que ser de 1 a 40 caracteres, sin caracteres especiales. "
+          leyendaError=" Los apellidos tiene que ser de 1 a 50 caracteres, sin caracteres especiales. "
           expresionRegular={expresiones.apellido}
           requerido={""}
         />
