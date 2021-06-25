@@ -11,65 +11,74 @@ import './style.css'
 import Administrador from '../../components/Administrador';
 
 function MainRouter() {
+
+    if (localStorage.getItem('token') !== null && localStorage.getItem('nuevaSesion') === null) {
+        localStorage.setItem('nuevaSesion', 'nuevaSesion');
+        setTimeout(function () {
+            localStorage.removeItem('token');
+            localStorage.removeItem('nuevaSesion');
+            window.location = '/ui/login';
+        }, 15 * 60 * 1000);
+    }
+
     return (
         <Router>
             <Route path='/ui' component={Header} />
             <Switch>
-                <Route path='/ui/inicio'>
+                <Route exact path='/ui/inicio'>
                     <div className='container-image inicio'>
                         <Inicio />
                     </div>
                 </Route>
                 {localStorage.getItem('token') !== null && localStorage.getItem('token') !== '' && localStorage.getItem('token') !== undefined &&
-                    <Route path='/ui/alimentos'>
+                    <Route exact path='/ui/alimentos'>
                         <div className='container-image alimentos'>
                             <Alimentos />
                         </div>
                     </Route>
                 }
                 {localStorage.getItem('token') !== null && localStorage.getItem('token') !== '' && localStorage.getItem('token') !== undefined &&
-                    <Route path='/ui/añadir'>
+                    <Route exact path='/ui/añadir'>
                         <div className='container-image anadir-alimento'>
                             <AñadirAlimento />
                         </div>
                     </Route>
                 }
                 {localStorage.getItem('token') !== null && localStorage.getItem('token') !== '' && localStorage.getItem('token') !== undefined &&
-                 <Route path='/ui/administrador'>
-                    <div className='container-image mostrar-detalle'>
-                        <Administrador />
-                    </div>
-                </Route>}
-                <Route path='/ui/resultados'>
+                    <Route exact path='/ui/administrador'>
+                        <div className='container-image mostrar-detalle'>
+                            <Administrador />
+                        </div>
+                    </Route>}
+                <Route exact path='/ui/resultados'>
                     <div className='container-image resultado-busqueda'>
                         <ResultadoBusqueda />
                     </div>
                 </Route>
-                <Route path='/ui/mostrar'>
+                <Route exact path='/ui/mostrar'>
                     <div className='container-image mostrar-detalle'>
                         <MostrarDetalle />
                     </div>
                 </Route>
-                <Route path='/ui/resultados'>
+                <Route exact path='/ui/resultados'>
                     <div className='container-image resultado-busqueda'>
                         <ResultadoBusqueda />
                     </div>
                 </Route>
-                <Route path='/ui/mostrar'>
+                <Route exact path='/ui/mostrar'>
                     <div className='container-image mostrar-detalle'>
                         <MostrarDetalle />
                     </div>
                 </Route>
                 {(localStorage.getItem('token') === null || localStorage.getItem('token') === '' || localStorage.getItem('token') === undefined) &&
-                    <Route path='/ui/login'>
+                    <Route exact path='/ui/login'>
                         <div className='container-image login'>
                             <Login />
                         </div>
                     </Route>
                 }
-                <Redirect from='/ui/*' to='/ui/inicio' />
+                <Redirect strict from='/*' to='/ui/inicio' />
             </Switch>
-            <Redirect from='/*' to='/ui/inicio' />
         </Router >
     );
 }
