@@ -25,11 +25,7 @@ const Fecha = ({ className, requerido, estado, cambiarEstado,  label,
 	return actual;
   }
    
-	//  console.log(hoy);
-	//  console.log(mesActual);
-	//  console.log(anioActual);
-    //  console.log(actual);
-	console.log(fechaActual())
+
 	return (
 		<div>
 			{label && <Label htmlFor={name} valido={estado.valido}>{label}</Label>}

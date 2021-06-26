@@ -29,6 +29,10 @@ const Administrador = () => {
     carnet: /^[0-9\b]*$/,
   }
 
+  function mostrar() {
+    cambiarFormulario(null);
+  }
+
   const onSubmit = (e) => {
 
 		e.preventDefault();
@@ -60,12 +64,14 @@ const Administrador = () => {
 					cambiarCorreo({ campo: '', valido: null });
 					cambiarNacimiento({ campo: '', valido: null });
 					cambiarGenero({ campo: '', valido: null });
+          setTimeout(mostrar,4000);
 				})
         .catch(error => {
 					if (error.response.status === 409) {
 						msg = MSG_ERROR_NAME;
 					}
 					cambiarFormulario(false);
+          setTimeout(mostrar,4000);
 				})
 
 
@@ -74,6 +80,7 @@ const Administrador = () => {
       msg = 'Por favor rellena el formulario correctamente.';
 
          cambiarFormulario(false);
+         setTimeout(mostrar,4000);
 
         if(nombres.valido==null){	
           cambiarNombres({valido: false});
