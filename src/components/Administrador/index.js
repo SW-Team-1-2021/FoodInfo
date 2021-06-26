@@ -7,7 +7,8 @@ import Fecha from './Fecha';
 import axios from "axios"
 import { URL_ADMINISTRATOR } from '../../global/const';
 
-const MSG_ERROR_NAME = 'El correo y/o CI. ya se encuentra registrado';
+const MSG_ERROR_CI = 'El  CI. ya se encuentra registrado';
+const MSG_ERROR_EMAIL= 'El correo ya se encuentra registrado';
 
 var msg = 'Por favor rellena el formulario correctamente.';
 
@@ -27,6 +28,10 @@ const Administrador = () => {
     apellido: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ_\s_ñ-]*$/,
     correo_electronico: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/,
     carnet: /^[0-9\b]*$/,
+  }
+
+  function mostrar() {
+    cambiarFormulario(null);
   }
 
   const onSubmit = (e) => {
@@ -49,7 +54,7 @@ const Administrador = () => {
           datebirth:nacimiento.campo,
           gender:genero.campo
         }
-
+     
        // console.log(datos);
        axios.post(URL_ADMINISTRATOR, datos)
 				.then(res => {
@@ -60,12 +65,19 @@ const Administrador = () => {
 					cambiarCorreo({ campo: '', valido: null });
 					cambiarNacimiento({ campo: '', valido: null });
 					cambiarGenero({ campo: '', valido: null });
+          setTimeout(mostrar,4000);
 				})
         .catch(error => {
-					if (error.response.status === 409) {
-						msg = MSG_ERROR_NAME;
+					if (error.response.data.message.search("ci")!=-1) {
+						msg = MSG_ERROR_CI;
+              
+					}
+          if (error.response.data.message.search("email")!=-1) {
+						msg = MSG_ERROR_EMAIL;
+              
 					}
 					cambiarFormulario(false);
+          setTimeout(mostrar,4000);
 				})
 
 
@@ -74,6 +86,7 @@ const Administrador = () => {
       msg = 'Por favor rellena el formulario correctamente.';
 
          cambiarFormulario(false);
+         setTimeout(mostrar,4000);
 
         if(nombres.valido==null){	
           cambiarNombres({valido: false});
