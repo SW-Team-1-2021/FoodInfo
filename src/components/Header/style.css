@@ -11,28 +11,40 @@
     0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
   border-radius: 2px;
   border: 10px black;
-  align-items: baseline;
+  align-items: center;
 }
 
 .sec1 {
-  width: 50%;
+  width: 80%;
   display: flex;
   align-items: baseline;
   justify-content: flex-start;
+  /*position: absolute;
+   */
+}
+
+@media (max-width: 400px) {
+  .sec1 {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: -17px;
+    overflow-x: scroll;
+  }
 }
 
 .sec2 {
-  width: 50%;
+  width: 20%;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: flex-end;
 }
 
-.image {
+/*.image {
   width: 100%;
   max-width: 50px;
   height: auto;
-}
+}*/
 
 .link {
   padding-left: 5px;
@@ -53,5 +65,5 @@
   }
 }
 .botonLoginYLogout {
-  margin-right: 20px;
+  margin-right: 10px;
 }
