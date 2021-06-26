@@ -79,7 +79,7 @@ const Index = () => {
             label="Correo electrónico"
             placeholder="ejemplo@gmail.com"
             name="correo"
-            leyendaError="Solo acepta un máximo de 250 caracteres, y solamente se permitiran letras, numeros, guion, guion bajo, punto y arroba"
+            leyendaError="Solo acepta un máximo de 250 caracteres, y solamente se permitirán letras, números, guion, guion bajo, punto y arroba"
             expresionRegular={expresiones.correo}
           />
           <ComponenteInput
