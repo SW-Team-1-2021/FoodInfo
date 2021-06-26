@@ -23,12 +23,10 @@ const Index = () => {
 
   const expresiones = {
     password: /^.{1,10}$/,
-    // correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{1,10}$/,
-    // correo: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/,
-    correo: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$/,
-    // correo: /^[a-zA-Z\d._-@a-zA-Z0-9._-\.a-zA-Z]*$/,
-    // correo: /^[a-zA-Z0-9._-\s@a-zA-Z0-9._-\s\.a-zA-Z.-\s]*$/,
-
+    // password: /^.*$/,
+    correo: /^([a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-zA-Z]+)*$/,
+    // correo: /^[a-zA-Z0-9._-\s@a-zA-Z0-9\.a-zA-Z]*$/,
+    // correo: /^\w+([._-]\w+)*@\w+\.\w+([-.]\w+)*/,
   };
 
   const onSubmit = (e) => {
@@ -42,8 +40,8 @@ const Index = () => {
         .post(URL_LOGIN, datos)
         .then((res) => {
           cambiarFormularioValido(true);
-          cambiarCorreo({ campo: "", valido: null });
-          cambiarPassword({ campo: "", valido: null });
+          cambiarCorreo({ campo: '', valido: null });
+          cambiarPassword({ campo: '', valido: null });
         })
         .catch((error) => {
           if (error.response.status === 401) {
@@ -86,7 +84,7 @@ const Index = () => {
             label="Correo electrónico"
             placeholder="ejemplo@gmail.com"
             name="correo"
-            leyendaError="Introduzca un correo válido. No se permite caracteres especiales, a excepción de guion, guion bajo, punto y arroba"
+            leyendaError="Introduzca un correo electrónico válido, por ejemplo: (usuario@organizacion.tipo). No se permite caracteres especiales, a excepción de guion, guion bajo, punto y arroba"
             expresionRegular={expresiones.correo}
             requerido={""}
           />
@@ -107,6 +105,8 @@ const Index = () => {
             estado={password}
             cambiarEstado={cambiarPassword}
             tipo="password"
+            nuMin="1"
+            nuMax="10"
             label="Contraseña"
             placeholder="Escriba su contraseña"
             name="password"
@@ -115,14 +115,14 @@ const Index = () => {
             requerido={""}
           />
 
-          {formularioValido === false && (
+          {formularioValido === false && 
             <MensajeError>
               <p>
                 <b>Error: </b>
                 {msg}{" "}
               </p>
             </MensajeError>
-          )}
+          }
 
           <ContenedorBotonCentrado>
             <Boton type="submit">Ingresar</Boton>
