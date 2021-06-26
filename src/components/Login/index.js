@@ -26,8 +26,15 @@ const Index = () => {
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{1,10}$/,
   };
 
+  const handleChange = event => {
+    console.log("******", event);
+    event.target.correo.expresionRegular="";
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
+    e.target.correo.expresionRegular=expresiones.correo;
+    console.log()
     if (correo.valido === true && password.valido === true) {
       var datos = {
         username: correo.campo,
@@ -73,6 +80,7 @@ const Index = () => {
         />
         <Formulario action="" onSubmit={onSubmit}>
           <ComponenteInput
+            id="correo"
             estado={correo}
             cambiarEstado={cambiarCorreo}
             tipo="text"
@@ -80,7 +88,8 @@ const Index = () => {
             placeholder="ejemplo@gmail.com"
             name="correo"
             leyendaError="Solo acepta un máximo de 250 caracteres, y solamente se permitirán letras, números, guion, guion bajo, punto y arroba"
-            expresionRegular={expresiones.correo}
+            //expresionRegular={expresiones.correo}
+            onChange={handleChange}
           />
           <ComponenteInput
             estado={password}
