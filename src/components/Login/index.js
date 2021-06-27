@@ -35,6 +35,10 @@ const Index = () => {
       campo:event.target.value
     });
   };
+ 
+  function mostrar() {
+    cambiarFormularioValido(null);
+  }
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -60,10 +64,12 @@ const Index = () => {
             msg = MSG_ERROR_NAME;
           }
           cambiarFormularioValido(false);
+          setTimeout(mostrar,4000);
         });
     } else {
       msg = "Llenar todos los espacios requeridos";
       cambiarFormularioValido(false);
+      setTimeout(mostrar,4000);
       if (correo.valido == null) {
         cambiarCorreo({ valido: false });
       }
