@@ -7,7 +7,7 @@ const BotonLogin = () => {
     <Link to="/ui/login">
       <div className="botonlogin">
         <img className="loginImage" src={login50} alt="login" />
-        <div className="labellogin">Login</div>
+        <div className="labellogin">Iniciar Sesión</div>
       </div>
     </Link>
   );
