@@ -29,8 +29,20 @@ const Index = () => {
     // correo: /^\w+([._-]\w+)*@\w+\.\w+([-.]\w+)*/,
   };
 
+  const handleChange = event => {
+    cambiarCorreo({
+      valido: null,
+      campo:event.target.value
+    });
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log('99999', correo.campo)
+    if(expresiones.correo.test(correo.campo)) {
+      correo.valido=true;
+    }
+
     if (correo.valido === true && password.valido === true) {
       var datos = {
         username: correo.campo,
@@ -85,8 +97,8 @@ const Index = () => {
             placeholder="ejemplo@gmail.com"
             name="correo"
             leyendaError="Introduzca un correo electrónico válido, por ejemplo: (usuario@organizacion.tipo). No se permite caracteres especiales, a excepción de guion, guion bajo, punto y arroba"
-            expresionRegular={expresiones.correo}
             requerido={""}
+            onKeyDown={handleChange}
           />
           {/* <ComponenteInput
             estado={correo}
