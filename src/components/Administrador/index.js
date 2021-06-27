@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import Input from '../AñadirAlimento/CampoInput';
 import { Boton, MensajeError, MensajeExito } from '../AñadirAlimento/estilosFormmulario';
-import { Formulario, ContenedorBotonCentrado,H1 } from './estilos';
+import { Formulario, ContenedorBotonCentrado, H1 } from './estilos';
 import Genero from '../Administrador/Genero/index';
 import Fecha from './Fecha';
 import axios from "axios"
-import { URL_ADMINISTRATOR} from '../../global/const';
+import { URL_ADMINISTRATOR } from '../../global/const';
 
-const MSG_ERROR_NAME = 'El usuario ya se encuentra registrado';
+const MSG_ERROR_CI = 'El  CI. ya se encuentra registrado';
+const MSG_ERROR_EMAIL= 'El correo ya se encuentra registrado';
 
 var msg = 'Por favor rellena el formulario correctamente.';
 
@@ -19,17 +20,22 @@ const Administrador = () => {
   const [correo, cambiarCorreo] = useState({ campo: '', valido: null });
   const [nacimiento, cambiarNacimiento] = useState({ campo: '', valido: null });
   const [genero, cambiarGenero] = useState({ campo: '', valido: null });
-  const [formulario,cambiarFormulario]=useState(null);
+  const [formulario, cambiarFormulario] = useState(null);
 
   const expresiones = {
 
     nombre: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ_\s_ñ-]*$/,
     apellido: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ_\s_ñ-]*$/,
-    correo_electronico: /^[a-zA-ZñÑáéíóúÁÉÍÓÚ0-9_\s_-___@_.-]*$/,
+    correo_electronico: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/,
     carnet: /^[0-9\b]*$/,
   }
 
+  function mostrar() {
+    cambiarFormulario(null);
+  }
+
   const onSubmit = (e) => {
+
 		e.preventDefault();
 
     if(
@@ -48,7 +54,7 @@ const Administrador = () => {
           datebirth:nacimiento.campo,
           gender:genero.campo
         }
-
+     
        // console.log(datos);
        axios.post(URL_ADMINISTRATOR, datos)
 				.then(res => {
@@ -59,15 +65,32 @@ const Administrador = () => {
 					cambiarCorreo({ campo: '', valido: null });
 					cambiarNacimiento({ campo: '', valido: null });
 					cambiarGenero({ campo: '', valido: null });
+          setTimeout(mostrar,4000);
+				})
+        .catch(error => {
+					if (error.response.data.message.search("ci")!=-1) {
+						msg = MSG_ERROR_CI;
+              
+					}
+          if (error.response.data.message.search("email")!=-1) {
+						msg = MSG_ERROR_EMAIL;
+              
+					}
+					cambiarFormulario(false);
+          setTimeout(mostrar,4000);
 				})
 
 
     }
-    else{
+    else {
       msg = 'Por favor rellena el formulario correctamente.';
+
          cambiarFormulario(false);
+         setTimeout(mostrar,4000);
+
         if(nombres.valido==null){	
           cambiarNombres({valido: false});
+         
          }
         if(apellidos.valido==null){
            cambiarApellidos({valido: false});
@@ -83,14 +106,15 @@ const Administrador = () => {
         if(nacimiento.valido==null){
           cambiarNacimiento({valido: false});
 
+
       }
-        if(genero.valido==null){
-          cambiarGenero({valido: false});
+      if (genero.valido == null) {
+        cambiarGenero({ valido: false });
 
       }
     }
   }
-  console.log(nacimiento.valido);
+
   return (
     <main>
       <H1 >Agregar Administrador</H1>
@@ -101,11 +125,11 @@ const Administrador = () => {
           cambiarEstado={cambiarNombres}
           tipo="text"
           nuMin="1"
-          nuMax="30"
+          nuMax="50"
           label="*Nombres"
           placeholder="ej: Michel"
           name="nombre"
-          leyendaError=" Los nombres tienen que ser de 1 a 30 caracteres, sin caracteres especiales. "
+          leyendaError=" Los nombres tienen que ser de 1 a 50 caracteres, sin caracteres especiales. "
           expresionRegular={expresiones.nombre}
 
           requerido={""}
@@ -115,11 +139,11 @@ const Administrador = () => {
           cambiarEstado={cambiarApellidos}
           tipo="text"
           nuMin="1"
-          nuMax="40"
+          nuMax="50"
           label="*Apellidos"
           placeholder="ej: Mamani choquehuanca"
           name="apellido"
-          leyendaError=" Los apellidos tiene que ser de 1 a 40 caracteres, sin caracteres especiales. "
+          leyendaError=" Los apellidos tiene que ser de 1 a 50 caracteres, sin caracteres especiales. "
           expresionRegular={expresiones.apellido}
           requerido={""}
         />
@@ -132,7 +156,7 @@ const Administrador = () => {
           label="*Carnet de Identidad"
           placeholder="ej: 3490293"
           name="ci"
-          leyendaError=" El CI tiene que ser de 1 a 40 caracteres, sin caracteres especiales. "
+          leyendaError=" El CI tiene que ser de 1 a 10 caracteres, sin caracteres especiales. "
           expresionRegular={expresiones.carnet}
           requerido={""}
         />
@@ -141,35 +165,25 @@ const Administrador = () => {
           cambiarEstado={cambiarCorreo}
           tipo="email"
           nuMin="1"
-          nuMax="100"
-          label="*Correo Electronico"
+          nuMax="250"
+          label="*Correo Electrónico"
           placeholder="ej: mevale90@gmail.com"
           name="correo"
-          leyendaError=" Introdusca un coorreo valido "
+          leyendaError=" Introdusca un correo valido "
           expresionRegular={expresiones.correo_electronico}
           requerido={""}
         />
-        {/* <Input
+        
+        <Fecha
           estado={nacimiento}
           cambiarEstado={cambiarNacimiento}
-          tipo="date"
           nuMin="1"
-          nuMax="80"
+          nuMax="100"
           label="*Fecha Nacimiento"
-          name="nacimiento"
+          placeholder="ej: mevale90@gmail.com"
+          name="fecha"
+          leyendaError=" Introdusca su fecha de nacimiento"
           requerido={""}
-        /> */}
-
-        <Fecha
-         estado={nacimiento}
-         cambiarEstado={cambiarNacimiento}
-         nuMin="1"
-         nuMax="100"
-         label="*Fecha Nacimiento"
-         placeholder="ej: mevale90@gmail.com"
-         name="fecha"
-         leyendaError=" Introdusca su fecha de nacimiento"
-         requerido={""}
         />
         <Genero
           estado={genero}
@@ -179,14 +193,14 @@ const Administrador = () => {
         />
 
         {formulario === false && <MensajeError>
-					<p>
-						< b > Error: </b>  {msg}
-					</p>
-				</MensajeError>}
+          <p>
+            < b > Error: </b>  {msg}
+          </p>
+        </MensajeError>}
 
         <ContenedorBotonCentrado>
           <Boton type="submit">Enviar</Boton>
-          {formulario === true && <MensajeExito><b>El usuario fue agregado correctamente</b></MensajeExito>}
+          {formulario === true && <MensajeExito ><b>El usuario fue agregado correctamente</b></MensajeExito>}
         </ContenedorBotonCentrado>
 
       </Formulario>

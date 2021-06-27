@@ -9,13 +9,13 @@ const BotonLogout = () => {
     <Link>
       <div
         onClick={() => {
-          const token = localStorage.getItem('token');
+          const token = localStorage.getItem("token");
           axios.post(URL_LOGOUT, { token: token });
         }}
         className="botonlogout"
       >
         <img className="logoutImage" src={logout50} alt="logout" />
-        <div className="labellogout">Logout</div>
+        <div className="labellogout">Cerrar Sesión</div>
       </div>
     </Link>
   );

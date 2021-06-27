@@ -126,13 +126,7 @@ const AñadirAlimento = () => {
 			
 		}
 	}
-	console.log(categoria.valido);
-	console.log(nombre.valido);
-	console.log(procedencia.valido);
-	console.log(calorias.valido);
-	console.log(advertencias.valido);
-	console.log(imagen.valido);
-     console.log(descripcion.valido);
+	
 	return (
 		<main>
 			<h1 align="center" >AGREGAR  ALIMENTO</h1>
