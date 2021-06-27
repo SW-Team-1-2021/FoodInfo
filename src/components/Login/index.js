@@ -24,7 +24,7 @@ const Index = () => {
   const expresiones = {
     password: /^.{1,10}$/,
     // password: /^.*$/,
-    correo: /^([a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-zA-Z]+)*$/,
+    correo: /^([a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-zA-Z]+)+$/,
     // correo: /^[a-zA-Z0-9._-\s@a-zA-Z0-9\.a-zA-Z]*$/,
     // correo: /^\w+([._-]\w+)*@\w+\.\w+([-.]\w+)*/,
   };
