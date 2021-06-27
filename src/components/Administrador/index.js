@@ -34,10 +34,20 @@ const Administrador = () => {
     cambiarFormulario(null);
   }
 
+  const handleChange = event => {
+    cambiarCorreo({
+      valido: null,
+      campo:event.target.value
+    });
+  };
+
   const onSubmit = (e) => {
 
 		e.preventDefault();
-
+    if(expresiones.correo_electronico.test(correo.campo)) {
+      correo.valido=true;
+    }
+    
     if(
       nombres.valido===true&&
       apellidos.valido===true&&
@@ -55,7 +65,6 @@ const Administrador = () => {
           gender:genero.campo
         }
      
-       // console.log(datos);
        axios.post(URL_ADMINISTRATOR, datos)
 				.then(res => {
 					cambiarFormulario(true);
@@ -169,9 +178,9 @@ const Administrador = () => {
           label="*Correo Electrónico"
           placeholder="ej: mevale90@gmail.com"
           name="correo"
-          leyendaError=" Introdusca un correo valido "
-          expresionRegular={expresiones.correo_electronico}
+          leyendaError="Introdusca un correo valido "
           requerido={""}
+          onKeyDown={handleChange}
         />
         
         <Fecha
