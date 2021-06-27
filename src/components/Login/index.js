@@ -22,8 +22,11 @@ const Index = () => {
   const [formularioValido, cambiarFormularioValido] = useState(null);
 
   const expresiones = {
-    password: /^.{4,30}$/,
-    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{1,10}$/,
+    password: /^.{1,10}$/,
+    // password: /^.*$/,
+    correo: /^([a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-zA-Z]+)+$/,
+    // correo: /^[a-zA-Z0-9._-\s@a-zA-Z0-9\.a-zA-Z]*$/,
+    // correo: /^\w+([._-]\w+)*@\w+\.\w+([-.]\w+)*/,
   };
 
   const onSubmit = (e) => {
@@ -37,8 +40,8 @@ const Index = () => {
         .post(URL_LOGIN, datos)
         .then((res) => {
           cambiarFormularioValido(true);
-          cambiarCorreo({ campo: "", valido: null });
-          cambiarPassword({ campo: "", valido: null });
+          cambiarCorreo({ campo: '', valido: null });
+          cambiarPassword({ campo: '', valido: null });
         })
         .catch((error) => {
           if (error.response.status === 401) {
@@ -75,32 +78,51 @@ const Index = () => {
           <ComponenteInput
             estado={correo}
             cambiarEstado={cambiarCorreo}
-            tipo="text"
+            tipo="email"
+            nuMin="1"
+            nuMax="250"
             label="Correo electrónico"
             placeholder="ejemplo@gmail.com"
             name="correo"
-            leyendaError="Solo acepta un máximo de 250 caracteres, y solamente se permitirán letras, números, guion, guion bajo, punto y arroba"
+            leyendaError="Introduzca un correo electrónico válido, por ejemplo: (usuario@organizacion.tipo). No se permite caracteres especiales, a excepción de guion, guion bajo, punto y arroba"
             expresionRegular={expresiones.correo}
+            requerido={""}
           />
+          {/* <ComponenteInput
+            estado={correo}
+            cambiarEstado={cambiarCorreo}
+            tipo="email"
+            nuMin="1"
+            nuMax="100"
+            label="*Correo electrónico"
+            placeholder="ejemplo@gmail.com"
+            name="correo"
+            leyendaError=" Introdusca un coorreo valido "
+            expresionRegular={expresiones.correo}
+            requerido={""}
+          /> */}
           <ComponenteInput
             estado={password}
             cambiarEstado={cambiarPassword}
             tipo="password"
+            nuMin="1"
+            nuMax="10"
             label="Contraseña"
-            placeholder="Escriba su password"
+            placeholder="Escriba su contraseña"
             name="password"
-            leyendaError="Solo se acepta un máximo de 30 caracteres"
+            leyendaError="La contraseña debe ser de 1 a 10 caracteres"
             expresionRegular={expresiones.password}
+            requerido={""}
           />
 
-          {formularioValido === false && (
+          {formularioValido === false && 
             <MensajeError>
               <p>
                 <b>Error: </b>
                 {msg}{" "}
               </p>
             </MensajeError>
-          )}
+          }
 
           <ContenedorBotonCentrado>
             <Boton type="submit">Ingresar</Boton>
